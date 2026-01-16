@@ -1,0 +1,88 @@
+# Platform Configurations
+#
+# This file defines all platforms to be scraped.
+# Each platform configuration includes:
+# - name: Display name of the platform
+# - base_url: Base URL of the platform
+# - spider_class: Name of the spider class (without .py extension)
+# - schedule: Cron schedule for scraping (default: daily at 2 AM)
+# - enabled: Whether this platform is active
+# - auth_required: Whether authentication is needed
+# - priority: Scraping priority (1-10, higher = more important)
+
+biolincc:
+  name: "BioLINCC"
+  base_url: "https://biolincc.nhlbi.nih.gov"
+  start_url: "https://biolincc.nhlbi.nih.gov/studies/"
+  spider_class: "BiolinccSpider"
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  enabled: true
+  auth_required: false
+  priority: 8
+  description: "Biologic Specimen and Data Repository Information Coordinating Center"
+
+openicpsr:
+  name: "OpenICPSR"
+  base_url: "https://www.openicpsr.org"
+  start_url: "https://www.openicpsr.org/openicpsr/search/studies"
+  login_url: "https://www.openicpsr.org/openicpsr/login"
+  spider_class: "OpenicpsrSpider"
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  enabled: true
+  auth_required: true
+  priority: 7
+  description: "Open Inter-university Consortium for Political and Social Research"
+
+# Add more platforms here following the same format
+# Example template:
+#
+# platform_name:
+#   name: "Platform Display Name"
+#   base_url: "https://platform-url.com"
+#   start_url: "https://platform-url.com/data"
+#   spider_class: "PlatformSpider"
+#   schedule: "0 2 * * *"
+#   enabled: true
+#   auth_required: false
+#   priority: 5
+#   description: "Platform description"
+
+# Placeholder for additional platforms from the 75-platform list
+yoda:
+  name: "YODA Project"
+  base_url: "https://yoda.yale.edu"
+  start_url: "https://yoda.yale.edu/data-requests"
+  spider_class: "YodaSpider"
+  schedule: "0 4 * * *"
+  enabled: false  # Not yet implemented
+  auth_required: true
+  priority: 7
+  description: "Yale Open Data Access Project"
+
+vivli:
+  name: "Vivli"
+  base_url: "https://vivli.org"
+  start_url: "https://vivli.org/resources/data"
+  spider_class: "VivliSpider"
+  schedule: "0 5 * * *"
+  enabled: false  # Not yet implemented
+  auth_required: true
+  priority: 8
+  description: "Center for Global Clinical Research Data"
+
+dbgap:
+  name: "dbGaP"
+  base_url: "https://www.ncbi.nlm.nih.gov/gap"
+  start_url: "https://www.ncbi.nlm.nih.gov/gap/browse"
+  spider_class: "DbgapSpider"
+  schedule: "0 6 * * *"
+  enabled: false  # Not yet implemented
+  auth_required: true
+  priority: 9
+  description: "Database of Genotypes and Phenotypes"
+
+# Note: Additional 70 platforms from the requirements list should be added here
+# Each new platform requires:
+# 1. Configuration entry in this file
+# 2. Spider implementation in spiders/ directory
+# 3. Credentials in credentials.yaml (if auth_required)

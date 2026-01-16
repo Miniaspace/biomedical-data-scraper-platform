@@ -1,0 +1,59 @@
+# Core Dependencies
+apache-airflow==2.8.1
+scrapy==2.11.0
+pandas==2.1.4
+pyyaml==6.0.1
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+
+# Redis & Celery
+redis==5.0.1
+celery==5.3.4
+
+# Authentication & Security
+cryptography==41.0.7
+
+# HTTP & Web
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==5.1.0
+
+# Dynamic page rendering (optional, for JavaScript-heavy sites)
+playwright==1.40.0
+scrapy-playwright==0.0.34
+
+# Proxy support (optional)
+scrapy-proxy-pool==0.1.5
+scrapy-user-agents==0.1.1
+
+# Data processing
+numpy==1.26.3
+openpyxl==3.1.2
+
+# Monitoring & Logging
+prometheus-client==0.19.0
+
+# AI Assistant (optional)
+openai==1.6.1
+
+# Object Storage
+boto3==1.34.20
+minio==7.2.2
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+
+# Development tools
+black==23.12.1
+flake8==7.0.0
+mypy==1.8.0
+ipython==8.19.0
+
+# Utilities
+python-dotenv==1.0.0
+click==8.1.7
+tqdm==4.66.1
