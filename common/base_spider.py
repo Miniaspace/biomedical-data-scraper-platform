@@ -68,9 +68,8 @@ class BaseSpider(scrapy.Spider):
             'errors': 0,
         }
         
-        # Setup logging
-        self.logger = logging.getLogger(f'spider.{self.platform_name}')
-        self.logger.info(f"Initializing spider for platform: {self.platform_name}")
+        # Note: Scrapy Spider already has a logger property
+        # We can use self.logger directly without reassigning
     
     def start_requests(self) -> Iterator[Request]:
         """

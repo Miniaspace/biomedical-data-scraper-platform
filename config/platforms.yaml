@@ -47,6 +47,39 @@ openicpsr:
 #   priority: 5
 #   description: "Platform description"
 
+bioportal:
+  name: "BioPortal"
+  base_url: "https://bioportal.bioontology.org"
+  start_url: "https://data.bioontology.org/ontologies"
+  spider_class: "BioportalSpider"
+  schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+  enabled: true
+  auth_required: true  # API key required
+  priority: 8
+  description: "National Center for Biomedical Ontology BioPortal"
+
+kidsfirst:
+  name: "Kids First Data Resource"
+  base_url: "https://kidsfirstdrc.org"
+  start_url: "https://kidsfirstdrc.org/resources/"
+  spider_class: "KidsfirstSpider"
+  schedule: "0 4 * * *"  # Daily at 4 AM
+  enabled: true
+  auth_required: false
+  priority: 8
+  description: "Kids First Data Resource Platform for Pediatric Research"
+
+nsrr:
+  name: "National Sleep Research Resource"
+  base_url: "https://sleepdata.org"
+  start_url: "https://sleepdata.org/datasets"
+  spider_class: "NsrrSpider"
+  schedule: "0 5 * * *"  # Daily at 5 AM
+  enabled: false  # Site currently experiencing issues
+  auth_required: false
+  priority: 7
+  description: "National Sleep Research Resource"
+
 # Placeholder for additional platforms from the 75-platform list
 yoda:
   name: "YODA Project"

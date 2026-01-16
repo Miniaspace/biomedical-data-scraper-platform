@@ -52,14 +52,37 @@ This platform is designed as a **universal, extensible data acquisition infrastr
 
 ## 🚀 Quick Start
 
-### Prerequisites
+We provide two running modes: **Local Direct Execution** (no Docker required, suitable for quick testing and development) and **Docker Containerized Execution** (recommended for production environments).
 
-- Docker & Docker Compose
-- Python 3.11+
-- 8GB+ RAM
-- 50GB+ Disk Space
+### Local Direct Execution (No Docker)
 
-### Installation
+1. **Clone the repository**
+```bash
+git clone https://github.com/Miniaspace/biomedical-data-scraper-platform.git
+cd biomedical-data-scraper-platform
+```
+
+2. **Install dependencies**
+```bash
+# Install dependencies for local execution
+pip install -r requirements-local.txt
+```
+
+3. **Run the scraper**
+```bash
+# List all available platforms
+python run_local.py --list
+
+# Run a single platform (e.g., Kids First)
+python run_local.py --platform kidsfirst
+
+# Run all enabled platforms
+python run_local.py --platform all
+```
+
+For a detailed guide, please see [QUICKSTART.md](QUICKSTART.md).
+
+### Docker Containerized Execution (Recommended for Production)
 
 1. **Clone the repository**
 ```bash
