@@ -1,0 +1,32 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul li > a.title, ul li > div.title, ul li > h3",
+      "author": "ul li span.author, ul li div.author",
+      "publication_date": "ul li span.date, ul li div.date",
+      "pdf_link": "ul li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "无分页，页面一次性加载所有列表项，直接抓取当前页面所有数据",
+  "file_download_strategy": "通过playwright模拟点击或直接请求PDF链接进行下载，需携带登录态Cookie，确保权限访问",
+  "anti_scraping_handling": [
+    "模拟真实浏览器环境，使用Playwright自动处理登录，保持会话",
+    "合理控制请求频率，避免触发服务器异常",
+    "利用Playwright自动处理JavaScript渲染，确保页面数据完整"
+  ],
+  "special_considerations": [
+    "必须先完成登录，登录流程需自动化处理，建议使用账号密码自动填充及提交",
+    "页面无分页，数据量较大时需注意内存和性能优化",
+    "无API接口，所有数据需从渲染后的HTML中提取"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('a.title, div.title, h3', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('span.author, div.author', 'el => el.textContent.trim()')\n        date = await item.query_selector_eval('span.date, div.date', 'el => el.textContent.trim()')\n        pdf_element = await item.query_selector('a[href$=\".pdf\"]')\n        pdf_link = await pdf_element.get_attribute('href') if pdf_element else None\n        results.append({'title': title, 'author': author, 'date': date, 'pdf_link': pdf_link})\n    return results",
+    "parse_detail": "# 无详情页，所有信息均在列表项中，无需单独解析详情页"
+  }
+}

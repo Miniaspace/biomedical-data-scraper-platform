@@ -1,0 +1,35 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "ul > li",
+    "detail_page_selector": "a[href^='/study-viewer/clinical_trials']",
+    "fields": {
+      "title": "css=h1.study-title, xpath=//h1[contains(@class,'study-title')]",
+      "study_id": "css=span.study-id, xpath=//span[contains(@class,'study-id')]",
+      "status": "css=div.status, xpath=//div[contains(@class,'status')]",
+      "start_date": "css=div.start-date, xpath=//div[contains(@class,'start-date')]",
+      "completion_date": "css=div.completion-date, xpath=//div[contains(@class,'completion-date')]",
+      "pdf_links": "css=a[href$='.pdf'], xpath=//a[contains(@href,'.pdf')]"
+    }
+  },
+  "pagination_strategy": "使用Playwright模拟用户滚动页面，触发无限滚动加载更多列表项，直到没有新数据加载为止。通过监听网络请求和DOM变化判断加载完成。",
+  "file_download_strategy": "在详情页中定位所有PDF链接，使用Playwright拦截下载请求或直接通过requests库结合cookie/session下载PDF文件，确保登录状态有效。",
+  "anti_scraping_handling": [
+    "保持登录状态，使用Playwright自动处理登录流程，避免频繁登录导致封禁。",
+    "模拟真实用户行为（如鼠标移动、随机等待）降低被检测风险。",
+    "合理控制请求频率，避免触发服务器异常流量检测。"
+  ],
+  "special_considerations": [
+    "登录认证为必需，需处理登录表单及可能的多因素认证。",
+    "无公开API，所有数据均需通过页面渲染抓取。",
+    "无限滚动加载数据量较大，需合理设计滚动和数据存储策略，避免内存溢出。",
+    "PDF文件下载需保证会话有效，可能需要动态cookie或token。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        link = await item.query_selector('a[href^=\"/study-viewer/clinical_trials\"]')\n        href = await link.get_attribute('href')\n        results.append(href)\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.study-title')\n    study_id = await page.text_content('span.study-id')\n    status = await page.text_content('div.status')\n    start_date = await page.text_content('div.start-date')\n    completion_date = await page.text_content('div.completion-date')\n    pdf_elements = await page.query_selector_all('a[href$=\".pdf\"]')\n    pdf_links = [await el.get_attribute('href') for el in pdf_elements]\n    return {\n        'title': title.strip() if title else '',\n        'study_id': study_id.strip() if study_id else '',\n        'status': status.strip() if status else '',\n        'start_date': start_date.strip() if start_date else '',\n        'completion_date': completion_date.strip() if completion_date else '',\n        'pdf_links': pdf_links\n    }"
+  }
+}

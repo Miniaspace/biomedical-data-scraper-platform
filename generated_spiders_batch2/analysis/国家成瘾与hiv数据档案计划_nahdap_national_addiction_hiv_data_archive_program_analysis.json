@@ -1,0 +1,35 @@
+{
+  "url": "https://icpsr.umich.edu/web/pages/NAHDAP/data/index.html",
+  "domain": "icpsr.umich.edu",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 14
+      }
+    ],
+    "detail_link_pattern": "/sites/nahdap/find-access-data",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": true
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/icpsr_umich_edu.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\" data-next-head=\"\"><meta name=\"viewport\" content=\"width=device-width\" data-next-head=\"\"><meta name=\"description\" content=\"The mission of the National Addiction and Health Data Archive Program is to facilitate research on substance use and health.\" data-next-head=\"\"><title data-next-head=\"\">About the National Addiction and Health Data Archive Program | NAHDAP</title><style type=\"text/css\">:root, :host {\n  --fa-font-solid: normal 900 1em/1 \"Font Awesome 7 Free\";\n  --fa-font-regular: normal 400 1em/1 \"Font Awesome 7 Free\";\n  --fa-font-light: normal 300 1em/1 \"Font Awesome 7 Pro\";\n  --fa-font-thin: normal 100 1em/1 \"Font Awesome 7 Pro\";\n  --fa-font-duotone: normal 900 1em/1 \"Font Awesome 7 Duotone\";\n  --fa-font-duotone-regular: normal 400 1em/1 \"Font Awesome 7 Duotone\";\n  --fa-font-duotone-light: normal 300 1em/1 \"Font Awesome 7 Duotone\";\n  --fa-font-duotone-thin: normal 100 1em/1 \"Font Awesome 7 Duotone\";\n  --fa-font-brands: normal 400 1em/1 \"Font Awesome 7 Brands\";\n  --fa-font-sharp-solid: normal 900 1em/1 \"Font Awesome 7 Sharp\";\n  --fa-font-sharp-regular: normal 400 1em/1 \"Font Awesome 7 Sharp\";\n  --fa-font-sharp-light: normal 300 1em/1 \"Font Awesome 7 Sharp\";\n  --fa-font-sharp-thin: normal 100 1em/1 \"Font Awesome 7 Sharp\";\n  --fa-font-sharp-duotone-solid: normal 900 1em/1 \"Font Awesome 7 Sharp Duotone\";\n  --fa-font-sharp-duotone-regular: normal 400 1em/1 \"Font Awesome 7 Sharp Duotone\";\n  --fa-font-sharp-duotone-light: normal 300 1em/1 \"Font Awesome 7 Sharp Duotone\";\n  --fa-font-sharp-duotone-thin: normal 100 1em/1 \"Font Awesome 7 Sharp Duotone\";\n  --fa-font-slab-regular: normal 400 1em/1 \"Font Awesome 7 Slab\";\n  --fa-font-slab-press-regular: normal 400 1em/1 \"Font Awesome 7 Slab Press\";\n  --fa-font-whiteboard-semibold: normal 600 1em/1 \"Font Awesome 7 Whiteboard\";\n  --fa-font-thumbprint-light: normal 300 1em/1 \"Font Awesome 7 Thumbprint\";\n  --fa-font-notdog-solid: normal 900 1em/1 \"Font Awesome 7 Notdog\";\n  --fa-font-notdog-duo-solid: normal 900 1em/1 \"Font Awesome 7 Notdog Duo\";\n  --fa-font-etch-solid: normal 900 1em/1 \"Font Awesome 7 Etch\";\n  --fa-font-jelly-regular: normal 400 1em/1 \"Font Awesome 7 Jelly\";\n  --fa-font-jelly-fill-regular: normal 400 1em/1 \"Font Awesome 7 Jelly Fill\";\n  --fa-font-jelly-duo-regular: normal 400 1em/1 \"Font Awesome 7 Jelly Duo\";\n  --fa-font-chisel-regular: normal 400 1em/1 \"Font Awesome 7 Chisel\";\n  --fa-font-utility-semibold: normal 600 1em/1 \"Font Awesome 7 Utility\";\n  --fa-font-utility-duo-semibold: normal 600 1em/1 \"Font Awesome 7 Utility Duo\";\n  --fa-font-utility-fill-semibold: normal 600 1em/1 \"Font Awesome 7 Utility Fill\";\n}\n\n.svg-inline--fa {\n  box-sizing: content-box;\n  display: var(--fa-display, inline-block);\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n  width: var(--fa-width, 1.25em);\n}\n.svg-inline--fa.fa-2xs {\n  vertical-align: 0.1em;\n}\n.svg-inline--fa.fa-xs {\n  vertical-align: 0em;\n}\n.svg-inline--fa.fa-sm {\n  vertical-align: -0.0714285714em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.2em;\n}\n.svg-inline--fa.fa-xl {\n  vertical-align: -0.25em;\n}\n.svg-inline--fa.fa-2xl {\n  vertical-align: -0.3125em;\n}\n.svg-inline--fa.fa-pull-left,\n.svg-inline--fa .fa-pull-start {\n  float: inline-start;\n  margin-inline-end: var(--fa-pull-margin, 0.3em);\n}\n.svg-inline--fa.fa-pull-right,\n.svg-inline--fa .fa-pull-end {\n  float: inline-end;\n  margin-inline-start: var(--fa-pull-margin, 0.3em);\n}\n.svg-inline--fa.fa-li {\n  width: var(--fa-li-width, 2em);\n  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));\n  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: var(--fa-width, 1.25em);\n}\n.fa-layers .svg-inline--fa {\n  inset: 0;\n  margin: auto;\n  position: absolute;\n  transform-origin: center center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: var(--fa-counter-background-color, #ff253a);\n  border-radius: var(--fa-counter-border-radius, 1em);\n  box-sizing: border-box;\n  color: var(--fa-inverse, #fff);\n  line-height: var(--fa-counter-line-height, 1);\n  max-width: var(--fa-counter-max-width, 5em);\n  min-width: var(--fa-counter-min-width, 1.5em);\n  overflow: hidden;\n  padding: var(--fa-counter-padding, 0.25em 0.5em);\n  right: var(--fa-right, 0);\n  text-overflow: ellipsis;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-counter-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: var(--fa-bottom, 0);\n  right: var(--fa-right, 0);\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: var(--fa-bottom, 0);\n  left"
+}

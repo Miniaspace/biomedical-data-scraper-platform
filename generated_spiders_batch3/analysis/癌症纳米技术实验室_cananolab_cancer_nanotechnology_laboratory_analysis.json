@@ -1,0 +1,35 @@
+{
+  "url": "https://cananolab.cancer.gov/#",
+  "domain": "cananolab.cancer.gov",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 40
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/cananolab_cancer_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n    <script async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script src=\"//assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-4b219b82c4737db0e1797b6c511cf10c802c95cb.js\"></script><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement.min.js\" async=\"\"></script><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement_Module_ActivityMap.min.js\" async=\"\"></script><script type=\"module\" src=\"https://static.cancer.gov/launchables/launch-banner-adminreview/v1.0.0/assets/index-CoFPPetr.js\"></script>\n    <title>caNanoLab</title>\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"keywords\" content=\"nanoinformatics, nanotechnology model, caNanoLab, nanotechnology, nanoparticle, nanomaterial, cancer, information model, portal, data portal, data repository, caBIG, caGRID, NCL, nano characterization, nanoparticle composition, Cancer Nanotechnology Excellence, Nanoparticle Ontology\">\n    <meta name=\"description\" content=\"caNanoLab is a data sharing portal designed to facilitate information sharing in the biomedical nanotechnology research community to expedite and validate the use of nanotechnology in biomedicine\">\n    <meta charset=\"utf-8\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n\n    <script>\n        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n\n        ga('create', 'UA-84884440-1', 'auto');\n    </script>\n\n    <script src=\"assets/jquery/3.6.0/jquery-3.6.0.min.js\"></script>\n    <script src=\"assets/popper/1.16.0/umd/popper.min.js\"></script>\n    <script src=\"assets/bootstrap-4.5.2-dist/js/bootstrap.min.js\"></script>\n    <!--\n      <script src=\"assets/bootstrap-5.0.0-dist/js/bootstrap.js\"></script>\n    -->\n\n    <!-- Don't cache.  Not for production  -->\n    <meta http-equiv=\"Cache-Control\" content=\"no-cache, no-store, must-revalidate\">\n    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n    <meta http-equiv=\"Expires\" content=\"0\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"><style>@font-face{font-family:Open Sans;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Open Sans;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format(\"woff2\");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Open Sans;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Open Sans;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format(\"woff2\");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Open Sans;font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Open Sans;font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format(\"woff2\");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,"
+}

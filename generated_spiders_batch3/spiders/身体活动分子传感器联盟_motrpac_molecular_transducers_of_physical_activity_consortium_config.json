@@ -1,0 +1,24 @@
+{
+  "spider_name": "身体活动分子传感器联盟_motrpac_molecular_transducers_of_physical_activity_consortium",
+  "platform": {
+    "name": "身体活动分子传感器联盟 MoTrPAC (Molecular Transducers of Physical Activity Consortium)",
+    "url": "https://motrpac-data.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程复杂，需实现自动化登录并处理多因素认证（如有）",
+    "网站无公开API，所有数据依赖前端渲染，必须使用浏览器自动化",
+    "文件下载链接可能动态生成，需在详情页完整加载后提取",
+    "无限滚动可能导致内存占用高，需设计合理的滚动和数据存储策略"
+  ]
+}

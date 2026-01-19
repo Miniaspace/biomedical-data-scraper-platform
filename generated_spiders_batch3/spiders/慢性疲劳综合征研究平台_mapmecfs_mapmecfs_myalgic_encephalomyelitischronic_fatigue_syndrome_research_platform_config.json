@@ -1,0 +1,23 @@
+{
+  "spider_name": "慢性疲劳综合征研究平台_mapmecfs_mapmecfs_myalgic_encephalomyelitischronic_fatigue_syndrome_research_platform",
+  "platform": {
+    "name": "慢性疲劳综合征研究平台 mapMECFS mapMECFS (Myalgic Encephalomyelitis/Chronic Fatigue Syndrome Research Platform)",
+    "url": "https://mapmecfs.org",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 5,
+    "estimated_dev_time": "8"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站当前返回403 Forbidden，需确认访问权限或联系网站管理员获取授权",
+    "无登录，无API，无JavaScript渲染，采集难度主要在于突破访问限制",
+    "后续若网站结构有更新或开放API，需重新评估采集方案"
+  ]
+}

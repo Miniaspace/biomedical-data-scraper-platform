@@ -1,0 +1,23 @@
+{
+  "spider_name": "加速药物合作伙伴计划帕金森病项目_amp_pd_accelerating_medicines_partnership_parkinsons_disease",
+  "platform": {
+    "name": "加速药物合作伙伴计划帕金森病项目 AMP PD (Accelerating Medicines Partnership Parkinson's Disease)",
+    "url": "https://amp-pd.org",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录和复杂反爬，采集相对简单，但需处理无限滚动加载",
+    "无检测到API接口，需基于页面HTML解析数据",
+    "注意PDF及补充材料链接可能为相对路径，需拼接完整URL"
+  ]
+}

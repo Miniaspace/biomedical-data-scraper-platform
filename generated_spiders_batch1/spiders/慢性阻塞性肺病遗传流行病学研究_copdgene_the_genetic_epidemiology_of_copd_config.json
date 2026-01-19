@@ -1,0 +1,22 @@
+{
+  "spider_name": "慢性阻塞性肺病遗传流行病学研究_copdgene_the_genetic_epidemiology_of_copd",
+  "platform": {
+    "name": "慢性阻塞性肺病遗传流行病学研究 COPDGene (The Genetic Epidemiology of COPD)",
+    "url": "http://www.copdgene.org/",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "8"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录和API，数据结构简单，采集稳定性较高",
+    "需关注未来网站结构变动，尤其导航栏链接选择器"
+  ]
+}

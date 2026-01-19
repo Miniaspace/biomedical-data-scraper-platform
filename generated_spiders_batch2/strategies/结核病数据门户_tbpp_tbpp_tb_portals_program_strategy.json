@@ -1,0 +1,30 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='http://www.hhs.gov/']",
+    "fields": {
+      "title": "li > a::text",
+      "detail_link": "li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "无分页，所有数据均在单页面加载，直接解析列表即可，无需分页处理",
+  "file_download_strategy": "在详情页中定位PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件链接完整且可访问",
+  "anti_scraping_handling": [
+    "由于无验证码、无登录、无Cloudflare及无明显限速，建议控制请求频率，避免过快请求导致IP被封",
+    "设置合理的下载延迟（如1秒）和并发请求数（如8）",
+    "使用随机User-Agent和请求头模拟正常浏览器访问"
+  ],
+  "special_considerations": [
+    "确认详情页中PDF及补充材料的链接格式，确保能正确抓取并下载",
+    "部分链接指向外部域名（如hhs.gov），需处理跨域请求问题",
+    "页面结构较为简单，无复杂JS渲染，Scrapy足够应对"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        title = li.css('a::text').get()\n        if detail_url and detail_url.startswith('http://www.hhs.gov/'):\n            yield response.follow(detail_url, self.parse_detail, meta={'title': title})",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.meta.get('title')\n    # 示例：抓取PDF链接\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    yield {\n        'title': title,\n        'pdf_links': pdf_links,\n        'detail_url': response.url\n    }"
+  }
+}

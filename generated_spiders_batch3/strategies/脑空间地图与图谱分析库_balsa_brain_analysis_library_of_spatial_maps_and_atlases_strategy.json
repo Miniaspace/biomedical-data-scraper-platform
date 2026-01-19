@@ -1,0 +1,35 @@
+{
+  "recommended_method": "scrapy+playwright (hybrid)",
+  "spider_template": "hybrid",
+  "difficulty": 3,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "td:nth-child(1) a::text",
+      "detail_link": "td:nth-child(1) a::attr(href)",
+      "author": "td:nth-child(2)::text",
+      "date": "td:nth-child(3)::text",
+      "status": "td:nth-child(4)::text"
+    }
+  },
+  "pagination_strategy": "通过点击页面底部的“Next”按钮进行分页，使用Playwright模拟点击操作，等待页面加载完成后抓取下一页数据，直到“Next”按钮不可用或不存在为止。",
+  "file_download_strategy": "在详情页中定位PDF文件及补充材料的下载链接，使用Scrapy的文件下载管道结合Playwright处理登录态和权限验证后，异步下载文件。文件下载前需确保已登录且有访问权限。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟登录，保持登录态，避免频繁登录导致账号异常。",
+    "合理设置请求间隔，避免触发服务器的访问频率限制。",
+    "使用代理池分散请求来源，降低被封风险。",
+    "监控页面变化，动态调整选择器，防止因页面结构调整导致采集失败。"
+  ],
+  "special_considerations": [
+    "登录过程需要处理表单提交，可能包含CSRF token，需动态获取并提交。",
+    "网站无API，数据需通过页面解析获取，且无明显JavaScript渲染，Playwright主要用于登录和分页点击。",
+    "文件下载链接可能是动态生成或带有权限校验，需保持登录状态并使用Playwright抓取最终下载链接。",
+    "无验证码和Cloudflare，反爬门槛较低，但仍需注意账号安全和访问频率。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        title = row.css('td:nth-child(1) a::text').get()\n        detail_url = row.css('td:nth-child(1) a::attr(href)').get()\n        author = row.css('td:nth-child(2)::text').get()\n        date = row.css('td:nth-child(3)::text').get()\n        status = row.css('td:nth-child(4)::text').get()\n        yield scrapy.Request(\n            url=response.urljoin(detail_url),\n            callback=self.parse_detail,\n            meta={'title': title, 'author': author, 'date': date, 'status': status}\n        )\n    next_btn = response.css('a.next')\n    if next_btn:\n        next_url = next_btn.attrib.get('href')\n        if next_url:\n            yield scrapy.Request(url=response.urljoin(next_url), callback=self.parse_list)",
+    "parse_detail": "def parse_detail(self, response):\n    item = {}\n    item['title'] = response.meta.get('title')\n    item['author'] = response.meta.get('author')\n    item['date'] = response.meta.get('date')\n    item['status'] = response.meta.get('status')\n    # 示例：提取PDF下载链接\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    item['pdf_urls'] = [response.urljoin(link) for link in pdf_links]\n    # 其他字段根据页面结构补充\n    yield item"
+  }
+}

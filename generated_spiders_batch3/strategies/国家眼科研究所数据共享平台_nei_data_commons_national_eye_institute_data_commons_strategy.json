@@ -1,0 +1,34 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "16",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='/adaptive-optics']",
+    "fields": {
+      "title": "css: h1.page-title, xpath: //h1[contains(@class, 'page-title')]",
+      "authors": "css: div.authors, xpath: //div[contains(@class, 'authors')]",
+      "abstract": "css: div.abstract, xpath: //div[contains(@class, 'abstract')]",
+      "publication_date": "css: span.pub-date, xpath: //span[contains(@class, 'pub-date')]",
+      "pdf_link": "css: a[href$='.pdf'], xpath: //a[contains(@href, '.pdf')]",
+      "supplementary_materials": "css: a.supplementary, xpath: //a[contains(@class, 'supplementary')]"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动加载更多列表项，使用Scrapy结合中间件（如scrapy-selenium或scrapy-playwright）模拟滚动加载，循环触发页面滚动事件，直到加载完全部列表项后停止采集。",
+  "file_download_strategy": "对所有详情页中检测到的PDF链接及补充材料链接，使用Scrapy的FilesPipeline或自定义下载中间件进行文件下载，确保文件完整性和重试机制。",
+  "anti_scraping_handling": [
+    "由于无验证码、无明显限速，保持合理请求间隔（如1-2秒）避免触发服务器限制",
+    "设置合理User-Agent，模拟常见浏览器请求头",
+    "使用IP代理池以防止IP封禁（可选）"
+  ],
+  "special_considerations": [
+    "页面JavaScript加载较少，Scrapy直接请求即可，无需Playwright",
+    "无限滚动需模拟前端行为，推荐使用scrapy-playwright或scrapy-selenium辅助",
+    "注意详情页链接为相对路径，需拼接完整URL"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    items = response.css('ul li')\n    for item in items:\n        detail_relative_url = item.css('a::attr(href)').get()\n        if detail_relative_url and detail_relative_url.startswith('/adaptive-optics'):\n            detail_url = response.urljoin(detail_relative_url)\n            yield scrapy.Request(detail_url, callback=self.parse_detail)\n\n    # 伪代码示例：模拟滚动加载更多\n    # if more_items_available:\n    #     yield scrapy.Request(next_page_url, callback=self.parse_list)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1.page-title::text').get()\n    authors = response.css('div.authors::text').getall()\n    abstract = response.css('div.abstract::text').get()\n    pub_date = response.css('span.pub-date::text').get()\n    pdf_url = response.css('a[href$=\".pdf\"]::attr(href)').get()\n\n    item = {\n        'title': title.strip() if title else '',\n        'authors': [a.strip() for a in authors if a],\n        'abstract': abstract.strip() if abstract else '',\n        'publication_date': pub_date.strip() if pub_date else '',\n        'pdf_url': response.urljoin(pdf_url) if pdf_url else None\n    }\n\n    if item['pdf_url']:\n        yield scrapy.Request(item['pdf_url'], callback=self.save_pdf)\n\n    yield item"
+  }
+}

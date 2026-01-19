@@ -1,0 +1,95 @@
+{
+  "url": "https://salivaryproteome.org",
+  "domain": "salivaryproteome.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 5
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": [
+      "institution"
+    ]
+  },
+  "api_info": {
+    "detected": true,
+    "endpoints": [
+      {
+        "url": "https://media.licdn.com/dms/image/v2/D4E0BAQF0U8RPybMdTQ/company-logo_100_100/company-logo_100_100/0/1709940073705/salivary_proteome_logo?e=2147483647&v=beta&t=WtqUm81slErk9sbyskZa6dfOiGl9_3aG3nPRavPyc9E",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://media.licdn.com/dms/image/v2/D4E22AQEX48S4ktTrWg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1704726639761?e=2147483647&v=beta&t=DUeKA_btt_FySe8-E19stQCCxC4AB5HbEbhdV_shu7Y",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://media.licdn.com/dms/image/v2/D4E03AQH8MS6l8kwzhA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704723435243?e=2147483647&v=beta&t=oDTIo_kd_okF6EAORKys3I7nXad4aO9q6gTX1V2QjW8",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://media.licdn.com/dms/image/sync/v2/D4D27AQETqkoNhRLdRQ/articleshare-shrink_800/articleshare-shrink_800/0/1742194200709?e=2147483647&v=beta&t=2U3xYjxe7b6XL9JSrLQLpxBR8EwbFpGEcYRzIGaUi-U",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQHJ0sGiLQKEIQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1527526018441?e=2147483647&v=beta&t=g2AqsfgQQ2F2b_vlxQQAXLWXIYMArmtN0XIaPcXgcGE",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://media.licdn.com/dms/image/sync/v2/D4D27AQHMsD4_61fm2A/articleshare-shrink_800/articleshare-shrink_800/0/1711527003429?e=2147483647&v=beta&t=HyaMmIv2karHZEL57HaGBfl2wEx6gF99xJbuyCoRqNY",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://dms.licdn.com/playlist/vid/v2/D5605AQGcCqG_62CRgg/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1709702178402?e=2147483647&v=beta&t=IsuuOnyqOFEp0XsdLoj3rLkn7nrPFoJlSRTm5jElkJQ",
+        "method": "HEAD",
+        "resource_type": "fetch"
+      },
+      {
+        "url": "https://collector-pxdojv695v.protechts.net/api/v2/msft",
+        "method": "POST",
+        "resource_type": "xhr"
+      },
+      {
+        "url": "https://collector-pxdojv695v.protechts.net/api/v2/msft",
+        "method": "POST",
+        "resource_type": "xhr"
+      },
+      {
+        "url": "https://collector-pxdojv695v.protechts.net/api/v2/msft",
+        "method": "POST",
+        "resource_type": "xhr"
+      },
+      {
+        "url": "https://collector-pxdojv695v.protechts.net/api/v2/msft",
+        "method": "POST",
+        "resource_type": "xhr"
+      }
+    ]
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/salivaryproteome_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta name=\"emotion-insertion-point\" content=\"\"><meta charset=\"utf-8\"><link rel=\"icon\" href=\"/favicon.ico\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#000000\"><meta name=\"description\" content=\"HSP is a collaborative, community-based Web portal to more than 1,000 unique human saliva proteins identified by high-throughput proteomic technologies.\"><meta name=\"image\" property=\"og:image\" content=\"https://hspw-public-prod-v2.s3.us-east-2.amazonaws.com/web-static/hsp-logo.png\"><link rel=\"apple-touch-icon\" href=\"/logo192.png\"><link rel=\"manifest\" href=\"/manifest.json\"><title>HSP | Home</title><script defer=\"defer\" src=\"/static/js/main.8e1b3d9d.js\"></script><link href=\"/static/css/main.4f12eebd.css\" rel=\"stylesheet\"><style>:root{--swal2-outline: 0 0 0 3px rgba(100, 150, 200, 0.5);--swal2-container-padding: 0.625em;--swal2-backdrop: rgba(0, 0, 0, 0.4);--swal2-backdrop-transition: background-color 0.1s;--swal2-width: 32em;--swal2-padding: 0 0 1.25em;--swal2-border: none;--swal2-border-radius: 0.3125rem;--swal2-background: white;--swal2-color: #545454;--swal2-show-animation: swal2-show 0.3s;--swal2-hide-animation: swal2-hide 0.15s forwards;--swal2-icon-zoom: 1;--swal2-icon-animations: true;--swal2-title-padding: 0.8em 1em 0;--swal2-html-container-padding: 1em 1.6em 0.3em;--swal2-input-border: 1px solid #d9d9d9;--swal2-input-border-radius: 0.1875em;--swal2-input-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;--swal2-input-background: transparent;--swal2-input-transition: border-color 0.2s, box-shadow 0.2s;--swal2-input-hover-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;--swal2-input-focus-border: 1px solid #b4dbed;--swal2-input-focus-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px $swal2-outline-color;--swal2-progress-step-background: #add8e6;--swal2-validation-message-background: #f0f0f0;--swal2-validation-message-color: #666;--swal2-footer-border-color: #eee;--swal2-footer-background: transparent;--swal2-footer-color: inherit;--swal2-timer-progress-bar-background: rgba(0, 0, 0, 0.3);--swal2-close-button-position: initial;--swal2-close-button-inset: auto;--swal2-close-button-font-size: 2.5em;--swal2-close-button-color: #ccc;--swal2-close-button-transition: color 0.2s, box-shadow 0.2s;--swal2-close-button-outline: initial;--swal2-close-button-box-shadow: inset 0 0 0 3px transparent;--swal2-close-button-focus-box-shadow: inset var(--swal2-outline);--swal2-close-button-hover-transform: none;--swal2-actions-justify-content: center;--swal2-actions-width: auto;--swal2-actions-margin: 1.25em auto 0;--swal2-actions-padding: 0;--swal2-actions-border-radius: 0;--swal2-actions-background: transparent;--swal2-action-button-transition: background-color 0.2s, box-shadow 0.2s;--swal2-action-button-hover: black 10%;--swal2-action-button-active: black 10%;--swal2-confirm-button-box-shadow: none;--swal2-confirm-button-border-radius: 0.25em;--swal2-confirm-button-background-color: #7066e0;--swal2-confirm-button-color: #fff;--swal2-deny-button-box-shadow: none;--swal2-deny-button-border-radius: 0.25em;--swal2-deny-button-background-color: #dc3741;--swal2-deny-button-color: #fff;--swal2-cancel-button-box-shadow: none;--swal2-cancel-button-border-radius: 0.25em;--swal2-cancel-button-background-color: #6e7881;--swal2-cancel-button-color: #fff;--swal2-toast-show-animation: swal2-toast-show 0.5s;--swal2-toast-hide-animation: swal2-toast-hide 0.1s forwards;--swal2-toast-border: none;--swal2-toast-box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 1px 2px hsl(0deg 0% 0% / 0.075), 1px 2px 4px hsl(0deg 0% 0% / 0.075), 1px 3px 8px hsl(0deg 0% 0% / 0.075), 2px 4px 16px hsl(0deg 0% 0% / 0.075)}[data-swal2-theme=dark]{--swal2-dark-theme-black: #19191a;--swal2-dark-theme-white: #e1e1e1;--swal2-background: var(--swal2-dark-theme-black);--swal2-color: var(--swal2-dark-theme-white);--swal2-footer-border-color: #555;--swal2-input-background: color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background: color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color: var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background: rgba(255, 255, 255, 0.7)}@media(prefers-color-scheme: dark){[data-swal2-theme=auto]{--swal2-dark-theme-black: #19191a;--swal2-dark-theme-white: #e1e1e1;--swal2-background: var(--swal2-dark-theme-black);--swal2-color: var(--swal2-dark-theme-white);--swal2-footer-border-color: #555;--swal2-input-background: color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background: color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color: var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background: rgba(255, 255, 255, 0.7)}}body.swal2-shown:not(.s"
+}

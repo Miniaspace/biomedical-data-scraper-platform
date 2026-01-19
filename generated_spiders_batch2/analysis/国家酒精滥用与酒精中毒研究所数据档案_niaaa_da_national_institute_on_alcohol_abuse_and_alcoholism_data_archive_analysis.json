@@ -1,0 +1,35 @@
+{
+  "url": "https://nda.nih.gov/niaaa",
+  "domain": "nda.nih.gov",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 8
+      }
+    ],
+    "detail_link_pattern": "https://nda.nih.gov/nda/webinars-and-tutorials",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/nda_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-4MKWL8HRM8&amp;cx=c&amp;gtm=4e61e1\"></script><script id=\"GTMscript\" async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-T8XWRGQ6\"></script>\n    <meta charset=\"utf-8\">\n    <title>NIMH Data Archive - NIAAA</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n\n    <!-- https://material.io/resources/icons/?style=baseline -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Material+Icons\" rel=\"stylesheet\">\n\n    <!-- https://material.io/resources/icons/?style=outline -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Material+Icons+Outlined\" rel=\"stylesheet\">\n\n    <!-- https://material.io/resources/icons/?style=round -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Material+Icons+Round\" rel=\"stylesheet\">\n\n    <!-- https://material.io/resources/icons/?style=sharp -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Material+Icons+Sharp\" rel=\"stylesheet\">\n\n    <!-- https://material.io/resources/icons/?style=twotone -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone\" rel=\"stylesheet\">\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap\" rel=\"stylesheet\">\n  <style>html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}@font-face{font-family:Lato;src:url(LatoLatin-Bold.56af1572c88927d9.eot);src:url(LatoLatin-Bold.56af1572c88927d9.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Bold.1cf13853095a62e2.woff2) format(\"woff2\"),url(LatoLatin-Bold.9d1bee7824203b19.woff) format(\"woff\"),url(LatoLatin-Bold.10d44a1a0ed5a99f.ttf) format(\"truetype\");font-style:normal;font-weight:700}@font-face{font-family:Lato;src:url(LatoLatin-Regular.9b027a406ebdbfd6.eot);src:url(LatoLatin-Regular.9b027a406ebdbfd6.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Regular.d45d409d2fa42169.woff2) format(\"woff2\"),url(LatoLatin-Regular.2d0c0323452c74d7.woff) format(\"woff\"),url(LatoLatin-Regular.06c4cf9dfee1a8e3.ttf) format(\"truetype\");font-style:normal;font-weight:400}@font-face{font-family:Lato;src:url(LatoLatin-Italic.18697880eb21a0dc.eot);src:url(LatoLatin-Italic.18697880eb21a0dc.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Italic.71fc01820777da89.woff2) format(\"woff2\"),url(LatoLatin-Italic.8531003e6041e97f.woff) format(\"woff\"),url(LatoLatin-Italic.652d6c0bb76b85de.ttf) format(\"truetype\");font-style:italic;font-weight:400}@font-face{font-family:Lato;src:url(LatoLatin-Light.1635ccb9492771fe.eot);src:url(LatoLatin-Light.1635ccb9492771fe.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Light.38c28ef5d38c7945.woff2) format(\"woff2\"),url(LatoLatin-Light.1b6040a671c125dc.woff) format(\"woff\"),url(LatoLatin-Light.27db6e67e988c18c.ttf) format(\"truetype\");font-style:normal;font-weight:300}@font-face{font-family:Lato;src:url(LatoLatin-Bold.56af1572c88927d9.eot);src:url(LatoLatin-Bold.56af1572c88927d9.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Bold.1cf13853095a62e2.woff2) format(\"woff2\"),url(LatoLatin-Bold.9d1bee7824203b19.woff) format(\"woff\"),url(LatoLatin-Bold.10d44a1a0ed5a99f.ttf) format(\"truetype\");font-style:normal;font-weight:700}@font-face{font-family:Lato;src:url(LatoLatin-Regular.9b027a406ebdbfd6.eot);src:url(LatoLatin-Regular.9b027a406ebdbfd6.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Regular.d45d409d2fa42169.woff2) format(\"woff2\"),url(LatoLatin-Regular.2d0c0323452c74d7.woff) format(\"woff\"),url(LatoLatin-Regular.06c4cf9dfee1a8e3.ttf) format(\"truetype\");font-style:normal;font-weight:400}@font-face{font-family:Lato;src:url(LatoLatin-Italic.18697880eb21a0dc.eot);src:url(LatoLatin-Italic.18697880eb21a0dc.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Italic.71fc01820777da89.woff2) format(\"woff2\"),url(LatoLatin-Italic.8531003e6041e97f.woff) format(\"woff\"),url(LatoLatin-Italic.652d6c0bb76b85de.ttf) format(\"truetype\");font-style:italic;font-weight:400}@font-face{font-family:Lato;src:url(LatoLatin-Light.1635ccb9492771fe.eot);src:url(LatoLatin-Light.1635ccb9492771fe.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Light.38c28ef5d38c7945.woff2) format(\"woff2\"),url(LatoLatin-Light.1b6040a671c125dc.woff) format(\"woff\"),url(LatoLatin-Light.27db6e67e988c18c.ttf) format(\"truetype\");font-style:normal;font-weight:300}.mat-typography{font:400 14px/20px Roboto,Helvetica Neue,sans-serif;letter-spacing:normal}.mat-typography{font:400 1rem/1.375rem Lato,Helvetica,Arial,sans-serif;letter-spacing:normal}@font-face{font-family:Lato;src:url(LatoLatin-Bold.56af1572c88927d9.eot);src:url(LatoLatin-Bold.56af1572c88927d9.eot?#iefix) format(\"embedded-opentype\"),url(LatoLatin-Bold.1cf13853095a"
+}

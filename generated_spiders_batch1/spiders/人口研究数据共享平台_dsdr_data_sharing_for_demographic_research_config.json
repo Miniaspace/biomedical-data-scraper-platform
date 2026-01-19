@@ -1,0 +1,23 @@
+{
+  "spider_name": "人口研究数据共享平台_dsdr_data_sharing_for_demographic_research",
+  "platform": {
+    "name": "人口研究数据共享平台 DSDR (Data Sharing for Demographic Research)",
+    "url": "https://icpsr.umich.edu/web/pages/DSDR/discover.html",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程复杂，需实现自动化登录并处理多因素认证（如有）",
+    "无公开API，所有数据需通过页面渲染获取",
+    "页面JavaScript渲染较多，纯Scrapy难以完成，必须使用Playwright"
+  ]
+}

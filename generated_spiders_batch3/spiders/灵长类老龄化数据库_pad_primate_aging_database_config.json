@@ -1,0 +1,23 @@
+{
+  "spider_name": "灵长类老龄化数据库_pad_primate_aging_database",
+  "platform": {
+    "name": "灵长类老龄化数据库 PAD (Primate Aging Database)",
+    "url": "https://primatedatabase.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "必须先完成登录，登录流程需自动化处理，建议使用账号密码自动填充及提交",
+    "页面无分页，数据量较大时需注意内存和性能优化",
+    "无API接口，所有数据需从渲染后的HTML中提取"
+  ]
+}

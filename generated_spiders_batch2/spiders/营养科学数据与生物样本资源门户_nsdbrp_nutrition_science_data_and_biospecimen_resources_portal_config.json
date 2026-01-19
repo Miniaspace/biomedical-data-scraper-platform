@@ -1,0 +1,23 @@
+{
+  "spider_name": "营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal",
+  "platform": {
+    "name": "营养科学数据与生物样本资源门户 NSDBRP (Nutrition Science Data and Biospecimen Resources Portal)",
+    "url": "https://dpcpsi.nih.gov/onr/onr-nutrition-science-data-and-biospecimen-resources-portal",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站基于Drupal 10，结构相对稳定，但需关注动态加载内容。",
+    "目标数据中PDF和补充材料链接可能分散在详情页多个位置，需全面提取。",
+    "Cloudflare保护可能导致请求失败，Playwright的无头浏览器模式更适合绕过。"
+  ]
+}

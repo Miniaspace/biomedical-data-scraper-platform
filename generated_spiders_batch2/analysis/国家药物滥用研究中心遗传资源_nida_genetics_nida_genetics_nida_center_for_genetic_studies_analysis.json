@@ -1,0 +1,35 @@
+{
+  "url": "https://nidagenetics.org",
+  "domain": "nidagenetics.org",
+  "site_type": "clinical_trial",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 9
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/nidagenetics_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en-US\" class=\"js svg background-fixed\"><head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\">\n\n<script>(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement);</script>\n<meta name=\"robots\" content=\"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1\">\n\n\t<!-- This site is optimized with the Yoast SEO plugin v26.6 - https://yoast.com/wordpress/plugins/seo/ -->\n\t<title>Welcome - NIDA Center for Genetic Studies</title>\n\t<link rel=\"canonical\" href=\"https://nidagenetics.org/\">\n\t<meta property=\"og:locale\" content=\"en_US\">\n\t<meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:title\" content=\"Welcome - NIDA Center for Genetic Studies\">\n\t<meta property=\"og:description\" content=\"This repository is under review for potential modification in compliance with Administration directives. The&nbsp;National Institute on Drug Abuse, in collaboration with the&nbsp;National Institutes of Health, has established the NIDA Center for Genetic Studies, also known as the NIDA Genetic&nbsp;Repository,&nbsp;under a contract to Rutgers University and its subcontractor,&nbsp;WashU Medicine, to produce, store, and distribute clinical data … Continue reading &quot;Welcome&quot;\">\n\t<meta property=\"og:url\" content=\"https://nidagenetics.org/\">\n\t<meta property=\"og:site_name\" content=\"NIDA Center for Genetic Studies\">\n\t<meta property=\"article:modified_time\" content=\"2025-12-01T13:24:52+00:00\">\n\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\t<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://nidagenetics.org/\",\"url\":\"https://nidagenetics.org/\",\"name\":\"Welcome - NIDA Center for Genetic Studies\",\"isPartOf\":{\"@id\":\"https://nidagenetics.org/#website\"},\"about\":{\"@id\":\"https://nidagenetics.org/#organization\"},\"datePublished\":\"2024-01-31T16:49:57+00:00\",\"dateModified\":\"2025-12-01T13:24:52+00:00\",\"breadcrumb\":{\"@id\":\"https://nidagenetics.org/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://nidagenetics.org/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://nidagenetics.org/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://nidagenetics.org/#website\",\"url\":\"https://nidagenetics.org/\",\"name\":\"NIDA Center for Genetic Studies\",\"description\":\"Providing Data and Biomaterials for Research on the Genetics of Addiction\",\"publisher\":{\"@id\":\"https://nidagenetics.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://nidagenetics.org/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https://nidagenetics.org/#organization\",\"name\":\"NIDA Center for Genetic Studies\",\"url\":\"https://nidagenetics.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://nidagenetics.org/#/schema/logo/image/\",\"url\":\"https://nidagenetics.org/wp-content/uploads/2022/06/cropped-911144_dna_genetics_genome_science_icon-256px.png\",\"contentUrl\":\"https://nidagenetics.org/wp-content/uploads/2022/06/cropped-911144_dna_genetics_genome_science_icon-256px.png\",\"width\":250,\"height\":250,\"caption\":\"NIDA Center for Genetic Studies\"},\"image\":{\"@id\":\"https://nidagenetics.org/#/schema/logo/image/\"}}]}</script>\n\t<!-- / Yoast SEO plugin. -->\n\n\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"NIDA Center for Genetic Studies » Feed\" href=\"https://nidagenetics.org/feed/\">\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"NIDA Center for Genetic Studies » Comments Feed\" href=\"https://nidagenetics.org/comments/feed/\">\n<link rel=\"alternate\" title=\"oEmbed (JSON)\" type=\"application/json+oembed\" href=\"https://nidagenetics.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnidagenetics.org%2F\">\n<link rel=\"alternate\" title=\"oEmbed (XML)\" type=\"text/xml+oembed\" href=\"https://nidagenetics.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnidagenetics.org%2F&amp;format=xml\">\n<style id=\"wp-img-auto-sizes-contain-inline-css\">\nimg:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px}\n/*# sourceURL=wp-img-auto-sizes-contain-inline-css */\n</style>\n<style id=\"wp-emoji-styles-inline-css\">\n\n\timg.wp-smiley, img.emoji {\n\t\tdisplay: inline !important;\n\t\tborder: none !important;\n\t\tbox-shadow: none !important;\n\t\theight: 1em !important;\n\t\twidth: 1em !important;\n\t\tmargin: 0 0.07em !important;\n\t\tvertical-align: -0.1em !important;\n\t\tbackground: none !important;\n\t\tpadding: 0 !important;\n\t}\n/*# sourceURL=wp-emoji-styles-inline-css */\n</style>\n<style id=\"wp-block-library-inline-css\">\n:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-"
+}

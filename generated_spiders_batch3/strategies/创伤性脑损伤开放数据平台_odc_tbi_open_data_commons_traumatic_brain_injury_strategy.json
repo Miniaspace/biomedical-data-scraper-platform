@@ -1,0 +1,35 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "ul > li",
+    "detail_page_selector": "待分析具体详情页结构，建议使用页面内动态内容加载后的选择器",
+    "fields": {
+      "title": "CSS选择器示例: li .title 或 li h3",
+      "author": "CSS选择器示例: li .author",
+      "date": "CSS选择器示例: li .date",
+      "description": "CSS选择器示例: li .description",
+      "pdf_link": "CSS选择器示例: li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite scroll)，使用Playwright模拟用户滚动页面，等待新数据加载，直到无新数据出现或达到预设最大条目数。",
+  "file_download_strategy": "在详情页或列表页中定位PDF或补充材料链接，使用Playwright获取完整下载URL，结合Python requests或Playwright自身下载接口进行文件下载，需处理登录态和cookie传递。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，执行JavaScript，避免因无JS执行而无法加载内容",
+    "保持登录状态，模拟正常用户操作，避免触发登录验证",
+    "控制请求频率，避免短时间内大量请求导致封禁",
+    "使用随机等待时间和滚动间隔，模拟真实用户浏览行为"
+  ],
+  "special_considerations": [
+    "登录流程需要先分析，可能涉及验证码或多因素认证，需人工辅助或模拟登录",
+    "无限滚动可能加载大量数据，需设置合理的最大采集条数或时间限制",
+    "详情页链接为'#'，说明详情信息可能在列表页动态展开或通过AJAX加载，需分析网络请求抓取数据",
+    "无公开API，需通过页面渲染抓取，数据结构可能动态变化，需定期维护选择器"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('.title', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('.author', 'el => el.textContent.trim()')\n        pdf_link = await item.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n        results.append({'title': title, 'author': author, 'pdf_link': pdf_link})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 如果详情内容在新页面或动态加载\n    await page.wait_for_selector('.detail-content')\n    title = await page.query_selector_eval('.detail-title', 'el => el.textContent.trim()')\n    authors = await page.query_selector_eval('.detail-authors', 'el => el.textContent.trim()')\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n    return {'title': title, 'authors': authors, 'pdf_link': pdf_link}"
+  }
+}

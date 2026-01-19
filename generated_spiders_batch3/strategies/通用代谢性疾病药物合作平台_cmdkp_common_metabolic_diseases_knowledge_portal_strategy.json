@@ -1,0 +1,35 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "ul li a[href]",
+    "fields": {
+      "title": "ul li .title, ul li h3, ul li a.title",
+      "author": "ul li .author, ul li .meta .author",
+      "date": "ul li .date, ul li .meta .date",
+      "summary": "ul li .summary, ul li p.summary",
+      "pdf_link": "ul li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite_scroll)分页，使用Playwright模拟页面滚动，等待新内容加载，直到无新数据或达到预设最大条数。通过监听DOM变化或滚动条位置判断加载完成。",
+  "file_download_strategy": "对页面中检测到的PDF或补充材料链接，使用Playwright获取完整URL后，通过requests或Playwright的API进行文件下载，支持断点续传和重试机制，保存到指定目录。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免因无头浏览器特征被识别",
+    "合理控制滚动和请求频率，避免触发速率限制",
+    "登录环节使用Playwright自动化填写账号密码，保持会话有效",
+    "使用随机User-Agent和代理IP池（如有必要）"
+  ],
+  "special_considerations": [
+    "登录必须，需提前准备账号密码，且登录后cookie/session需保持",
+    "页面大量依赖JavaScript渲染，传统Scrapy无法直接抓取",
+    "无公开API，所有数据需从前端渲染内容中提取",
+    "文件下载链接可能动态生成，需在详情页或列表页动态获取"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title_el = await item.query_selector('.title')\n        title = await title_el.inner_text() if title_el else ''\n        link_el = await item.query_selector('a[href]')\n        detail_url = await link_el.get_attribute('href') if link_el else ''\n        results.append({'title': title, 'detail_url': detail_url})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.title')\n    author = await page.text_content('.author')\n    date = await page.text_content('.date')\n    summary = await page.text_content('.summary')\n    pdf_link_el = await page.query_selector('a[href$=\".pdf\"]')\n    pdf_link = await pdf_link_el.get_attribute('href') if pdf_link_el else None\n    return {\n        'title': title.strip() if title else '',\n        'author': author.strip() if author else '',\n        'date': date.strip() if date else '',\n        'summary': summary.strip() if summary else '',\n        'pdf_link': pdf_link\n    }"
+  }
+}

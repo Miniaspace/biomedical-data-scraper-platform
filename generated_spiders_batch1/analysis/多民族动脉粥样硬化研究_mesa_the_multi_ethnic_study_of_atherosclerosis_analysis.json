@@ -1,0 +1,37 @@
+{
+  "url": "https://www.mesa-nhlbi.org/",
+  "domain": "www.mesa-nhlbi.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 20
+      }
+    ],
+    "detail_link_pattern": "",
+    "fields": [
+      "author"
+    ]
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/www_mesa-nhlbi_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"h-100\"><head>\n    <meta charset=\"utf-8\">\n<meta name=\"Generator\" content=\"Drupal 11 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"icon\" href=\"/themes/custom/breathe/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://mesa-nhlbi.org/\">\n<link rel=\"canonical\" href=\"https://mesa-nhlbi.org/home\">\n<link rel=\"shortlink\" href=\"https://mesa-nhlbi.org/node/39\">\n\n    <title>The Multi-Ethnic Study of Atherosclerosis | MESA</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/align.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/container-inline.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/clearfix.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/hidden.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/item-list.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/js.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/position-container.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/reset-appearance.module.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/core/assets/vendor/normalize-css/normalize.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/action-links.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/breadcrumb.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/container-inline.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/details.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/exposed-filters.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/field.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/form.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/icons.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/inline-form.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/item-list.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/links.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/menu.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/more-link.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/pager.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/tabledrag.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/tableselect.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/tablesort.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/textarea.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/ui-dialog.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/messages.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/components/node.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/css/style.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/bootstrap5/dist/icons/1.11.0/font/bootstrap-icons.css?t6cqqp\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/breathe/css/style.css?t6cqqp\">\n\n    \n  </head>\n  <body class=\"path-frontpage page-node-type-page   d-flex flex-column h-100\">\n        <div class=\"visually-hidden-focusable skip-link p-3 container\">\n      <a href=\"#main-content\" class=\"p-2\">\n        Skip to main content\n      </a>\n    </div>\n    \n    \n\n<!-- THEME DEBUG -->\n<!-- THEME HOOK: 'off_canvas_page_wrapper' -->\n<!-- BEGIN OUTPUT from 'themes/contrib/bootstrap5/templates/content/off-canvas-page-wrapper.html.twig' -->\n  <div class=\"dialog-off-canvas-main-canvas d-flex flex-column h-100\" data-off-canvas-main-canvas=\"\">\n    \n\n<!-- THEME DEBUG -->\n<!-- THEME HOOK: 'page' -->\n<!-- FILE NAME SUGGESTIONS:\n   ▪️ page--front.html.twig\n   ▪️ page--node--39.html.twig\n   ▪️ page--node--%.html.twig\n   ▪️ page--node.html.twig\n   ✅ page.html.twig\n-->\n<!-"
+}

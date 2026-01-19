@@ -1,0 +1,23 @@
+{
+  "spider_name": "国家睡眠研究资源平台_nsrr_national_sleep_research_resource",
+  "platform": {
+    "name": "国家睡眠研究资源平台 NSRR (National Sleep Research Resource)",
+    "url": "https://sleepdata.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录是必须步骤，需稳定实现登录流程并维护会话",
+    "验证码可能在登录或关键操作时出现，需预留人工干预接口",
+    "网站无API，数据结构较简单但需处理登录和验证码，采集难度较高"
+  ]
+}

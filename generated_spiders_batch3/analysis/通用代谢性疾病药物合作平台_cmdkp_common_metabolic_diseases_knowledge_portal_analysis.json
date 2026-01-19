@@ -1,0 +1,37 @@
+{
+  "url": "https://hugeamp.org",
+  "domain": "hugeamp.org",
+  "site_type": "unknown",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [
+      "a:has-text(\">\")"
+    ],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 48
+      }
+    ],
+    "detail_link_pattern": "/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/hugeamp_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/png\" href=\"/images/favicons/md/ico.png\"><link rel=\"icon\" type=\"image/svg+xml\" href=\"/images/favicons/md/ico.svg\"><link rel=\"stylesheet preload prefetch\" as=\"style\" href=\"/css/mdkp.css\"><link rel=\"stylesheet preload prefetch\" as=\"style\" href=\"/css/colors.css\"><link rel=\"stylesheet preload prefetch\" as=\"style\" href=\"/css/vue-helpers.css\"><script src=\"/js/mdkp.js\" defer=\"\"></script><script src=\"https://cdn.jsdelivr.net/npm/tabix-reader@~1.0.0\" crossorigin=\"anonymous\" defer=\"\"></script><title>Home | Common Metabolic Diseases Knowledge Portal</title><link href=\"/css/chunk-common.d3a65a2f.css\" rel=\"preload\" as=\"style\"><link href=\"/css/chunk-vendors.731f8d50.css\" rel=\"preload\" as=\"style\"><link href=\"/css/index.cc4a4421.css\" rel=\"preload\" as=\"style\"><link href=\"/js/chunk-common.c7d1d9ca.js\" rel=\"preload\" as=\"script\"><link href=\"/js/chunk-vendors.ea8a4676.js\" rel=\"preload\" as=\"script\"><link href=\"/js/index.3eab8be3.js\" rel=\"preload\" as=\"script\"><link href=\"/css/chunk-vendors.731f8d50.css\" rel=\"stylesheet\"><link href=\"/css/chunk-common.d3a65a2f.css\" rel=\"stylesheet\"><link href=\"/css/index.cc4a4421.css\" rel=\"stylesheet\"><link href=\"https://www.googletagmanager.com\" rel=\"preconnect\"><script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-B7R7YKFCZL&amp;l=dataLayer\"></script></head><body class=\"kp-default\"><noscript><strong>We're sorry but this website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class=\"front-page-body\"><div data-v-11a4a814=\"\"><!----><div data-v-11a4a814=\"\" id=\"analytics\"></div><div data-v-11a4a814=\"\"></div><div data-v-11a4a814=\"\" class=\"container-fluid\"><div data-v-11a4a814=\"\" class=\"row amp-banner-2021\"><a data-v-11a4a814=\"\" href=\"https://fnih.org/our-programs/accelerating-medicines-partnership-amp/amp-common-metabolic-disorders/\"><img data-v-11a4a814=\"\" src=\"//kp4cd.org/sites/default/files/vueportal/amp_text.svg\" style=\"width: 500px; margin-left: 15px; margin-top: 15px;\"></a></div><!----><div data-v-11a4a814=\"\" class=\"row mdkp-header\"><div data-v-11a4a814=\"\" class=\"mdkp-logo-wrapper col-md-4\"><a data-v-11a4a814=\"\" href=\"/\"><img data-v-11a4a814=\"\" src=\"//kp4cd.org/sites/default/files/vueportal/cmdkp_header_logo_2024_2.svg\" class=\"mdkp-logo\"></a><!----></div><div data-v-11a4a814=\"\" class=\"kp-menu-wrapper col-md-8\"><div data-v-a8219914=\"\" data-v-11a4a814=\"\" class=\"portal-menu-wrapper\" group=\"md\"><ul id=\"header.menu\" class=\"doc list\">\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/\">Home</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"javascript:;\">Data</a><ul id=\"header.menu\" class=\"doc list\">\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/datasets.html\">Genetic association datasets</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=kp_phenotypes\">Explore phenotypes</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=credible_sets_296\">Credible sets</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=cmdga_205\">Epigenomic datasets</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/downloads.html\">Downloads</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/project.html?project=lunaris\">Programmatic access</a> </li></ul></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"javascript:;\">Tools</a><ul id=\"header.menu\" class=\"doc list\">\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=mccarthy_t2d_247\">Curated T2D Effector Gene Predictions</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/genesifter.html\">Gene Sifter</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/gait.html\">Genetic Association Interactive Tool (GAIT)</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/hugecalculator.html\">Human Genetic Evidence Calculator</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=egl_241\">Predicted Effector Genes</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=screen2gene_274\">Screen to Gene</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/signalsifter.html\">Signal Sifter</a></li>\n<li id=\"header.menu\" class=\"doc item\"><a id=\"header.menu\" class=\"doc link\" href=\"/research.html?pageid=kp_variant_sif"
+}

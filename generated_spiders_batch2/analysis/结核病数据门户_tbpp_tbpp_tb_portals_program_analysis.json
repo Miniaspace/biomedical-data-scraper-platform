@@ -1,0 +1,35 @@
+{
+  "url": "https://tbportals.niaid.nih.gov",
+  "domain": "tbportals.niaid.nih.gov",
+  "site_type": "unknown",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 26
+      }
+    ],
+    "detail_link_pattern": "http://www.hhs.gov/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/tbportals_niaid_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n    <!-- Required meta tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n<link rel=\"icon\" type=\"image/svg\" sizes=\"16x16\" href=\"/images/nih-favicon.svg\">\n\n<!-- Google fonts CSS -->\n<link href=\"https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap\" rel=\"stylesheet\">\n\n<!-- Font Awesome CSS -->\n<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\" integrity=\"sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf\" crossorigin=\"anonymous\">\n\n<!-- Bootstrap CSS -->\n<link href=\"/stylesheet/bootstrap.css\" rel=\"stylesheet\">\n\n<!-- Custom CSS -->\n<link href=\"/stylesheet/custom.css\" rel=\"stylesheet\">\n\n<title>TB Portals - Home </title>\n\n<!-- Google Tag Manager -->\n<script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CSLL4ZEK4L&amp;cx=c&amp;gtm=4e61e1\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-QMGMKDYFZF&amp;cx=c&amp;_slc=1\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://script.crazyegg.com/pages/scripts/0086/4098.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CE2WMGCFY5&amp;cx=c&amp;gtm=4e61e1\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-N2529TM\"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n        })(window,document,'script','dataLayer','GTM-N2529TM');</script>\n<!-- End Google Tag Manager -->\n\n<!-- Digital Analytics Program (DAP) government-wide code -->\n<script async=\"\" type=\"text/javascript\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=NIH\" id=\"_fed_an_ua_tag\"></script>\n    <meta name=\"description\" content=\"Tuberculosis (TB) Portal for public health impact with data science.\">\n    <meta name=\"keywords\" content=\"tb portals, TB, tuberculocis, Case Browsing, Multi-Domain Data Analysis, Mycobacterium Tuberculosis Genomics, Radiomics, Data sharing\">\n<script src=\"https://dap.digitalgov.gov/web-vitals/dist/web-vitals.attribution.iife.js\"></script><script type=\"text/javascript\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CSLL4ZEK4L\"></script></head>\n\n<body>\n\n        <!-- Topbar with links to other government sites -->\n    <div class=\"card d-none d-lg-block rounded-0 text-center border-0 top-bar\">\n            <div class=\"card-body py-2 px-3\">\n                <ul class=\"list-inline mb-0\">\n                    <li class=\"list-inline-item me-4\">\n                        <a class=\"small text-white-50\" href=\"http://www.hhs.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">U.S. Department of Health &amp; Human Services\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" fill=\"currentColor\" class=\"bi bi-box-arrow-up-right\" viewBox=\"0 0 19 19\">\n                                <path fill-rule=\"evenodd\" d=\"M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z\"></path>\n                                <path fill-rule=\"evenodd\" d=\"M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z\"></path>\n                            </svg>\n                        </a>\n                        \n                    </li>\n                    <li class=\"list-inline-item me-4\">\n                        <a class=\"small text-white text-white-50\" href=\"https://www.nih.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">National Institutes of Health\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" fill=\"currentColor\" class=\"bi bi-box-arrow-up-right\" viewBox=\"0 0 19 19\">\n                                <path fill-rule=\"evenodd\" d=\"M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z\"></path>\n                                <path fill-rule=\"evenodd\" d=\"M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z\"></path>\n                            </svg>\n                        </a>\n                    </li>\n                    <li class=\"list-inline-item me-4\">\n                        <a class=\"small t"
+}

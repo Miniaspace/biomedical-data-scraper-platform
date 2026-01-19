@@ -1,0 +1,29 @@
+{
+  "url": "https://ninds.nih.gov/current-research/research-funded-ninds/clinical-research/archived-clinical-research-datasets",
+  "domain": "ninds.nih.gov",
+  "site_type": "unknown",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/ninds_nih_gov.png",
+  "html_sample": "<html><head><title>403 Forbidden</title></head>\n<body>\n<center><h1>403 Forbidden</h1></center>\n\n\n\n\n\n\n\n\n</body></html>"
+}

@@ -1,0 +1,30 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "ul li a",
+    "fields": {
+      "title": "ul li a::text",
+      "detail_url": "ul li a::attr(href)"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动(infinite_scroll)加载所有列表项，建议通过分析页面加载机制，模拟滚动触发更多数据加载，或直接请求完整列表页（若无API）。若页面数据一次性加载完毕，则直接采集即可，无需分页处理。",
+  "file_download_strategy": "在详情页中定位PDF文件链接（通常为a标签，href以.pdf结尾），使用Scrapy的文件下载管道或自定义请求下载PDF文件，保存时保持文件名或用唯一ID命名，确保文件完整性。",
+  "anti_scraping_handling": [
+    "无明显反爬机制，保持合理请求频率，避免过快访问。",
+    "设置User-Agent模拟真实浏览器，避免被简单封禁。",
+    "使用Scrapy默认的重试和延迟中间件，保证稳定采集。"
+  ],
+  "special_considerations": [
+    "页面不依赖JavaScript渲染，Scrapy即可完成采集，无需Playwright。",
+    "确认所有PDF链接均可直接访问，若有权限限制需额外处理。",
+    "注意列表项中可能存在无效链接或重复数据，需做数据清洗。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url:\n            yield response.follow(detail_url, callback=self.parse_detail)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1::text').get() or response.css('title::text').get()\n    pdf_urls = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    for pdf_url in pdf_urls:\n        yield {\n            'title': title,\n            'pdf_url': response.urljoin(pdf_url)\n        }\n        yield scrapy.Request(response.urljoin(pdf_url), callback=self.save_pdf)\n\ndef save_pdf(self, response):\n    path = response.url.split('/')[-1]\n    with open(path, 'wb') as f:\n        f.write(response.body)"
+  }
+}

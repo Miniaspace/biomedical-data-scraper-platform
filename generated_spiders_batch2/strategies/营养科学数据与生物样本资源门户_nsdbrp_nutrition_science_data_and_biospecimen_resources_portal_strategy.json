@@ -1,0 +1,32 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul > li",
+    "detail_page_selector": "a[href^='https://www.hhs.gov/']",
+    "fields": {
+      "title": "li > a",
+      "description": "li > p, li > div.description",
+      "detail_url": "li > a::attr(href)",
+      "pdf_links": "a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite scroll)分页，使用Playwright模拟页面滚动，等待新内容加载，直到无新数据加载为止。",
+  "file_download_strategy": "在详情页或列表页中定位所有PDF链接，使用Playwright拦截下载请求或直接通过requests下载，保存文件时根据标题或唯一ID命名，确保文件完整且无重复。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免触发Cloudflare的反爬机制。",
+    "设置合理的请求间隔，避免短时间内大量请求导致封禁。",
+    "使用随机User-Agent和浏览器指纹，模拟真实用户访问。"
+  ],
+  "special_considerations": [
+    "网站基于Drupal 10，结构相对稳定，但需关注动态加载内容。",
+    "目标数据中PDF和补充材料链接可能分散在详情页多个位置，需全面提取。",
+    "Cloudflare保护可能导致请求失败，Playwright的无头浏览器模式更适合绕过。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 模拟滚动加载所有数据\n    previous_height = await page.evaluate('document.body.scrollHeight')\n    while True:\n        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')\n        await page.wait_for_timeout(2000)  # 等待加载\n        new_height = await page.evaluate('document.body.scrollHeight')\n        if new_height == previous_height:\n            break\n        previous_height = new_height\n    # 获取所有列表项\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('a', 'el => el.textContent.trim()')\n        detail_url = await item.query_selector_eval('a', 'el => el.href')\n        results.append({'title': title, 'detail_url': detail_url})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 获取PDF链接\n    pdf_links = await page.eval_on_selector_all('a[href$=\".pdf\"]', 'els => els.map(el => el.href)')\n    # 可扩展提取其他字段\n    return {'pdf_links': pdf_links}"
+  }
+}

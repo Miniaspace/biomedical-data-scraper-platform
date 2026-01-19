@@ -1,0 +1,34 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "body > div.content > div.listing > ul > li",
+    "detail_page_selector": "body > div.content > div.detail",
+    "fields": {
+      "title": "h1.page-title, div.detail-header > h1",
+      "author": "div.authors > span.author-name",
+      "publication_date": "div.pub-date",
+      "abstract": "div.abstract",
+      "pdf_link": "a[href$='.pdf']",
+      "supplementary_materials": "a.supplementary-download"
+    }
+  },
+  "pagination_strategy": "网站无分页，所有数据在单页面或通过筛选加载，直接采集当前页面所有列表项，无需分页处理。",
+  "file_download_strategy": "检测页面中所有PDF及补充材料下载链接，使用Scrapy的FilesPipeline或自定义下载中间件批量下载，确保链接完整性和重试机制。",
+  "anti_scraping_handling": [
+    "合理设置下载延迟，避免短时间内大量请求导致IP封禁",
+    "使用随机User-Agent池，模拟多浏览器请求头",
+    "监控异常响应，自动重试失败请求"
+  ],
+  "special_considerations": [
+    "网站无登录和JavaScript渲染，Scrapy即可满足需求",
+    "需确认所有数据是否均在HTML中，若部分数据通过异步请求加载，需进一步分析接口",
+    "确保下载文件链接有效，避免断链"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    items = response.css('body > div.content > div.listing > ul > li')\n    for item in items:\n        detail_url = item.css('a::attr(href)').get()\n        if detail_url:\n            yield response.follow(detail_url, self.parse_detail)",
+    "parse_detail": "def parse_detail(self, response):\n    yield {\n        'title': response.css('h1.page-title::text, div.detail-header > h1::text').get(),\n        'author': response.css('div.authors > span.author-name::text').getall(),\n        'publication_date': response.css('div.pub-date::text').get(),\n        'abstract': response.css('div.abstract::text').get(),\n        'pdf_link': response.css('a[href$=\".pdf\"]::attr(href)').get(),\n        'supplementary_materials': response.css('a.supplementary-download::attr(href)').getall()\n    }"
+  }
+}

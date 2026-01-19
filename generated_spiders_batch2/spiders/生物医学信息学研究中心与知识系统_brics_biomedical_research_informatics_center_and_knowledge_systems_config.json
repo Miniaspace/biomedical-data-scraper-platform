@@ -1,0 +1,23 @@
+{
+  "spider_name": "生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems",
+  "platform": {
+    "name": "生物医学信息学研究中心与知识系统 BRICS (Biomedical Research Informatics Center and Knowledge Systems)",
+    "url": "https://brics.nei.nih.gov",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需处理表单提交，可能涉及CSRF token，需动态获取",
+    "Cloudflare防护可能导致初次访问延迟，需设置合理等待时间",
+    "详情页链接跳转至外部域名，需处理跨域请求和文件下载"
+  ]
+}

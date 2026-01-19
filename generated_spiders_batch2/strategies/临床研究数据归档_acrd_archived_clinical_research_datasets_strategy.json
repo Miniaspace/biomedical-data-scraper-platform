@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 4,
+  "estimated_dev_time": "16",
+  "data_extraction": {
+    "list_page_selector": null,
+    "detail_page_selector": null,
+    "fields": {}
+  },
+  "pagination_strategy": "无分页，页面内容无法访问，需先解决403 Forbidden访问限制问题",
+  "file_download_strategy": "待页面正常访问后，根据页面中PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载",
+  "anti_scraping_handling": [
+    "403 Forbidden可能由IP封禁或User-Agent限制导致，尝试更换User-Agent模拟浏览器",
+    "使用代理IP池避免单IP访问频率过高",
+    "添加合理的请求间隔，避免触发服务器安全策略",
+    "检查请求头，模拟浏览器完整请求头信息"
+  ],
+  "special_considerations": [
+    "当前页面返回403 Forbidden，需确认是否有地理位置限制或IP限制",
+    "无API接口，且页面无分页，采集难度较大",
+    "页面无JavaScript渲染需求，故无需Playwright",
+    "需联系网站管理员确认数据开放政策及访问权限"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    # 目前页面403，正常情况下应定位列表条目\n    # 示例：\n    # items = response.css('div.dataset-item')\n    # for item in items:\n    #     detail_url = item.css('a::attr(href)').get()\n    #     yield response.follow(detail_url, self.parse_detail)\n    pass",
+    "parse_detail": "def parse_detail(self, response):\n    # 解析详情页字段\n    # 示例：\n    # title = response.css('h1.title::text').get()\n    # author = response.css('span.author::text').get()\n    # pdf_url = response.css('a.pdf-download::attr(href)').get()\n    # yield {'title': title, 'author': author, 'pdf_url': pdf_url}\n    pass"
+  }
+}

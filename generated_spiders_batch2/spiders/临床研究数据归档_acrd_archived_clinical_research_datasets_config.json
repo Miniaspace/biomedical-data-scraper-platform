@@ -1,0 +1,24 @@
+{
+  "spider_name": "临床研究数据归档_acrd_archived_clinical_research_datasets",
+  "platform": {
+    "name": "临床研究数据归档 ACRD (Archived Clinical Research Datasets)",
+    "url": "https://ninds.nih.gov/current-research/research-funded-ninds/clinical-research/archived-clinical-research-datasets",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 4,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "当前页面返回403 Forbidden，需确认是否有地理位置限制或IP限制",
+    "无API接口，且页面无分页，采集难度较大",
+    "页面无JavaScript渲染需求，故无需Playwright",
+    "需联系网站管理员确认数据开放政策及访问权限"
+  ]
+}

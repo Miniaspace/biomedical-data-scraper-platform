@@ -1,0 +1,24 @@
+{
+  "spider_name": "个性化环境与基因研究_pegs_personalized_environment_and_genes_study",
+  "platform": {
+    "name": "个性化环境与基因研究 PEGS (Personalized Environment and Genes Study)",
+    "url": "https://niehs.nih.gov/research/atniehs/labs/crb/studies/pegs",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面被Cloudflare保护，普通Scrapy无法直接访问，必须使用Playwright或类似工具",
+    "页面无API接口，数据需从渲染后的HTML中提取",
+    "页面无分页，数据量可能有限，但需确保页面完全加载",
+    "验证码存在，若触发需人工干预或采用第三方验证码识别服务"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "spider_name": "脑数据科学平台_bdsp_brain_data_science_platform",
+  "platform": {
+    "name": "脑数据科学平台 BDSP (Brain Data Science Platform)",
+    "url": "https://bdsp.io",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录认证是采集前提，需实现登录表单提交并保持会话",
+    "无API接口，需解析HTML，字段选择器需根据详情页实际DOM结构调整",
+    "文件下载需确保登录态，防止403或重定向至登录页"
+  ]
+}

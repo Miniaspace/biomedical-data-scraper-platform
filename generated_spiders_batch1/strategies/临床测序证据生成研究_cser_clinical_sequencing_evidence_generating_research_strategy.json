@@ -1,0 +1,30 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href*='/about-genomics']",
+    "fields": {
+      "title": "li > a::text",
+      "detail_url": "li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动加载，使用Scrapy结合Splash或Playwright模拟滚动加载，直到加载完所有列表项，或者通过分析网络请求模拟分页参数进行请求，若无API则采用自动滚动加载方式。",
+  "file_download_strategy": "在详情页中解析所有PDF及补充材料链接，使用Scrapy的文件下载管道进行下载，确保文件链接为绝对路径，支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "控制请求频率，避免过快请求导致封禁",
+    "设置合理User-Agent，模拟真实浏览器",
+    "使用IP代理池以防止IP被封禁"
+  ],
+  "special_considerations": [
+    "页面不依赖JavaScript渲染核心内容，Scrapy即可满足需求",
+    "无限滚动需结合浏览器模拟或Splash，增加开发复杂度",
+    "无登录和验证码，降低反爬难度"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        title = item.css('a::text').get()\n        detail_url = response.urljoin(item.css('a::attr(href)').get())\n        yield scrapy.Request(detail_url, callback=self.parse_detail, meta={'title': title})",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.meta['title']\n    # 示例：提取PDF链接\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    pdf_links = [response.urljoin(url) for url in pdf_links]\n    yield {\n        'title': title,\n        'pdf_links': pdf_links\n    }"
+  }
+}

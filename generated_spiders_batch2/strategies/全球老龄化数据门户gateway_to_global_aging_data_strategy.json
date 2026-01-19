@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "table tbody tr td:nth-child(1) a",
+      "authors": "table tbody tr td:nth-child(2)",
+      "publication_date": "table tbody tr td:nth-child(3)",
+      "pdf_link": "table tbody tr td a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动（infinite_scroll）分页，使用Playwright模拟浏览器滚动页面，逐步加载更多内容，直到无新内容加载为止。通过监听网络请求或检测页面中table tbody tr元素数量变化判断加载结束。",
+  "file_download_strategy": "在解析列表或详情页时提取PDF文件链接，使用Playwright获取完整的下载URL后，结合requests或Playwright的API下载PDF文件，支持断点续传和重试机制，确保文件完整性。",
+  "anti_scraping_handling": [
+    "针对网站的验证码机制，建议控制请求频率，模拟正常用户浏览行为，避免触发验证码。",
+    "使用Playwright的无头浏览器环境，保持合理的User-Agent和浏览器指纹，降低被识别风险。",
+    "设置适当的等待时间和随机延迟，避免快速连续请求。",
+    "必要时结合代理IP池轮换IP，防止IP封禁。"
+  ],
+  "special_considerations": [
+    "网站不提供公开API，且内容通过表格展示，需精准定位表格行和列提取数据。",
+    "无限滚动分页需要动态加载数据，传统Scrapy不适用，Playwright更合适。",
+    "验证码可能在异常请求时触发，需设计异常处理和人工干预机制。",
+    "PDF文件下载链接可能是相对路径，需拼接完整URL。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 滚动页面加载全部数据\n    previous_count = 0\n    while True:\n        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')\n        await page.wait_for_timeout(2000)  # 等待加载\n        rows = await page.query_selector_all('table tbody tr')\n        if len(rows) == previous_count:\n            break\n        previous_count = len(rows)\n    data = []\n    for row in rows:\n        title_el = await row.query_selector('td:nth-child(1) a')\n        title = await title_el.inner_text() if title_el else ''\n        authors = await (await row.query_selector('td:nth-child(2)')).inner_text()\n        pub_date = await (await row.query_selector('td:nth-child(3)')).inner_text()\n        pdf_el = await row.query_selector('a[href$=\".pdf\"]')\n        pdf_url = await pdf_el.get_attribute('href') if pdf_el else None\n        data.append({'title': title, 'authors': authors, 'publication_date': pub_date, 'pdf_url': pdf_url})\n    return data",
+    "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    # 详情页解析逻辑视具体页面结构而定\n    # 示例：\n    title = await page.text_content('h1.article-title')\n    authors = await page.text_content('div.authors')\n    pdf_link = await page.get_attribute('a.pdf-download', 'href')\n    return {'title': title, 'authors': authors, 'pdf_link': pdf_link}"
+  }
+}

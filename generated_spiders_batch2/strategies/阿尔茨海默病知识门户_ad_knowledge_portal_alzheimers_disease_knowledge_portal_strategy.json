@@ -1,0 +1,32 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "td:nth-child(1) a",
+      "author": "td:nth-child(2)",
+      "date": "td:nth-child(3)",
+      "status": "td:nth-child(4)"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动(infinite scroll)加载数据，使用Playwright模拟用户滚动页面，等待新数据加载完成后继续滚动，直到页面不再加载新数据为止，确保采集所有列表项。",
+  "file_download_strategy": "在采集到的列表或详情页中定位PDF文件及补充材料的下载链接，使用Playwright模拟点击或直接请求下载链接进行文件下载。登录态需保持，且下载时需处理可能的重定向和断点续传。",
+  "anti_scraping_handling": [
+    "保持登录态，使用Playwright模拟真实浏览器环境，避免被识别为爬虫。",
+    "控制滚动和请求频率，避免触发服务器异常。",
+    "使用随机延时和适度并发，模拟正常用户行为。"
+  ],
+  "special_considerations": [
+    "登录流程需要实现自动化，可能涉及多步验证，需提前准备账号和密码。",
+    "页面无公开API，所有数据需通过渲染后的页面DOM提取。",
+    "文件下载链接可能动态生成，需在页面完全加载后提取。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('table tbody tr')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('td:nth-child(1) a', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('td:nth-child(2)', 'el => el.textContent.trim()')\n        date = await item.query_selector_eval('td:nth-child(3)', 'el => el.textContent.trim()')\n        status = await item.query_selector_eval('td:nth-child(4)', 'el => el.textContent.trim()')\n        results.append({'title': title, 'author': author, 'date': date, 'status': status})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 示例：提取PDF下载链接\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n    return {'pdf_link': pdf_link}"
+  }
+}

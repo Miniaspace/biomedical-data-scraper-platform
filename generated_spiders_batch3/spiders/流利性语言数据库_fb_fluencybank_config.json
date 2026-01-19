@@ -1,0 +1,23 @@
+{
+  "spider_name": "流利性语言数据库_fb_fluencybank",
+  "platform": {
+    "name": "流利性语言数据库 FB (FluencyBank)",
+    "url": "https://fluency.talkbank.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程依赖外部authUI模块，需调试登录流程，确保cookie/session正确获取",
+    "无API接口，所有数据需通过页面渲染抓取，需确认页面结构稳定性",
+    "文件下载链接可能为动态生成，需在登录状态下抓取"
+  ]
+}

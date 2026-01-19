@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "8",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "all_fields": "td"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动(infinite_scroll)且无API支持，建议通过模拟滚动加载更多数据，结合Scrapy的中间件或扩展实现动态内容抓取，或结合Playwright辅助实现页面滚动后抓取完整表格数据。",
+  "file_download_strategy": "检测表格中是否含有文件下载链接（如PDF、补充材料），通过提取对应的<a>标签href属性进行文件下载，使用Scrapy的FilesPipeline或自定义下载逻辑保存文件。",
+  "anti_scraping_handling": [
+    "由于无明显反爬机制，保持适当抓取频率避免触发服务器限制",
+    "设置合理User-Agent，避免默认爬虫标识",
+    "使用IP代理池可选，防止IP封禁风险"
+  ],
+  "special_considerations": [
+    "页面内容为静态HTML，无需执行JavaScript，减少复杂度",
+    "无限滚动加载可能需要结合Playwright或Splash辅助实现完整数据采集",
+    "无登录，采集门槛较低"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        data = row.css('td::text').getall()\n        yield {'row_data': data}\n    # 如果使用Playwright辅助滚动加载，需在请求中实现滚动逻辑",
+    "parse_detail": "# 无详情页链接，所有数据均在列表页，故无详情页解析逻辑"
+  }
+}

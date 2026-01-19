@@ -1,0 +1,24 @@
+{
+  "spider_name": "癌症多维度知识门户_cckp_cancer_complexity_knowledge_portal",
+  "platform": {
+    "name": "癌症多维度知识门户 CCKP (Cancer Complexity Knowledge Portal)",
+    "url": "https://cancercomplexity.synapse.org",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站需要登录，需实现自动登录流程并管理cookie/session",
+    "无公开API，所有数据需通过页面渲染抓取",
+    "无限滚动分页需精准判断数据加载结束，避免遗漏或重复采集",
+    "文件下载需处理大文件和断点续传，保证数据完整性"
+  ]
+}

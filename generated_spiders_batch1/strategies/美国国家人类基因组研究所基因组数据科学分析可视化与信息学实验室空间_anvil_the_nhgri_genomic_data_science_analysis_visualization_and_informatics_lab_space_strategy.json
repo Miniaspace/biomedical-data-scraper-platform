@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 1,
+  "estimated_dev_time": "4",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='https://support.terra.bio/hc/en-us/articles/']",
+    "fields": {
+      "title": "ul li a::text",
+      "author": "ul li .author::text"
+    }
+  },
+  "pagination_strategy": "通过检测页面底部的“Next”按钮，使用Scrapy的follow机制自动跟踪下一页链接，直到无下一页按钮为止。",
+  "file_download_strategy": "在详情页中解析PDF或补充材料的下载链接（通常为a标签href包含.pdf或相关文件后缀），使用Scrapy的FilesPipeline或自定义下载中间件进行文件下载和存储。",
+  "anti_scraping_handling": [
+    "由于无登录、无验证码、无复杂反爬机制，保持合理的请求间隔即可避免被封禁。",
+    "设置User-Agent模拟常见浏览器，避免被简单的UA检测封禁。"
+  ],
+  "special_considerations": [
+    "网站无API，且内容静态加载，无需使用Playwright等浏览器自动化工具，节省资源。",
+    "确认详情页链接格式稳定，避免因链接格式变化导致采集失败。",
+    "部分文件可能托管在第三方站点，需确认下载链接有效性。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('https://support.terra.bio/hc/en-us/articles/'):\n            yield response.follow(detail_url, self.parse_detail)\n    next_page = response.css('a.next::attr(href)').get()\n    if next_page:\n        yield response.follow(next_page, self.parse_list)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1.article-title::text').get()\n    author = response.css('.author::text').get()\n    files = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    yield {\n        'title': title,\n        'author': author,\n        'files': files\n    }"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "url": "https://neidatacommons.nei.nih.gov",
+  "domain": "neidatacommons.nei.nih.gov",
+  "site_type": "clinical_trial",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [
+      "a:has-text(\"Next\")"
+    ],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 30
+      }
+    ],
+    "detail_link_pattern": "/adaptive-optics",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/neidatacommons_nei_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# \" class=\" js\"><head>\n    <meta charset=\"utf-8\">\n<script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-TKY52QRW43\"></script>\n<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag(\"js\", new Date());gtag(\"set\", \"developer_id.dMDhkMT\", true);gtag(\"config\", \"G-TKY52QRW43\", {\"groups\":\"default\",\"page_placeholder\":\"PLACEHOLDER_page_location\"});</script>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"icon\" href=\"/themes/custom/nei/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n\n    <title>Home | NEI Data Commons</title>\n    <link rel=\"preload\" href=\"/themes/custom/nei/fonts/Aleo-Bold.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"/themes/custom/nei/fonts/Lato-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/nei/css/style.css?t210o6\">\n\n    \n  </head>\n  <body>\n        <a href=\"#main-content\" class=\"u-skip-link\">\n      Skip to content\n    </a>\n    \n      <div class=\"dialog-off-canvas-main-canvas\" data-off-canvas-main-canvas=\"\">\n    \n<div id=\"u-page-outer\" class=\"u-outer\" style=\"padding-top: 0px;\">\n        <div class=\"views-element-container site-notice-block\" id=\"block-views-block-site-notices-block-1\">\n  \n\n    \n\n    \n      <div>\n<div class=\"js-view-dom-id-c4570a756c508765ba59fc6ddca62dd750f90b11d5527f5edc767b3906f9e2a1 site-notices\">\n  \n  \n  \n\n  \n  \n  \n\n  \n  \n  \n  \n  \n\n  \n  \n</div>\n</div>\n\n  \n    \n</div>\n\n  \n  <img src=\"/themes/custom/nei/images/NEI-logo-tagline.svg\" alt=\"NEI Data Commons logo\" width=\"200\" height=\"48\" class=\"u-print-only\">\n  <div class=\"r-global-header headroom headroom--frozen\">\n    <div id=\"r-header-outer\" class=\"r-header\">\n      \n  <div class=\"r-header-inner\">\n    \n<div id=\"block-nei-site-branding\" role=\"banner\">\n  \n\n    \n\n    \n            <div class=\"o-logo\">\n        <a href=\"/\" class=\"o-logo__link\" title=\"Home\" rel=\"home\"><span class=\"o-logo__text\">National Eye Institute</span> <span class=\"o-logo__tagline\">Research Today… Vision Tomorrow</span></a>\n      </div>\n      \n    \n</div>\n    \n    \n    <div class=\"c-search--global\">\n        <div class=\"search-block-form\" data-drupal-selector=\"search-block-form\" id=\"block-nei-searchform\" role=\"search\">\n\n            \n    \n                        \n    \n                            <label for=\"edit-terms\">Search</label>\n                \n<form action=\"/search/node\" method=\"get\" id=\"search-block-form\" accept-charset=\"UTF-8\">\n  <div class=\"c-form__inner\">\n    <div class=\"js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label\">\n      <label for=\"edit-keys\" class=\"visually-hidden\">Search</label>\n        <input title=\"Enter the terms you wish to search for.\" data-drupal-selector=\"edit-keys\" type=\"search\" id=\"edit-keys\" name=\"keys\" value=\"\" size=\"15\" maxlength=\"128\" class=\"form-search\" style=\"\">\n\n        </div>\n<div data-drupal-selector=\"edit-actions\" class=\"form-actions js-form-wrapper form-wrapper\" id=\"edit-actions\"><input data-drupal-selector=\"edit-submit\" type=\"submit\" id=\"edit-submit\" value=\"Search\" class=\"button js-form-submit form-submit\" style=\"\">\n</div>\n\n  </div>\n</form>\n\n                \n        </div>\n    </div>\n    \n<div id=\"block-neicommonsmenubutton-2\">\n  \n\n    \n\n    \n      \n\n\n\n                    <div class=\"o-menu-toggle\"><button aria-controls=\"block-mainnavigation\" aria-expanded=\"true\" class=\"o-menu-toggle__btn\">Menu</button></div>\n\n            \n\n  \n    \n</div>\n\n  </div>\n\n    </div>\n\n    <div class=\"r-menu-primary\">\n            <nav role=\"navigation\" aria-labelledby=\"block-mainnavigation-menu\" id=\"block-mainnavigation\" class=\"o-menu-main__outer\" aria-hidden=\"false\">\n            \n  <h2 class=\"visually-hidden\" id=\"block-mainnavigation-menu\">main navigation</h2>\n  \n\n        \n                       <ul class=\"o-menu o-menu-main\">                                       <li class=\"o-menu-main__item o-menu-main__item--collapsed\" id=\"o-menu-main__item-5609568\">                <span title=\"Research Areas\" class=\"o-menu-main__link\" aria-expanded=\"false\" id=\"o-menu-main__link-5609568\" aria-haspopup=\"true\" aria-controls=\"o-menu-main__submenu-5609568\">Research Areas</span><button aria-expanded=\"false\" aria-controls=\"o-menu-main__submenu-5609568\" id=\"o-menu-main__toggle-5609568\" class=\"o-menu-main__toggle\">Toggle submenu</button>\n                                         <ul class=\"o-menu o-menu-main__submenu\" id=\"o-menu-main__submenu-5609568\" aria-labelledby=\"o-menu-main__link-5609568\">                                       <li class"
+}

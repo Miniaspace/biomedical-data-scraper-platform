@@ -1,0 +1,23 @@
+{
+  "spider_name": "医学影像与数据资源中心_midrc_medical_imaging_and_data_resource_center",
+  "platform": {
+    "name": "医学影像与数据资源中心 MIDRC (Medical Imaging and Data Resource Center)",
+    "url": "https://midrc.org",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录但存在验证码，需重点关注验证码触发条件，尽量避免频繁请求。",
+    "无限滚动分页可能导致数据量大，需合理设计采集批次和数据存储。",
+    "无公开API，数据需从HTML页面解析，需关注页面结构变化。"
+  ]
+}

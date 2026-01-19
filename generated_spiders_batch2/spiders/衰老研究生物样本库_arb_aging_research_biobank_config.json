@@ -1,0 +1,23 @@
+{
+  "spider_name": "衰老研究生物样本库_arb_aging_research_biobank",
+  "platform": {
+    "name": "衰老研究生物样本库 ARB (Aging Research Biobank)",
+    "url": "https://agingresearchbiobank.nia.nih.gov",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "detail_link_pattern为“#”，说明无详情页，所有信息均在列表页内，采集时需充分解析列表页内容。",
+    "部分数据可能嵌入在文本或HTML标签中，需根据实际HTML结构灵活调整选择器。",
+    "无限滚动加载数据量较大时，需控制爬取深度和数据量，避免资源浪费。"
+  ]
+}

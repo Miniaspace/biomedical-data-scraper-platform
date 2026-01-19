@@ -1,0 +1,24 @@
+{
+  "spider_name": "生物数据催化剂平台_bdc_biodata_catalyst_platform",
+  "platform": {
+    "name": "生物数据催化剂平台 BDC (BioData Catalyst Platform)",
+    "url": "https://biodatacatalyst.nhlbi.nih.gov",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站强制人机验证，自动化采集难度大，需结合人工辅助",
+    "无公开API，需逆向分析动态加载数据接口",
+    "文件下载需保持登录态或验证态，确保链接有效",
+    "采集前需确认版权及使用合规性"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "url": "https://itntrialshare.org/login/home/login.view?returnUrl=%2Fhome%2Fproject-start.view%3F",
+  "domain": "itntrialshare.org",
+  "site_type": "biobank",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 14
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/itntrialshare_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" class=\"  ext-strict\"><head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"canonical\" href=\"https://www.itntrialshare.org/login/login.view\">\n<meta name=\"authenticatedUser\" content=\"guest\">\n<meta name=\"impersonatedUser\" content=\"-\">\n\n    \n    <title>Sign In: /home</title>\n    \n    <link rel=\"shortcut icon\" href=\"/home/favicon.image?revision=573\">\n<link rel=\"icon\" href=\"/home/favicon.image?revision=573\">\n<script src=\"/labkey.js?1500852400\" type=\"text/javascript\" nonce=\"\"></script>\n<script src=\"/stacktrace.min.js?1500852400\" type=\"text/javascript\" nonce=\"\"></script>\n<script src=\"/mothership.js?1500852400\" type=\"text/javascript\" nonce=\"\"></script>\n\n<script type=\"text/javascript\" nonce=\"\">LABKEY.init({\"container\":{\"path\":\"/home\",\"formats\":{\"dateTimeFormat\":\"yyyy-MM-dd HH:mm:ss\",\"dateFormat\":\"yyyy-MM-dd\",\"timeFormat\":\"HH:mm:ss\"},\"parentPath\":\"/\",\"name\":\"home\",\"userPermissions\":0,\"title\":\"home\",\"activeModules\":[],\"folderType\":\"\"},\"extThemeName_42\":\"overcast\",\"imagePath\":\"/_images\",\"timezone\":\"America/Los_Angeles\",\"useMDYDateParsing\":true,\"project\":{\"path\":\"/home\",\"rootId\":\"B1843961-6218-102E-B7C3-FAD62C01C422\",\"name\":\"home\",\"id\":\"B1843962-6218-102E-B7C3-FAD62C01C422\",\"title\":\"home\"},\"serverName\":\"www.itntrialshare.org\",\"experimental\":{\"disableGuestAccount\":false,\"containerRelativeURL\":false},\"login\":{\"registrationEnabled\":true,\"requiresTermsOfUse\":true,\"hasOtherLoginMechanisms\":false},\"tours\":{},\"sharedContainer\":\"Shared\",\"defaultHeaders\":{\"X-LABKEY-CSRF\":\"dfff267d52202918e6bd90d8aeb4520d3cd787bbcc8626588f594485b5809e15\",\"X-ONUNAUTHORIZED\":\"UNAUTHORIZED\"},\"pageAdminMode\":false,\"jdkJavaDocLinkPrefix\":\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/\",\"versionString\":\"25.7.7\",\"contextPath\":\"\",\"demoMode\":false,\"homeContainer\":\"home\",\"extJsRoot\":\"ext-3.4.1\",\"extDefaultDateTimeFormat\":\"Y-m-d H:i:s\",\"helpLinkPrefix\":\"https://www.labkey.org/Documentation/25.7/wiki-page.view?name=\",\"devMode\":false,\"portalContext\":{},\"standardDisplayFormats\":{\"dateFormats\":[\"yyyy-MM-dd\",\"yyyy-MMM-dd\",\"yyyy-MM\",\"dd-MM-yyyy\",\"dd-MMM-yyyy\",\"dd-MMM-yy\",\"ddMMMyyyy\",\"ddMMMyy\",\"MM/dd/yyyy\",\"MM-dd-yyyy\",\"MMMM dd yyyy\"],\"timeFormats\":[\"HH:mm:ss\",\"HH:mm\",\"HH:mm:ss.SSS\",\"hh:mm a\"]},\"extDateInputFormat\":\"Y-m-d\",\"CSRF\":\"dfff267d52202918e6bd90d8aeb4520d3cd787bbcc8626588f594485b5809e15\",\"analyticProviders\":{\"AGG_MAD\":\"Median Absolute Deviation\",\"AGG_COUNT_BLANK\":\"Count (blank)\",\"AGG_CV\":\"Coefficient of Variation\",\"AGG_MIN\":\"Minimum\",\"AGG_STDERR\":\"Standard Error (of mean)\",\"COL_SUMMARYSTATS\":\"Summary Statistics...\",\"VIS_PIE\":\"Pie Chart\",\"VIS_BOX\":\"Box & Whisker\",\"AGG_COUNT_DISTINCT\":\"Count (distinct)\",\"AGG_COUNT\":\"Count (non-blank)\",\"AGG_MEAN\":\"Mean\",\"COL_QUICK_CHART\":\"Quick Chart\",\"VIS_BAR\":\"Bar Chart\",\"AGG_STDDEV\":\"Standard Deviation (of mean)\",\"AGG_QUARTILES\":\"Quartiles\",\"AGG_MAX\":\"Maximum\",\"AGG_RSD\":\"Relative Standard Deviation\",\"COL_REMOVE\":\"Remove Column\",\"AGG_MEDIAN\":\"Median\",\"AGG_IQR\":\"Interquartile Range\",\"AGG_SUM\":\"Sum\"},\"user\":{\"canUpdateOwn\":false,\"isRootAdmin\":false,\"canUpdate\":false,\"isGuest\":true,\"canInsert\":false,\"displayName\":\"guest\",\"isSignedIn\":false,\"avatar\":\"/_images/defaultavatar.png\",\"isAdmin\":false,\"isDeveloper\":false,\"isSystemAdmin\":false,\"isSystem\":false,\"canDeleteOwn\":false,\"isAnalyst\":false,\"canDelete\":false,\"id\":0,\"email\":\"guest\",\"canImpersonateSiteRoles\":false,\"isTrusted\":false,\"maxAllowedPhi\":\"Restricted\"},\"hash\":\"1500852400\",\"moduleContext\":{\"trialshare\":{},\"study\":{\"subject\":{\"nounPlural\":\"Participants\",\"tableName\":\"Participant\",\"nounSingular\":\"Participant\",\"columnName\":\"ParticipantId\"},\"timepointType\":\"VISIT\"},\"trialsharenavtree\":{},\"wiki\":{},\"query\":{\"isProductFoldersEnabled\":false,\"queryProductProjectDataListingScoped\":false,\"hasProductFolders\":false,\"hasEditQueriesPermission\":false,\"queryProductAllFolderLookups\":false},\"issues\":{\"hasRestrictedIssueList\":false},\"filetransfer\":{},\"professional\":{},\"pipeline\":{},\"trialsharestatic\":{},\"core\":{\"productFeatures\":[\"Assay\",\"ApiKeys\",\"ELN\",\"DataChangeCommentRequirement\",\"CalculatedFields\",\"SampleManagement\",\"Workflow\",\"Folders\",\"FreezerManagement\"],\"deprecatedObjectLevelDiscussions\":false},\"search\":{},\"premium\":{},\"experiment\":{},\"assay\":{},\"filecontent\":{},\"specimen\":{},\"trialsharelandingpage\":{},\"api\":{\"allowApiKeys\":true,\"allowSessionKeys\":false,\"apiKeyExpirationSeconds\":-1,\"moduleNames\":[\"core\",\"announcements\",\"api\",\"bigiron\",\"cas\",\"cloud\",\"cloudservices\",\"connectors\",\"docker\",\"filetransfer\",\"ldap\",\"mfa\",\"moduleeditor\",\"pipeline\",\"public\",\"puppeteer\",\"query\",\"experiment\",\"assay\",\"audit\",\"cdisc_odm\",\"dataintegration\",\"filecontent\",\"flow\",\"inventory\",\"list\",\"premium\",\"redshift\",\"rstudio\",\"saml\",\"samplemanagement\",\"search\",\"issues\",\"signing\",\"snowflake\",\"study\",\"datafinder\",\"professional\",\"redcap\",\"specimen\",\"survey\",\"timeline\",\"trialshare\",\"trialsharelandingpage\",\"trialsharenavtree\",\"trialsharestatic\",\"visual"
+}

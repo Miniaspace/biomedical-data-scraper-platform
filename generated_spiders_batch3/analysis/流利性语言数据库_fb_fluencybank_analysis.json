@@ -1,0 +1,32 @@
+{
+  "url": "https://fluency.talkbank.org",
+  "domain": "fluency.talkbank.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "docx",
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/fluency_talkbank_org.png",
+  "html_sample": "<html><head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n\t<title>FluencyBank</title>\n\t<link rel=\"shortcut icon\" href=\"fluency.jpg\">\n\t<script type=\"module\">\n        import { showAuthModal, initPageAuth, authAndLoad } from 'https://sla2.talkbank.org/authUI/pageAuth.js';\n        initPageAuth('https://sla2.talkbank.org', 'authModals', true);\n</script>\t\n<style>.authModals_button {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 3px;\n    padding-right: 7px;\n    padding-left: 7px;\n    margin-right: 3px;\n    margin-left: 3px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 12px;\n    color: black;\n    border-radius: 3px;\n    user-select: none;\n  }\n  \n  .authModals_button:hover {\n    cursor: pointer;\n    filter: brightness(95%);\n  }\n\n  \n  \n  .authModals_button_submit {\n    border: 2px solid rgb(42, 168, 76);\n    background-color: rgb(42, 168, 76);\n    color: white;\n  }\n  \n  .authModals_button_info {\n    border: 2px solid black;\n    background-color: skyblue;\n    color: black;\n  }\n  \n  /* The full-page modal background (semi-transparent overlay). */\n  .authModals_background {\n    display: block;\n  \n    /* Keep on top */\n    // z-index: 999;\n    z-inxed: 1501;\n  \n    position: fixed;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n  \n    background-color: rgba(0, 0, 0, 0.3);\n    /* Black background with translucent opacity. */\n  \n    font-family: Helvetica, Arial, sans-serif;\n    font-size: 14px;\n    user-select: none;\n    -webkit-user-select: none;\n  }\n  \n  /* Class to hide the modal (instead of showing it with .CollabAccountModal-background). */\n  .authModals_hide {\n    display: none;\n  }\n  \n  \n  /* The modal box that sits in full-page semi-transparent background . */\n  .authModals_box {\n    position: relative;\n    margin: auto;\n    margin-top: 180px;\n    width: 380px;\n    background-color: white;\n    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);\n  \n    animation-name: slidein;\n    animation-duration: 0.5s;\n  }\n  \n  \n  @keyframes slidein {\n    from {\n      top: -500px;\n    }\n  \n    to {\n      top: 0;\n    }\n  }\n  \n  \n  /* Top bar of modal with title and closeBtn. */\n  .authModals_topBar {\n    box-sizing: border-box;\n\n    margin-bottom: 10px;\n    padding-top: 1px;\n    padding-bottom: 2px;\n    padding-left: 14px;\n    padding-right: 5px;\n    background-color: dodgerblue;\n    color: white;\n    width: 100%;\n  }\n  \n  .authModals_topBarText {\n    line-height: 30px;\n    color: white;\n    font-size: 14pt;\n  }\n  \n  /* Close \"X\" modal button. */\n  .authModals_closeBtn {\n    color: white;\n    float: right;\n    font-size: 22px;\n\n    padding-top: 2px;\n    padding-right: 2px;\n  }\n  \n  .authModals_closeBtn:hover {\n    color: black;\n    cursor: pointer;\n  }\n  \n  \n  /* Main UI area of modal box. */\n  .authModals_main {\n    padding-left: 15px;\n    padding-right: 15px;\n  \n    padding-bottom: 3px;\n  }\n  \n  /* Area for success messages. */\n  .authModals_messageArea {\n    margin-top: 10px;\n    background-color: white;\n    text-align: right;\n  }\n  \n  /* Area for error messages. */\n  .authModals_messageFail {\n    color: red;\n  }\n  \n  \n  /*********************/\n  .authModals_formArea {\n    display: grid;\n    grid-template-columns: 75px 1fr;\n    grid-gap: 10px;\n  }\n  \n  .authModals_formAreaLabel {\n    grid-column: 1 / 2;\n  }\n  \n  .authModals_formAreaTextInput {\n    grid-column: 2 / 3;\n    padding-left: 5px;\n    font-size: 14px;\n  }\n  \n  \n  .authModals_login {\n    color: dodgerblue;\n  }\n  \n  .authModals_login:hover {\n    cursor: pointer;\n    filter: brightness(80%);\n  }\n  \n  \n  .authModals_newUser {\n    color: dodgerblue;\n  }\n  \n  .authModals_newUser:hover {\n    cursor: pointer;\n    filter: brightness(80%);\n  }\n  \n  \n  .authModals_forgotPswd {\n    color: dodgerblue;\n  }\n  \n  .authModals_forgotPswd:hover {\n    cursor: pointer;\n    filter: brightness(90%);\n  }\n  \n  /*********************/\n  .authModals_successMessage {\n    padding-top: 0px;\n    padding-left: 15px;\n    padding-right: 15px;\n    padding-bottom: 15px;\n  \n    background-color: white;\n    color: black;\n    font-size: 18px;\n  }\n  \n  .authModals_successMsgTxt {\n    font-size: 16px;\n    padding-bottom: 10px;\n  }\n  \n  \n  .authModals_buttonArea {\n    width: 100%;\n    margin-top: 10px;\n  }\n  \n  .authModals_optionsArea {\n    display: flex;\n    justify-content: space-between;\n    margin-top: 15px;\n  }\n  \n  \n  /***************/\n  .authModals_top {\n    // z-index: 1;\n    // z-index: calc(infinity);\n    z-index: 1500;\n    position: fixed;\n    height: 0px;\n    /* MENU BAR HIDDEN 0px */\n    width: 100%;\n    padding: 0px;\n    /* MENU BAR HIDDEN 0px */\n    text-align: right;\n    background-color: slategray;\n    color: white;\n    font-weight: bold;\n  \n    /* position:absolute; */\n    top: 0;\n    right: 0;\n  }\n  \n  #authModals_loginLogoutBtn {\n    background-color: rgb(42, 168, 76);\n    border-left: 1px solid black;\n    border-bottom: 1px solid black;\n    color: white;\n    padding: 7px 10px 5px 10px;\n    text-align: ce"
+}

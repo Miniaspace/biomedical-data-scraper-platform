@@ -1,0 +1,23 @@
+{
+  "spider_name": "伊芙分析_ea_eve_analytics",
+  "platform": {
+    "name": "伊芙分析 EA (Eve Analytics)",
+    "url": "https://eveanalytics.com",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无公开API，需全程模拟浏览器操作完成数据加载和交互。",
+    "登录流程复杂，需提前准备账号密码，处理可能的登录验证码或多因素认证。",
+    "无限滚动可能导致内存占用较高，需设计合理的分批处理和数据存储方案。"
+  ]
+}

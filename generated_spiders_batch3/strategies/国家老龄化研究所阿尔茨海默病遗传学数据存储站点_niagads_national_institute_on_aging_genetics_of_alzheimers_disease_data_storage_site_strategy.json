@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='https://www.niagads.org/about/']",
+    "fields": {
+      "title": "css=h1.page-title, xpath=//h1[contains(@class,'page-title')]",
+      "authors": "css=div.authors, xpath=//div[contains(@class,'authors')]",
+      "abstract": "css=div.abstract, xpath=//div[contains(@class,'abstract')]",
+      "publication_date": "css=span.pub-date, xpath=//span[contains(@class,'pub-date')]",
+      "pdf_link": "css=a[href$='.pdf'], xpath=//a[contains(@href,'.pdf')]",
+      "supplementary_materials": "css=a.supplementary, xpath=//a[contains(@class,'supplementary')]"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite_scroll)分页，使用Playwright模拟页面滚动，触发动态加载，直到页面不再加载新内容或达到设定的最大条目数，结合等待网络空闲或元素加载完成判断加载结束。",
+  "file_download_strategy": "对采集到的PDF及补充材料链接，使用Playwright或requests进行文件下载，确保请求头中带上必要的Referer和User-Agent，支持断点续传和重试机制，保存文件时使用有意义的命名规则（如标题+日期）。",
+  "anti_scraping_handling": [
+    "Cloudflare防护：使用Playwright的无头浏览器模拟真实用户行为，自动处理JS挑战。",
+    "合理设置请求间隔，避免短时间内大量请求导致封禁。",
+    "使用随机User-Agent和代理IP池（如必要）以分散请求来源。"
+  ],
+  "special_considerations": [
+    "网站无登录需求，减少认证复杂度。",
+    "无限滚动加载可能导致内存占用较高，需合理控制滚动次数和数据量。",
+    "部分数据字段可能存在缺失或格式不统一，需做好异常处理。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    for item in items:\n        detail_link = await item.query_selector_eval('a', 'a => a.href')\n        yield {'detail_url': detail_link}",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.page-title')\n    authors = await page.text_content('div.authors')\n    abstract = await page.text_content('div.abstract')\n    pub_date = await page.text_content('span.pub-date')\n    pdf_link = await page.get_attribute('a[href$=\".pdf\"]', 'href')\n    supplementary = await page.get_attribute('a.supplementary', 'href')\n    return {\n        'title': title.strip() if title else None,\n        'authors': authors.strip() if authors else None,\n        'abstract': abstract.strip() if abstract else None,\n        'publication_date': pub_date.strip() if pub_date else None,\n        'pdf_link': pdf_link,\n        'supplementary_materials': supplementary\n    }"
+  }
+}

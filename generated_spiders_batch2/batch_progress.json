@@ -1,0 +1,1052 @@
+[
+  {
+    "success": true,
+    "platform_name": "脑数据科学平台 BDSP (Brain Data Science Platform)",
+    "url": "https://bdsp.io",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/脑数据科学平台_bdsp_brain_data_science_platform_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/脑数据科学平台_bdsp_brain_data_science_platform_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/脑数据科学平台_bdsp_brain_data_science_platform_spider.py",
+      "config": "./generated_spiders_batch2/spiders/脑数据科学平台_bdsp_brain_data_science_platform_config.json",
+      "readme": "./generated_spiders_batch2/spiders/脑数据科学平台_bdsp_brain_data_science_platform_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:19:35.995435",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic/login",
+      "difficulty": 2,
+      "estimated_dev_time": "16",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='/content/']",
+        "fields": {
+          "title": "h1.page-title, div.title, or header h1 (需根据详情页实际结构调整)",
+          "author": "div.author, span.author-name (需根据详情页实际结构调整)",
+          "abstract": "div.abstract, section.abstract (需根据详情页实际结构调整)",
+          "publication_date": "span.pub-date, div.date (需根据详情页实际结构调整)",
+          "pdf_link": "a[href$='.pdf']",
+          "supplementary_materials": "a.supplementary, a[href*='supplement']"
+        }
+      },
+      "pagination_strategy": "网站无分页，所有数据均在单页或通过详情页访问，无需分页处理",
+      "file_download_strategy": "登录后通过Scrapy请求详情页，解析PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保携带登录cookie",
+      "anti_scraping_handling": [
+        "使用Scrapy的CookieMiddleware管理登录状态，保持会话",
+        "设置合理的下载延迟和并发限制，避免触发服务器限制",
+        "模拟正常浏览器请求头，避免被识别为爬虫"
+      ],
+      "special_considerations": [
+        "登录认证是采集前提，需实现登录表单提交并保持会话",
+        "无API接口，需解析HTML，字段选择器需根据详情页实际DOM结构调整",
+        "文件下载需确保登录态，防止403或重定向至登录页"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse_list(self, response):\n    items = response.css('ul li')\n    for item in items:\n        detail_url = item.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('/content/'):\n            yield response.follow(detail_url, callback=self.parse_detail)",
+        "parse_detail": "def parse_detail(self, response):\n    yield {\n        'title': response.css('h1::text').get(),\n        'author': response.css('div.author::text').get(),\n        'abstract': response.css('div.abstract::text').get(),\n        'publication_date': response.css('span.pub-date::text').get(),\n        'pdf_url': response.css('a[href$=\".pdf\"]::attr(href)').get(),\n        'supplementary_urls': response.css('a.supplementary::attr(href)').getall()\n    }"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "国家药物滥用研究中心遗传资源 NIDA Genetics (NIDA Genetics (NIDA Center for Genetic Studies))",
+    "url": "https://nidagenetics.org",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies_spider.py",
+      "config": "./generated_spiders_batch2/spiders/国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies_config.json",
+      "readme": "./generated_spiders_batch2/spiders/国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:19:52.370588",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "8",
+      "data_extraction": {
+        "list_page_selector": "table tbody tr",
+        "detail_page_selector": null,
+        "fields": {
+          "all_fields": "td"
+        }
+      },
+      "pagination_strategy": "由于页面采用无限滚动(infinite_scroll)且无API支持，建议通过模拟滚动加载更多数据，结合Scrapy的中间件或扩展实现动态内容抓取，或结合Playwright辅助实现页面滚动后抓取完整表格数据。",
+      "file_download_strategy": "检测表格中是否含有文件下载链接（如PDF、补充材料），通过提取对应的<a>标签href属性进行文件下载，使用Scrapy的FilesPipeline或自定义下载逻辑保存文件。",
+      "anti_scraping_handling": [
+        "由于无明显反爬机制，保持适当抓取频率避免触发服务器限制",
+        "设置合理User-Agent，避免默认爬虫标识",
+        "使用IP代理池可选，防止IP封禁风险"
+      ],
+      "special_considerations": [
+        "页面内容为静态HTML，无需执行JavaScript，减少复杂度",
+        "无限滚动加载可能需要结合Playwright或Splash辅助实现完整数据采集",
+        "无登录，采集门槛较低"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        data = row.css('td::text').getall()\n        yield {'row_data': data}\n    # 如果使用Playwright辅助滚动加载，需在请求中实现滚动逻辑",
+        "parse_detail": "# 无详情页链接，所有数据均在列表页，故无详情页解析逻辑"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "生物医学信息学研究中心与知识系统 BRICS (Biomedical Research Informatics Center and Knowledge Systems)",
+    "url": "https://brics.nei.nih.gov",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems_spider.py",
+      "config": "./generated_spiders_batch2/spiders/生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems_config.json",
+      "readme": "./generated_spiders_batch2/spiders/生物医学信息学研究中心与知识系统_brics_biomedical_research_informatics_center_and_knowledge_systems_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:20:09.035437",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/basic",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='http://www.hhs.gov/']",
+        "fields": {
+          "title": "li > a::text",
+          "detail_url": "li > a::attr(href)"
+        }
+      },
+      "pagination_strategy": "无分页，页面一次性加载所有列表项，无需分页处理",
+      "file_download_strategy": "通过Playwright模拟登录后，访问详情页，解析PDF文件链接，使用Playwright下载或通过requests附带登录cookie下载PDF文件",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，绕过Cloudflare防护",
+        "保持登录状态，管理会话cookie，避免频繁重新登录",
+        "控制请求频率，避免触发潜在的访问限制"
+      ],
+      "special_considerations": [
+        "登录流程需处理表单提交，可能涉及CSRF token，需动态获取",
+        "Cloudflare防护可能导致初次访问延迟，需设置合理等待时间",
+        "详情页链接跳转至外部域名，需处理跨域请求和文件下载"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('a', 'el => el.textContent.trim()')\n        url = await item.query_selector_eval('a', 'el => el.href')\n        results.append({'title': title, 'detail_url': url})\n    return results",
+        "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    # 假设PDF链接在a标签中，href以.pdf结尾\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n    return {'pdf_url': pdf_link}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "国家睡眠研究资源平台 NSRR (National Sleep Research Resource)",
+    "url": "https://sleepdata.org",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/国家睡眠研究资源平台_nsrr_national_sleep_research_resource_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/国家睡眠研究资源平台_nsrr_national_sleep_research_resource_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/国家睡眠研究资源平台_nsrr_national_sleep_research_resource_spider.py",
+      "config": "./generated_spiders_batch2/spiders/国家睡眠研究资源平台_nsrr_national_sleep_research_resource_config.json",
+      "readme": "./generated_spiders_batch2/spiders/国家睡眠研究资源平台_nsrr_national_sleep_research_resource_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:20:29.785678",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login",
+      "difficulty": 4,
+      "estimated_dev_time": "40",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='/pages/']",
+        "fields": {
+          "title": "css=h1.page-title, xpath=//h1[contains(@class,'page-title')]",
+          "authors": "css=.author-list, xpath=//div[contains(@class,'author-list')]",
+          "abstract": "css=.abstract, xpath=//section[contains(@class,'abstract')]",
+          "publication_date": "css=.pub-date, xpath=//time[contains(@class,'pub-date')]",
+          "pdf_link": "css=a[href$='.pdf'], xpath=//a[contains(@href,'.pdf')]",
+          "supplementary_materials": "css=a.supplementary, xpath=//a[contains(@class,'supplementary')]"
+        }
+      },
+      "pagination_strategy": "无分页，需遍历首页所有列表项，若数据量大需结合登录后动态加载或筛选功能进行分批采集",
+      "file_download_strategy": "通过Playwright模拟登录后，使用页面中直接可访问的PDF和补充材料链接进行文件下载，确保带上登录cookie和header，避免重定向到登录页",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，自动处理登录和验证码弹窗",
+        "针对验证码，尝试人工打码或集成第三方验证码识别服务",
+        "控制请求频率，模拟正常用户浏览节奏，避免触发异常检测"
+      ],
+      "special_considerations": [
+        "登录是必须步骤，需稳定实现登录流程并维护会话",
+        "验证码可能在登录或关键操作时出现，需预留人工干预接口",
+        "网站无API，数据结构较简单但需处理登录和验证码，采集难度较高"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    for item in items:\n        link = await item.query_selector('a')\n        href = await link.get_attribute('href')\n        if href and href.startswith('/pages/'):\n            await page.context.new_page().goto(f'https://sleepdata.org{href}')\n            # 进一步处理详情页",
+        "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.page-title')\n    authors = await page.text_content('.author-list')\n    abstract = await page.text_content('.abstract')\n    pub_date = await page.get_attribute('time.pub-date', 'datetime')\n    pdf_link = await page.get_attribute('a[href$=\".pdf\"]', 'href')\n    # 下载pdf时需保持登录状态\n    return {\n        'title': title.strip() if title else '',\n        'authors': authors.strip() if authors else '',\n        'abstract': abstract.strip() if abstract else '',\n        'publication_date': pub_date,\n        'pdf_link': pdf_link\n    }"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "NIH数据共享云计划 NIH DC (NIH Data Commons)",
+    "url": "https://commonfund.nih.gov/commons",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/nih数据共享云计划_nih_dc_nih_data_commons_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/nih数据共享云计划_nih_dc_nih_data_commons_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/nih数据共享云计划_nih_dc_nih_data_commons_spider.py",
+      "config": "./generated_spiders_batch2/spiders/nih数据共享云计划_nih_dc_nih_data_commons_config.json",
+      "readme": "./generated_spiders_batch2/spiders/nih数据共享云计划_nih_dc_nih_data_commons_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:20:55.754473",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "12",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='https://www.nih.gov/']",
+        "fields": {
+          "title": "li > a::text",
+          "detail_url": "li > a::attr(href)",
+          "description": "li > p::text",
+          "pdf_links": "a[href$='.pdf']::attr(href)",
+          "supplementary_materials": "a.supplementary-material::attr(href)"
+        }
+      },
+      "pagination_strategy": "无分页，页面一次性加载所有列表项，直接抓取全部li元素即可，无需额外分页处理。",
+      "file_download_strategy": "针对PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载中间件进行文件下载，确保文件完整性和重试机制。",
+      "anti_scraping_handling": [
+        "由于网站使用Cloudflare，建议设置合理的下载延迟和并发限制，模拟正常用户访问频率。",
+        "使用Scrapy自带的User-Agent中间件，随机切换User-Agent，避免被简单封禁。",
+        "开启自动重试机制，处理因Cloudflare防护导致的偶发请求失败。"
+      ],
+      "special_considerations": [
+        "网站基于Drupal 10构建，结构相对稳定，CSS选择器较为可靠。",
+        "无登录和动态加载需求，Scrapy即可满足采集需求，无需Playwright。",
+        "注意采集时尊重robots.txt及网站使用条款，避免过度请求。"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('https://www.nih.gov/'):\n            yield response.follow(detail_url, self.parse_detail)\n",
+        "parse_detail": "def parse_detail(self, response):\n    yield {\n        'title': response.css('h1::text').get(),\n        'authors': response.css('.author-list::text').getall(),\n        'pdf_links': response.css('a[href$=\".pdf\"]::attr(href)').getall(),\n        'supplementary_materials': response.css('a.supplementary-material::attr(href)').getall(),\n        'description': response.css('meta[name=\"description\"]::attr(content)').get()\n    }\n"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "全球老龄化数据门户GATEWAY TO GLOBAL AGING DATA",
+    "url": "https://g2aging.org/",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/全球老龄化数据门户gateway_to_global_aging_data_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/全球老龄化数据门户gateway_to_global_aging_data_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/全球老龄化数据门户gateway_to_global_aging_data_spider.py",
+      "config": "./generated_spiders_batch2/spiders/全球老龄化数据门户gateway_to_global_aging_data_config.json",
+      "readme": "./generated_spiders_batch2/spiders/全球老龄化数据门户gateway_to_global_aging_data_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:21:19.087690",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "table tbody tr",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "table tbody tr td:nth-child(1) a",
+          "authors": "table tbody tr td:nth-child(2)",
+          "publication_date": "table tbody tr td:nth-child(3)",
+          "pdf_link": "table tbody tr td a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动（infinite_scroll）分页，使用Playwright模拟浏览器滚动页面，逐步加载更多内容，直到无新内容加载为止。通过监听网络请求或检测页面中table tbody tr元素数量变化判断加载结束。",
+      "file_download_strategy": "在解析列表或详情页时提取PDF文件链接，使用Playwright获取完整的下载URL后，结合requests或Playwright的API下载PDF文件，支持断点续传和重试机制，确保文件完整性。",
+      "anti_scraping_handling": [
+        "针对网站的验证码机制，建议控制请求频率，模拟正常用户浏览行为，避免触发验证码。",
+        "使用Playwright的无头浏览器环境，保持合理的User-Agent和浏览器指纹，降低被识别风险。",
+        "设置适当的等待时间和随机延迟，避免快速连续请求。",
+        "必要时结合代理IP池轮换IP，防止IP封禁。"
+      ],
+      "special_considerations": [
+        "网站不提供公开API，且内容通过表格展示，需精准定位表格行和列提取数据。",
+        "无限滚动分页需要动态加载数据，传统Scrapy不适用，Playwright更合适。",
+        "验证码可能在异常请求时触发，需设计异常处理和人工干预机制。",
+        "PDF文件下载链接可能是相对路径，需拼接完整URL。"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    # 滚动页面加载全部数据\n    previous_count = 0\n    while True:\n        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')\n        await page.wait_for_timeout(2000)  # 等待加载\n        rows = await page.query_selector_all('table tbody tr')\n        if len(rows) == previous_count:\n            break\n        previous_count = len(rows)\n    data = []\n    for row in rows:\n        title_el = await row.query_selector('td:nth-child(1) a')\n        title = await title_el.inner_text() if title_el else ''\n        authors = await (await row.query_selector('td:nth-child(2)')).inner_text()\n        pub_date = await (await row.query_selector('td:nth-child(3)')).inner_text()\n        pdf_el = await row.query_selector('a[href$=\".pdf\"]')\n        pdf_url = await pdf_el.get_attribute('href') if pdf_el else None\n        data.append({'title': title, 'authors': authors, 'publication_date': pub_date, 'pdf_url': pdf_url})\n    return data",
+        "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    # 详情页解析逻辑视具体页面结构而定\n    # 示例：\n    title = await page.text_content('h1.article-title')\n    authors = await page.text_content('div.authors')\n    pdf_link = await page.get_attribute('a.pdf-download', 'href')\n    return {'title': title, 'authors': authors, 'pdf_link': pdf_link}"
+      }
+    }
+  },
+  {
+    "success": false,
+    "platform_name": "国家阿尔茨海默病协调中心 NACC (National Alzheimer's Coordinating Center)",
+    "url": "https://naccdata.org",
+    "files": {},
+    "errors": [
+      "达到最大重试次数"
+    ]
+  },
+  {
+    "success": true,
+    "platform_name": "帕金森病生物标志物计划 PDBP (Parkinson's Disease Biomarker Program)",
+    "url": "https://pdbp.ninds.nih.gov",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program_spider.py",
+      "config": "./generated_spiders_batch2/spiders/帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program_config.json",
+      "readme": "./generated_spiders_batch2/spiders/帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:22:50.231312",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 4,
+      "estimated_dev_time": "40",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "ul li .title, ul li h3, ul li a.title",
+          "author": "ul li .author, ul li .meta .author",
+          "date": "ul li .date, ul li .meta .date",
+          "summary": "ul li .summary, ul li .description",
+          "pdf_link": "ul li a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动(infinite scroll)，使用Playwright模拟页面滚动，等待新内容加载，直到无新数据加载为止。通过监听网络请求或DOM变化判断加载完成。",
+      "file_download_strategy": "针对PDF及补充材料链接，使用Playwright获取完整下载URL，结合登录状态发送带Cookie的请求下载文件，支持断点续传和重试机制。",
+      "anti_scraping_handling": [
+        "模拟真实用户行为，控制滚动速度和间隔，避免触发异常",
+        "保持登录状态，管理好Cookie和Session",
+        "设置合理请求间隔，防止服务器压力过大"
+      ],
+      "special_considerations": [
+        "登录流程复杂，需处理验证码或多因素认证（若存在）",
+        "网站基于Drupal 10，页面结构可能动态变化，需定期维护选择器",
+        "无公开API，所有数据需通过页面渲染抓取",
+        "文件下载需鉴权，确保请求头携带登录信息"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('.title', 'el => el.innerText').catch(lambda e: '')\n        author = await item.query_selector_eval('.author', 'el => el.innerText').catch(lambda e: '')\n        pdf_link = await item.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href').catch(lambda e: None)\n        results.append({'title': title, 'author': author, 'pdf_link': pdf_link})\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    # 如果有详情页，解析详情页内容\n    title = await page.query_selector_eval('h1.title', 'el => el.innerText').catch(lambda e: '')\n    authors = await page.query_selector_eval('.authors', 'el => el.innerText').catch(lambda e: '')\n    abstract = await page.query_selector_eval('.abstract', 'el => el.innerText').catch(lambda e: '')\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href').catch(lambda e: None)\n    return {'title': title, 'authors': authors, 'abstract': abstract, 'pdf_link': pdf_link}"
+      }
+    }
+  },
+  {
+    "success": false,
+    "platform_name": "国家老龄化数据档案 NACDA (National Archive of Computerized Data on Aging)",
+    "url": "https://icpsr.umich.edu/web/pages/NACDA",
+    "files": {},
+    "errors": [
+      "达到最大重试次数"
+    ]
+  },
+  {
+    "success": true,
+    "platform_name": "阿尔茨海默病知识门户 AD Knowledge Portal (Alzheimer's Disease Knowledge Portal)",
+    "url": "https://adknowledgeportal.synapse.org",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal_spider.py",
+      "config": "./generated_spiders_batch2/spiders/阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal_config.json",
+      "readme": "./generated_spiders_batch2/spiders/阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:23:45.658475",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "table tbody tr",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "td:nth-child(1) a",
+          "author": "td:nth-child(2)",
+          "date": "td:nth-child(3)",
+          "status": "td:nth-child(4)"
+        }
+      },
+      "pagination_strategy": "由于页面采用无限滚动(infinite scroll)加载数据，使用Playwright模拟用户滚动页面，等待新数据加载完成后继续滚动，直到页面不再加载新数据为止，确保采集所有列表项。",
+      "file_download_strategy": "在采集到的列表或详情页中定位PDF文件及补充材料的下载链接，使用Playwright模拟点击或直接请求下载链接进行文件下载。登录态需保持，且下载时需处理可能的重定向和断点续传。",
+      "anti_scraping_handling": [
+        "保持登录态，使用Playwright模拟真实浏览器环境，避免被识别为爬虫。",
+        "控制滚动和请求频率，避免触发服务器异常。",
+        "使用随机延时和适度并发，模拟正常用户行为。"
+      ],
+      "special_considerations": [
+        "登录流程需要实现自动化，可能涉及多步验证，需提前准备账号和密码。",
+        "页面无公开API，所有数据需通过渲染后的页面DOM提取。",
+        "文件下载链接可能动态生成，需在页面完全加载后提取。"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('table tbody tr')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('td:nth-child(1) a', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('td:nth-child(2)', 'el => el.textContent.trim()')\n        date = await item.query_selector_eval('td:nth-child(3)', 'el => el.textContent.trim()')\n        status = await item.query_selector_eval('td:nth-child(4)', 'el => el.textContent.trim()')\n        results.append({'title': title, 'author': author, 'date': date, 'status': status})\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    # 示例：提取PDF下载链接\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n    return {'pdf_link': pdf_link}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "儿童癌症数据计划中心 CCDI Hub (Childhood Cancer Data Initiative Hub)",
+    "url": "https://ccdi.cancer.gov/home",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub_spider.py",
+      "config": "./generated_spiders_batch2/spiders/儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub_config.json",
+      "readme": "./generated_spiders_batch2/spiders/儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:24:08.329361",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright",
+      "difficulty": 3,
+      "estimated_dev_time": "16",
+      "data_extraction": {
+        "list_page_selector": "ul > li",
+        "detail_page_selector": "body",
+        "fields": {
+          "title": "css=h1, xpath=//h1",
+          "author": "css=.author, xpath=//*[contains(@class, 'author')]",
+          "publication_date": "css=.pub-date, xpath=//*[contains(@class, 'pub-date')]",
+          "abstract": "css=.abstract, xpath=//*[contains(@class, 'abstract')]",
+          "pdf_link": "css=a[href$='.pdf'], xpath=//a[contains(@href, '.pdf')]",
+          "supplementary_materials": "css=a.supplementary, xpath=//a[contains(@class, 'supplementary')]"
+        }
+      },
+      "pagination_strategy": "采用Playwright模拟浏览器自动滚动页面，触发infinite scroll加载更多内容。通过监听页面DOM变化或定时滚动到底部，直到无新内容加载为止。",
+      "file_download_strategy": "对页面中所有PDF链接和补充材料链接进行提取，使用Playwright或requests结合cookie/session头部进行文件下载，确保文件完整。支持断点续传和重试机制。",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器环境，执行JavaScript，避免因无JS执行导致页面内容缺失",
+        "控制请求频率，避免触发潜在的速率限制",
+        "设置合理User-Agent和Headers，模拟真实用户访问",
+        "启用代理池以防IP封禁（虽然当前无明显限制，但预防性措施）"
+      ],
+      "special_considerations": [
+        "网站无登录，无API，且数据通过JavaScript动态加载，必须使用支持JS渲染的工具",
+        "分页为无限滚动，需精确控制滚动触发加载，避免漏采或重复采集",
+        "PDF和补充材料链接可能分散在详情页不同位置，需全面提取",
+        "部分字段可能缺失或格式不统一，需容错处理"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    # 等待列表加载完成\n    await page.wait_for_selector('ul > li')\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        link = await item.query_selector('a')\n        href = await link.get_attribute('href')\n        results.append(href)\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1')\n    author = await page.text_content('.author')\n    pub_date = await page.text_content('.pub-date')\n    abstract = await page.text_content('.abstract')\n    pdf_links = await page.eval_on_selector_all('a[href$=\".pdf\"]', 'elements => elements.map(e => e.href)')\n    supplementary_links = await page.eval_on_selector_all('a.supplementary', 'elements => elements.map(e => e.href)')\n    return {\n        'title': title.strip() if title else None,\n        'author': author.strip() if author else None,\n        'publication_date': pub_date.strip() if pub_date else None,\n        'abstract': abstract.strip() if abstract else None,\n        'pdf_links': pdf_links,\n        'supplementary_links': supplementary_links\n    }"
+      }
+    }
+  },
+  {
+    "success": false,
+    "platform_name": "美国国家生物医学本体中心BioPortal BioPortal (National Center for Biomedical Ontology BioPortal)",
+    "url": "https://bioportal.bioontology.org",
+    "files": {},
+    "errors": [
+      "达到最大重试次数"
+    ]
+  },
+  {
+    "success": true,
+    "platform_name": "国家酒精滥用与酒精中毒研究所数据档案 NIAAA-DA (National Institute on Alcohol Abuse and Alcoholism Data Archive)",
+    "url": "https://nda.nih.gov/niaaa",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive_spider.py",
+      "config": "./generated_spiders_batch2/spiders/国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive_config.json",
+      "readme": "./generated_spiders_batch2/spiders/国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:25:34.049650",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='https://nda.nih.gov/nda/webinars-and-tutorials']",
+        "fields": {
+          "title": "li > a > text()",
+          "link": "li > a::attr(href)"
+        }
+      },
+      "pagination_strategy": "无分页，页面全部数据一次性加载，无需分页处理",
+      "file_download_strategy": "登录后通过Playwright模拟用户点击下载链接，自动处理文件保存路径和重命名，支持断点续传和重试机制",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，避免因无头浏览器特征被识别",
+        "合理设置请求间隔，避免触发登录会话异常",
+        "保存和复用登录状态Cookies，减少重复登录次数"
+      ],
+      "special_considerations": [
+        "必须先完成登录，登录流程可能涉及多因素认证，需人工辅助或预置账号信息",
+        "页面无API接口，需解析HTML，结构较简单但需确保登录状态有效",
+        "文件下载链接可能动态生成，需在登录状态下动态抓取"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.eval_on_selector('a', 'el => el.textContent.trim()')\n        link = await item.eval_on_selector('a', 'el => el.href')\n        results.append({'title': title, 'link': link})\n    return results",
+        "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    # 示例：提取PDF下载链接\n    pdf_link = await page.eval_on_selector('a[href$=\".pdf\"]', 'el => el.href')\n    return {'pdf_link': pdf_link}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "国立精神卫生研究所数据存档库 NDA (National Institute of Mental Health Data Archive)",
+    "url": "https://nda.nih.gov/nda/access-data-info.html",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive_spider.py",
+      "config": "./generated_spiders_batch2/spiders/国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive_config.json",
+      "readme": "./generated_spiders_batch2/spiders/国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:25:56.423328",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "ul li > strong, ul li > a, ul li > span",
+          "description": "ul li > p, ul li > span.description",
+          "date": "ul li > time, ul li > span.date",
+          "pdf_link": "ul li a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动（infinite_scroll）分页，使用Playwright模拟浏览器滚动页面，等待新内容加载后继续滚动，直到页面不再加载新数据或达到预设最大条数。",
+      "file_download_strategy": "采集到PDF或补充材料链接后，使用Playwright获取完整下载链接，结合登录状态发送带cookie的请求下载文件，支持断点续传和重试机制。",
+      "anti_scraping_handling": [
+        "模拟真实用户行为，控制滚动速度和间隔，避免触发异常访问",
+        "保持登录状态，定期刷新cookie或重新登录",
+        "合理设置请求间隔，防止服务器压力过大"
+      ],
+      "special_considerations": [
+        "登录流程需自动化处理，可能涉及多因素认证或验证码，需提前确认登录接口和流程",
+        "页面无API接口，所有数据需通过渲染后的DOM提取",
+        "部分文件下载链接可能需要额外请求头或Referer，需抓包确认"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('strong, a, span', 'el => el.textContent.trim()')\n        pdf_link = await item.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href') if await item.query_selector('a[href$=\".pdf\"]') else None\n        results.append({'title': title, 'pdf_link': pdf_link})\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    # 页面无明确详情页，详情数据均在列表页中，若有详情页链接可在此补充\n    pass"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "脊髓损伤开放数据平台 ODC-SCI (Open Data Commons for Spinal Cord Injury)",
+    "url": "https://odc-sci.org",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury_spider.py",
+      "config": "./generated_spiders_batch2/spiders/脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury_config.json",
+      "readme": "./generated_spiders_batch2/spiders/脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:26:27.342817",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 4,
+      "estimated_dev_time": "40",
+      "data_extraction": {
+        "list_page_selector": "ul > li",
+        "detail_page_selector": "待分析具体详情页结构，因detail_link_pattern为'#'，需通过JS事件或DOM结构定位详情内容",
+        "fields": {
+          "title": "CSS选择器需基于详情页结构确定，如 'h1.article-title' 或类似元素",
+          "author": "详情页中作者信息的CSS选择器，如 '.authors-list' 或 '.author-names'",
+          "abstract": "详情页中摘要的选择器，如 '.abstract' 或 'section.abstract'",
+          "publication_date": "详情页中日期选择器，如 '.pub-date'",
+          "pdf_link": "详情页中PDF下载链接选择器，如 'a.pdf-download' 或 'a[href$='.pdf']'",
+          "supplementary_materials": "详情页中补充材料链接选择器，如 '.supplementary a'"
+        }
+      },
+      "pagination_strategy": "使用Playwright模拟用户滚动页面触发infinite scroll加载更多内容，循环检测新内容加载完成后继续滚动，直到无新内容加载为止",
+      "file_download_strategy": "在详情页解析PDF及补充材料链接后，通过Playwright获取带有登录态的请求头，使用Python requests或Playwright自带API下载文件，确保携带cookie和认证信息",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，执行JavaScript，避免因无JS执行导致数据缺失",
+        "保持登录状态，定期刷新cookie或重新登录以防会话过期",
+        "控制请求频率，避免触发潜在的速率限制"
+      ],
+      "special_considerations": [
+        "登录流程需要自动化处理，可能涉及表单提交及验证码检测（目前无验证码）",
+        "详情页链接非标准链接（detail_link_pattern为'#'），需分析页面JS事件绑定或DOM结构，可能需要直接解析列表项中的隐藏数据或通过XHR请求获取详情数据",
+        "由于无公开API，所有数据均需通过页面渲染后抓取，增加采集复杂度"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    # 等待列表加载\n    await page.wait_for_selector('ul > li')\n    items = await page.query_selector_all('ul > li')\n    for item in items:\n        # 这里假设详情内容在列表项内或通过点击加载\n        # 示例：\n        title = await item.query_selector_eval('h2.title', 'el => el.textContent')\n        # 其他字段类似\n        # 也可以触发点击事件进入详情页\n        yield {'title': title}\n\n    # 处理无限滚动\n    previous_height = await page.evaluate('document.body.scrollHeight')\n    while True:\n        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')\n        await page.wait_for_timeout(2000)  # 等待加载\n        new_height = await page.evaluate('document.body.scrollHeight')\n        if new_height == previous_height:\n            break\n        previous_height = new_height",
+        "parse_detail": "async def parse_detail(page):\n    await page.wait_for_selector('h1.article-title')\n    title = await page.query_selector_eval('h1.article-title', 'el => el.textContent')\n    authors = await page.query_selector_eval('.authors-list', 'el => el.textContent')\n    abstract = await page.query_selector_eval('.abstract', 'el => el.textContent')\n    pub_date = await page.query_selector_eval('.pub-date', 'el => el.textContent')\n    pdf_url = await page.query_selector_eval('a.pdf-download', 'el => el.href')\n    # 下载文件时需携带登录态\n    return {\n        'title': title,\n        'authors': authors,\n        'abstract': abstract,\n        'publication_date': pub_date,\n        'pdf_url': pdf_url\n    }"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "包容性神经发育数据平台 INCLUDE (INCLUDE 数据中心) INCLUDE (Inclusive Neurodevelopmental Data Platform INCLUDE (INCLUDE Data Hub))",
+    "url": "https://portal.includedcc.org/login?redirect_path=/dashboard",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub_spider.py",
+      "config": "./generated_spiders_batch2/spiders/包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub_config.json",
+      "readme": "./generated_spiders_batch2/spiders/包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:27:01.315418",
+    "strategy": {
+      "recommended_method": "hybrid",
+      "spider_template": "hybrid/playwright_login_api",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": null,
+        "detail_page_selector": null,
+        "fields": {
+          "title": "根据API返回的JSON字段提取，如data.title",
+          "author": "根据API返回的JSON字段提取，如data.author",
+          "publication_date": "根据API返回的JSON字段提取，如data.pub_date",
+          "pdf_url": "根据API返回的JSON字段提取，如data.pdf_url",
+          "supplementary_materials": "根据API返回的JSON字段提取，如data.supplementary_files"
+        }
+      },
+      "pagination_strategy": "无传统分页，利用API接口的参数（如offset/limit或page）进行分页请求，直到返回空数据或无更多数据标志",
+      "file_download_strategy": "通过解析API返回的文件URL，使用带登录状态的请求头（如Cookies或Token）进行文件下载，支持断点续传和重试机制",
+      "anti_scraping_handling": [
+        "使用Playwright模拟登录，保持会话状态，避免频繁登录触发限制",
+        "合理控制请求频率，避免触发服务器异常检测",
+        "利用API接口数据，减少页面渲染和复杂DOM解析，降低被检测概率"
+      ],
+      "special_considerations": [
+        "登录流程需模拟完整，包括验证码无但需处理多因素认证或动态token",
+        "API请求可能包含动态签名或token，需分析请求头和参数，动态生成",
+        "确保文件下载时携带有效身份验证信息，避免403错误"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(self, response):\n    json_data = response.json()\n    items = json_data.get('data', [])\n    for item in items:\n        yield scrapy.Request(\n            url=item.get('detail_url'),\n            callback=self.parse_detail,\n            meta={'item_meta': item}\n        )\n    # 处理分页\n    if json_data.get('has_more'):\n        next_page = json_data.get('next_page')\n        yield scrapy.Request(\n            url=f'https://api.example.com/data?page={next_page}',\n            callback=self.parse_list\n        )",
+        "parse_detail": "async def parse_detail(self, response):\n    item_meta = response.meta.get('item_meta', {})\n    detail_json = response.json()\n    yield {\n        'title': item_meta.get('title') or detail_json.get('title'),\n        'author': item_meta.get('author') or detail_json.get('author'),\n        'publication_date': detail_json.get('pub_date'),\n        'pdf_url': detail_json.get('pdf_url'),\n        'supplementary_materials': detail_json.get('supplementary_files')\n    }"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "营养科学数据与生物样本资源门户 NSDBRP (Nutrition Science Data and Biospecimen Resources Portal)",
+    "url": "https://dpcpsi.nih.gov/onr/onr-nutrition-science-data-and-biospecimen-resources-portal",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal_spider.py",
+      "config": "./generated_spiders_batch2/spiders/营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal_config.json",
+      "readme": "./generated_spiders_batch2/spiders/营养科学数据与生物样本资源门户_nsdbrp_nutrition_science_data_and_biospecimen_resources_portal_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:27:21.738950",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright",
+      "difficulty": 2,
+      "estimated_dev_time": "12",
+      "data_extraction": {
+        "list_page_selector": "ul > li",
+        "detail_page_selector": "a[href^='https://www.hhs.gov/']",
+        "fields": {
+          "title": "li > a",
+          "description": "li > p, li > div.description",
+          "detail_url": "li > a::attr(href)",
+          "pdf_links": "a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动(infinite scroll)分页，使用Playwright模拟页面滚动，等待新内容加载，直到无新数据加载为止。",
+      "file_download_strategy": "在详情页或列表页中定位所有PDF链接，使用Playwright拦截下载请求或直接通过requests下载，保存文件时根据标题或唯一ID命名，确保文件完整且无重复。",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，避免触发Cloudflare的反爬机制。",
+        "设置合理的请求间隔，避免短时间内大量请求导致封禁。",
+        "使用随机User-Agent和浏览器指纹，模拟真实用户访问。"
+      ],
+      "special_considerations": [
+        "网站基于Drupal 10，结构相对稳定，但需关注动态加载内容。",
+        "目标数据中PDF和补充材料链接可能分散在详情页多个位置，需全面提取。",
+        "Cloudflare保护可能导致请求失败，Playwright的无头浏览器模式更适合绕过。"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    # 模拟滚动加载所有数据\n    previous_height = await page.evaluate('document.body.scrollHeight')\n    while True:\n        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')\n        await page.wait_for_timeout(2000)  # 等待加载\n        new_height = await page.evaluate('document.body.scrollHeight')\n        if new_height == previous_height:\n            break\n        previous_height = new_height\n    # 获取所有列表项\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('a', 'el => el.textContent.trim()')\n        detail_url = await item.query_selector_eval('a', 'el => el.href')\n        results.append({'title': title, 'detail_url': detail_url})\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    # 获取PDF链接\n    pdf_links = await page.eval_on_selector_all('a[href$=\".pdf\"]', 'els => els.map(el => el.href)')\n    # 可扩展提取其他字段\n    return {'pdf_links': pdf_links}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "国家成瘾与HIV数据档案计划 NAHDAP (National Addiction & HIV Data Archive Program)",
+    "url": "https://icpsr.umich.edu/web/pages/NAHDAP/data/index.html",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program_spider.py",
+      "config": "./generated_spiders_batch2/spiders/国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program_config.json",
+      "readme": "./generated_spiders_batch2/spiders/国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:27:51.904431",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 4,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href*='/sites/nahdap/find-access-data']",
+        "fields": {
+          "title": "ul li > a > h3, ul li > a > div.title, or ul li > a (根据具体结构调整)",
+          "author": "ul li .author, ul li .contributor (需根据实际DOM确认)",
+          "description": "ul li .description, ul li p.summary",
+          "download_links": "a[href$='.pdf'], a[href*='supplemental'], a.download-link"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动(infinite scroll)，使用Playwright模拟用户滚动页面，等待新内容加载，直到所有数据加载完成或达到预设最大条数。结合页面元素变化判断加载结束。",
+      "file_download_strategy": "拦截页面中的文件下载链接，结合Playwright的下载API进行文件下载。对PDF和补充材料链接单独处理，确保文件完整性。支持断点续传和重试机制。",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，避免简单UA检测",
+        "合理设置请求间隔，避免触发Cloudflare防护",
+        "登录环节采用自动化填写表单和Cookie持久化，减少重复登录",
+        "使用代理池分散请求IP，降低被封风险"
+      ],
+      "special_considerations": [
+        "登录是必须步骤，需提前获取有效账号和密码",
+        "Cloudflare防护可能导致请求延迟，需设置合理超时和重试",
+        "无限滚动加载可能导致内存占用较高，需分批保存数据",
+        "页面结构可能动态变化，需定期维护选择器"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        link = await item.query_selector('a[href*=\"/sites/nahdap/find-access-data\"]')\n        title = await item.inner_text()\n        href = await link.get_attribute('href') if link else None\n        results.append({'title': title.strip(), 'detail_url': href})\n    return results",
+        "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.title')\n    author = await page.text_content('.author')\n    description = await page.text_content('.description')\n    download_links = await page.query_selector_all('a[href$=\".pdf\"], a.download-link')\n    files = []\n    for link in download_links:\n        url = await link.get_attribute('href')\n        files.append(url)\n    return {'title': title.strip(), 'author': author.strip(), 'description': description.strip(), 'files': files}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "临床研究数据归档 ACRD (Archived Clinical Research Datasets)",
+    "url": "https://ninds.nih.gov/current-research/research-funded-ninds/clinical-research/archived-clinical-research-datasets",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/临床研究数据归档_acrd_archived_clinical_research_datasets_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/临床研究数据归档_acrd_archived_clinical_research_datasets_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/临床研究数据归档_acrd_archived_clinical_research_datasets_spider.py",
+      "config": "./generated_spiders_batch2/spiders/临床研究数据归档_acrd_archived_clinical_research_datasets_config.json",
+      "readme": "./generated_spiders_batch2/spiders/临床研究数据归档_acrd_archived_clinical_research_datasets_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:28:19.508931",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 4,
+      "estimated_dev_time": "16",
+      "data_extraction": {
+        "list_page_selector": null,
+        "detail_page_selector": null,
+        "fields": {}
+      },
+      "pagination_strategy": "无分页，页面内容无法访问，需先解决403 Forbidden访问限制问题",
+      "file_download_strategy": "待页面正常访问后，根据页面中PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载",
+      "anti_scraping_handling": [
+        "403 Forbidden可能由IP封禁或User-Agent限制导致，尝试更换User-Agent模拟浏览器",
+        "使用代理IP池避免单IP访问频率过高",
+        "添加合理的请求间隔，避免触发服务器安全策略",
+        "检查请求头，模拟浏览器完整请求头信息"
+      ],
+      "special_considerations": [
+        "当前页面返回403 Forbidden，需确认是否有地理位置限制或IP限制",
+        "无API接口，且页面无分页，采集难度较大",
+        "页面无JavaScript渲染需求，故无需Playwright",
+        "需联系网站管理员确认数据开放政策及访问权限"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    # 目前页面403，正常情况下应定位列表条目\n    # 示例：\n    # items = response.css('div.dataset-item')\n    # for item in items:\n    #     detail_url = item.css('a::attr(href)').get()\n    #     yield response.follow(detail_url, self.parse_detail)\n    pass",
+        "parse_detail": "def parse_detail(self, response):\n    # 解析详情页字段\n    # 示例：\n    # title = response.css('h1.title::text').get()\n    # author = response.css('span.author::text').get()\n    # pdf_url = response.css('a.pdf-download::attr(href)').get()\n    # yield {'title': title, 'author': author, 'pdf_url': pdf_url}\n    pass"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "结核病数据门户 TBPP TBPP (TB Portals Program)",
+    "url": "https://tbportals.niaid.nih.gov",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/结核病数据门户_tbpp_tbpp_tb_portals_program_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/结核病数据门户_tbpp_tbpp_tb_portals_program_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/结核病数据门户_tbpp_tbpp_tb_portals_program_spider.py",
+      "config": "./generated_spiders_batch2/spiders/结核病数据门户_tbpp_tbpp_tb_portals_program_config.json",
+      "readme": "./generated_spiders_batch2/spiders/结核病数据门户_tbpp_tbpp_tb_portals_program_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:28:38.167616",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "12",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "a[href^='http://www.hhs.gov/']",
+        "fields": {
+          "title": "li > a::text",
+          "detail_link": "li > a::attr(href)"
+        }
+      },
+      "pagination_strategy": "无分页，所有数据均在单页面加载，直接解析列表即可，无需分页处理",
+      "file_download_strategy": "在详情页中定位PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件链接完整且可访问",
+      "anti_scraping_handling": [
+        "由于无验证码、无登录、无Cloudflare及无明显限速，建议控制请求频率，避免过快请求导致IP被封",
+        "设置合理的下载延迟（如1秒）和并发请求数（如8）",
+        "使用随机User-Agent和请求头模拟正常浏览器访问"
+      ],
+      "special_considerations": [
+        "确认详情页中PDF及补充材料的链接格式，确保能正确抓取并下载",
+        "部分链接指向外部域名（如hhs.gov），需处理跨域请求问题",
+        "页面结构较为简单，无复杂JS渲染，Scrapy足够应对"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        title = li.css('a::text').get()\n        if detail_url and detail_url.startswith('http://www.hhs.gov/'):\n            yield response.follow(detail_url, self.parse_detail, meta={'title': title})",
+        "parse_detail": "def parse_detail(self, response):\n    title = response.meta.get('title')\n    # 示例：抓取PDF链接\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    yield {\n        'title': title,\n        'pdf_links': pdf_links,\n        'detail_url': response.url\n    }"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "衰老研究生物样本库 ARB (Aging Research Biobank)",
+    "url": "https://agingresearchbiobank.nia.nih.gov",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/衰老研究生物样本库_arb_aging_research_biobank_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/衰老研究生物样本库_arb_aging_research_biobank_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/衰老研究生物样本库_arb_aging_research_biobank_spider.py",
+      "config": "./generated_spiders_batch2/spiders/衰老研究生物样本库_arb_aging_research_biobank_config.json",
+      "readme": "./generated_spiders_batch2/spiders/衰老研究生物样本库_arb_aging_research_biobank_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:28:55.658940",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "12",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "ul li > strong, ul li > a, ul li > span",
+          "pdf_link": "ul li a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "由于网站采用无限滚动(infinite_scroll)分页且无API接口，建议通过模拟浏览器滚动行为获取更多数据。考虑到JavaScript执行量较小且无复杂反爬，使用Scrapy结合Splash或Scrapy-Selenium模拟滚动加载，直到无新数据加载为止。",
+      "file_download_strategy": "通过解析列表项中PDF文件的直接链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件名和路径合理保存。下载前可进行HEAD请求确认文件大小及类型。",
+      "anti_scraping_handling": [
+        "网站无验证码、无登录、无明显速率限制，建议合理设置下载延时和并发数，避免过快请求导致IP封禁。",
+        "使用随机User-Agent和请求头模拟真实浏览器请求，降低被识别风险。"
+      ],
+      "special_considerations": [
+        "detail_link_pattern为“#”，说明无详情页，所有信息均在列表页内，采集时需充分解析列表页内容。",
+        "部分数据可能嵌入在文本或HTML标签中，需根据实际HTML结构灵活调整选择器。",
+        "无限滚动加载数据量较大时，需控制爬取深度和数据量，避免资源浪费。"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        title = item.css('strong::text, a::text, span::text').get(default='').strip()\n        pdf_url = item.css('a[href$=\".pdf\"]::attr(href)').get()\n        yield {\n            'title': title,\n            'pdf_url': response.urljoin(pdf_url) if pdf_url else None\n        }\n    # 处理无限滚动通过Splash或Selenium模拟滚动加载更多数据",
+        "parse_detail": "pass  # 无详情页，所有数据均在列表页"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "单细胞阿片-HIV共病研究数据集 SCORCH SCORCH (Single Cell Opioid Responses in the Context of HIV)",
+    "url": "https://nida.nih.gov/about-nida/organization/divisions/division-neuroscience-behavior-dnb/basic-research-hiv-substance-use-disorder/scorch-program",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv_spider.py",
+      "config": "./generated_spiders_batch2/spiders/单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv_config.json",
+      "readme": "./generated_spiders_batch2/spiders/单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:29:19.435397",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "8",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": null,
+        "fields": {
+          "title": "ul li > a::text",
+          "link": "ul li > a::attr(href)"
+        }
+      },
+      "pagination_strategy": "由于页面采用无限滚动加载，但检测到页面内容为静态HTML且无API支持，建议通过Scrapy抓取初始页面所有ul li元素，若内容动态加载则需结合Playwright模拟滚动加载后抓取完整内容。",
+      "file_download_strategy": "页面未检测到可下载文件链接，若后续详情页或列表中出现PDF或补充材料链接，使用Scrapy的FilesPipeline或requests模块下载，需确保链接为完整URL或拼接域名后下载。",
+      "anti_scraping_handling": [
+        "无验证码和明显反爬限制，保持合理请求间隔避免触发服务器限流",
+        "设置User-Agent模拟浏览器请求，避免被简单封禁"
+      ],
+      "special_considerations": [
+        "页面内容较为静态，无需执行JavaScript，Scrapy即可满足需求",
+        "列表项链接pattern为“/”，需确认详情页链接是否存在，若无详情页，直接采集列表信息",
+        "因无API支持，且内容量较大（130条），建议分批抓取，避免请求超时"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        title = item.css('a::text').get()\n        link = item.css('a::attr(href)').get()\n        yield {\n            'title': title,\n            'link': response.urljoin(link) if link else None\n        }",
+        "parse_detail": "# 由于无明确详情页链接，详情页解析暂不实现\n# 若后续确认详情页存在，可实现对应解析函数"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "发育障碍数据库 LDbase LDbase (Developmental Disabilities Database LDbase)",
+    "url": "https://ldbase.org",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase_spider.py",
+      "config": "./generated_spiders_batch2/spiders/发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase_config.json",
+      "readme": "./generated_spiders_batch2/spiders/发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:29:36.522645",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login/infinite_scroll",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "ul li",
+        "detail_page_selector": "ul li a[href^='/data/'], ul li a[href^='/record/']",
+        "fields": {
+          "title": "css=ul li .title, xpath=./descendant::*[contains(@class,'title')]",
+          "author": "css=ul li .author, xpath=./descendant::*[contains(@class,'author')]",
+          "date": "css=ul li .date, xpath=./descendant::*[contains(@class,'date')]",
+          "description": "css=ul li .description, xpath=./descendant::*[contains(@class,'description')]",
+          "pdf_link": "css=ul li a[href$='.pdf']",
+          "supplementary_material_link": "css=ul li a.supplementary-material"
+        }
+      },
+      "pagination_strategy": "由于采用无限滚动(infinite_scroll)分页，使用Playwright模拟用户滚动页面到底部，等待新数据加载，循环此过程直到没有新数据加载为止。",
+      "file_download_strategy": "登录后通过Playwright获取文件下载链接，使用带有登录状态的会话进行文件下载。对PDF及补充材料链接进行请求并保存。支持断点续传和重试机制。",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器行为，避免因无头浏览器特征被识别。",
+        "合理设置滚动和请求间隔，避免触发服务器异常。",
+        "登录时保存并复用cookie，减少频繁登录。",
+        "监控页面变化，若出现登录失效或验证码提示，自动报警或暂停采集。"
+      ],
+      "special_considerations": [
+        "网站需要登录，需实现自动登录流程并处理登录失败。",
+        "无公开API，所有数据需通过页面解析获取。",
+        "无限滚动分页需确保滚动到底部后等待数据加载完成，避免遗漏数据。",
+        "文件下载需保证登录态有效，避免下载失败。",
+        "部分数据字段可能不固定，需根据实际页面结构灵活调整选择器。"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    for item in items:\n        detail_link = await item.query_selector_eval('a', 'a => a.href')\n        title = await item.query_selector_eval('.title', 'el => el.innerText')\n        yield {'title': title, 'detail_link': detail_link}",
+        "parse_detail": "async def parse_detail(page):\n    title = await page.query_selector_eval('.title', 'el => el.innerText')\n    author = await page.query_selector_eval('.author', 'el => el.innerText')\n    date = await page.query_selector_eval('.date', 'el => el.innerText')\n    description = await page.query_selector_eval('.description', 'el => el.innerText')\n    pdf_links = await page.query_selector_all('a[href$=\".pdf\"]')\n    pdf_urls = [await link.get_attribute('href') for link in pdf_links]\n    return {'title': title, 'author': author, 'date': date, 'description': description, 'pdf_urls': pdf_urls}"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "美国国家癌症研究所试验性新药数据库 NCI-IND (NCI Investigational New Drug Database)",
+    "url": "https://cipinddirectory.cancer.gov",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database_spider.py",
+      "config": "./generated_spiders_batch2/spiders/美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database_config.json",
+      "readme": "./generated_spiders_batch2/spiders/美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:29:57.346782",
+    "strategy": {
+      "recommended_method": "scrapy",
+      "spider_template": "basic",
+      "difficulty": 2,
+      "estimated_dev_time": "12",
+      "data_extraction": {
+        "list_page_selector": "table tbody tr",
+        "detail_page_selector": "a[href^='https://pubmed.ncbi.nlm.nih.gov/']",
+        "fields": {
+          "study_title": "table tbody tr td:nth-child(1)",
+          "study_id": "table tbody tr td:nth-child(2)",
+          "status": "table tbody tr td:nth-child(3)",
+          "phase": "table tbody tr td:nth-child(4)",
+          "study_type": "table tbody tr td:nth-child(5)",
+          "start_date": "table tbody tr td:nth-child(6)",
+          "completion_date": "table tbody tr td:nth-child(7)",
+          "detail_link": "table tbody tr td a[href^='https://pubmed.ncbi.nlm.nih.gov/']::attr(href)"
+        }
+      },
+      "pagination_strategy": "网站无分页，所有数据在单一页面的表格中加载，直接抓取全部表格行即可，无需分页处理。",
+      "file_download_strategy": "页面未检测到直接的PDF或补充材料下载链接。若详情页或外部链接（如PubMed）提供PDF文件，需在详情页解析对应下载链接后使用Scrapy的文件下载管道或requests下载文件。",
+      "anti_scraping_handling": [
+        "由于无验证码、无JavaScript渲染、无Cloudflare保护，建议控制请求频率，避免过快访问导致IP被封。",
+        "设置合理的下载延迟和并发数，模拟正常用户访问。",
+        "使用随机User-Agent切换，防止简单的UA封禁。"
+      ],
+      "special_considerations": [
+        "详情链接指向外部PubMed网站，需额外处理跨域请求和数据抓取。",
+        "部分数据字段可能为空或格式不统一，需做好数据清洗和异常处理。",
+        "若后续发现详情页含有PDF或补充材料，需动态扩展文件下载逻辑。"
+      ],
+      "code_snippets": {
+        "parse_list": "def parse(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        item = {}\n        item['study_title'] = row.css('td:nth-child(1)::text').get(default='').strip()\n        item['study_id'] = row.css('td:nth-child(2)::text').get(default='').strip()\n        item['status'] = row.css('td:nth-child(3)::text').get(default='').strip()\n        item['phase'] = row.css('td:nth-child(4)::text').get(default='').strip()\n        item['study_type'] = row.css('td:nth-child(5)::text').get(default='').strip()\n        item['start_date'] = row.css('td:nth-child(6)::text').get(default='').strip()\n        item['completion_date'] = row.css('td:nth-child(7)::text').get(default='').strip()\n        detail_link = row.css('td a[href^=\"https://pubmed.ncbi.nlm.nih.gov/\"]::attr(href)').get()\n        if detail_link:\n            yield response.follow(detail_link, callback=self.parse_detail, meta={'item': item})\n        else:\n            yield item",
+        "parse_detail": "def parse_detail(self, response):\n    item = response.meta['item']\n    # 这里根据PubMed页面结构提取更多字段，例如摘要、作者等\n    item['abstract'] = response.css('div.abstract-content p::text').get(default='').strip()\n    item['authors'] = response.css('div.authors-list span.authors-list-item a::text').getall()\n    # 如果有PDF下载链接\n    pdf_link = response.css('a.pdf-link::attr(href)').get()\n    if pdf_link:\n        yield scrapy.Request(response.urljoin(pdf_link), callback=self.save_pdf, meta={'item': item})\n    else:\n        yield item\n\ndef save_pdf(self, response):\n    item = response.meta['item']\n    # 这里实现PDF文件保存逻辑\n    path = f\"pdfs/{item['study_id']}.pdf\"\n    with open(path, 'wb') as f:\n        f.write(response.body)\n    item['pdf_path'] = path\n    yield item"
+      }
+    }
+  },
+  {
+    "success": true,
+    "platform_name": "临床试验数据共享平台 TS TS (TrialShare)",
+    "url": "https://itntrialshare.org/login/home/login.view?returnUrl=%2Fhome%2Fproject-start.view%3F",
+    "files": {
+      "analysis": "./generated_spiders_batch2/analysis/临床试验数据共享平台_ts_ts_trialshare_analysis.json",
+      "strategy": "./generated_spiders_batch2/strategies/临床试验数据共享平台_ts_ts_trialshare_strategy.json",
+      "spider": "./generated_spiders_batch2/spiders/临床试验数据共享平台_ts_ts_trialshare_spider.py",
+      "config": "./generated_spiders_batch2/spiders/临床试验数据共享平台_ts_ts_trialshare_config.json",
+      "readme": "./generated_spiders_batch2/spiders/临床试验数据共享平台_ts_ts_trialshare_README.md"
+    },
+    "errors": [],
+    "timestamp": "2026-01-18T06:30:22.040435",
+    "strategy": {
+      "recommended_method": "playwright",
+      "spider_template": "playwright/login",
+      "difficulty": 3,
+      "estimated_dev_time": "24",
+      "data_extraction": {
+        "list_page_selector": "table tbody tr",
+        "detail_page_selector": null,
+        "fields": {
+          "study_id": "table tbody tr td:nth-child(1)",
+          "study_name": "table tbody tr td:nth-child(2)",
+          "status": "table tbody tr td:nth-child(3)",
+          "start_date": "table tbody tr td:nth-child(4)",
+          "end_date": "table tbody tr td:nth-child(5)",
+          "pdf_link": "table tbody tr td a[href$='.pdf']"
+        }
+      },
+      "pagination_strategy": "无分页，所有数据均在单页面表格中展示，直接抓取全部表格行数据。",
+      "file_download_strategy": "通过Playwright模拟点击或直接请求PDF链接，确保登录状态下访问，保存PDF文件到本地。",
+      "anti_scraping_handling": [
+        "使用Playwright模拟真实浏览器环境，执行JavaScript，确保页面正常加载。",
+        "保持登录状态，管理好Cookie和会话信息，避免重复登录。",
+        "控制请求频率，避免触发潜在的速率限制。"
+      ],
+      "special_considerations": [
+        "登录过程需要处理表单提交，可能需要验证码外的额外验证步骤，需手动确认登录流程。",
+        "页面数据无分页，数据量较大时需注意内存和性能优化。",
+        "PDF文件下载需确保链接有效且在登录状态下可访问。"
+      ],
+      "code_snippets": {
+        "parse_list": "async def parse_list(page):\n    rows = await page.query_selector_all('table tbody tr')\n    for row in rows:\n        study_id = await row.query_selector_eval('td:nth-child(1)', 'el => el.textContent.trim()')\n        study_name = await row.query_selector_eval('td:nth-child(2)', 'el => el.textContent.trim()')\n        status = await row.query_selector_eval('td:nth-child(3)', 'el => el.textContent.trim()')\n        start_date = await row.query_selector_eval('td:nth-child(4)', 'el => el.textContent.trim()')\n        end_date = await row.query_selector_eval('td:nth-child(5)', 'el => el.textContent.trim()')\n        pdf_element = await row.query_selector('a[href$=\".pdf\"]')\n        pdf_url = await pdf_element.get_attribute('href') if pdf_element else None\n        yield {\n            'study_id': study_id,\n            'study_name': study_name,\n            'status': status,\n            'start_date': start_date,\n            'end_date': end_date,\n            'pdf_url': pdf_url\n        }",
+        "parse_detail": "无详情页，所有数据均在列表页展示，无需额外详情页解析。"
+      }
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "spider_name": "单细胞阿片_hiv共病研究数据集_scorch_scorch_single_cell_opioid_responses_in_the_context_of_hiv",
+  "platform": {
+    "name": "单细胞阿片-HIV共病研究数据集 SCORCH SCORCH (Single Cell Opioid Responses in the Context of HIV)",
+    "url": "https://nida.nih.gov/about-nida/organization/divisions/division-neuroscience-behavior-dnb/basic-research-hiv-substance-use-disorder/scorch-program",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "8"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面内容较为静态，无需执行JavaScript，Scrapy即可满足需求",
+    "列表项链接pattern为“/”，需确认详情页链接是否存在，若无详情页，直接采集列表信息",
+    "因无API支持，且内容量较大（130条），建议分批抓取，避免请求超时"
+  ]
+}

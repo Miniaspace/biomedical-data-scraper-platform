@@ -1,0 +1,32 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='/home/']",
+    "fields": {
+      "title": "css: h1.page-title, or css: ul li a > text",
+      "study_id": "css: ul li span.study-id",
+      "description": "css: div.study-description",
+      "pdf_links": "css: a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动加载，使用Scrapy结合中间件如 scrapy-splash 或 scrapy-playwright 来模拟滚动加载，或分析XHR请求模拟翻页加载；如果页面无XHR请求，采用Playwright自动滚动触发加载，直到所有数据加载完成后开始采集。",
+  "file_download_strategy": "对所有采集到的PDF链接，使用Scrapy的FilesPipeline或自定义下载中间件进行文件下载，确保文件完整性和重试机制；文件命名建议使用研究ID或标题做唯一标识。",
+  "anti_scraping_handling": [
+    "页面无验证码和Cloudflare，反爬较弱，保持合理请求频率避免触发服务器限制",
+    "设置User-Agent和Referer头模拟浏览器请求",
+    "使用IP代理池以防止IP封禁（预防性措施）"
+  ],
+  "special_considerations": [
+    "确保无限滚动加载完全，避免数据截断",
+    "PDF文件链接可能分布在详情页，需先采集详情页链接再访问详情页提取PDF",
+    "部分字段可能在详情页动态加载，若发现数据缺失，可考虑Playwright辅助渲染"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    items = response.css('ul li')\n    for item in items:\n        detail_url = item.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('/home/'):\n            yield response.follow(detail_url, self.parse_detail)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1.page-title::text').get()\n    description = response.css('div.study-description::text').get()\n    pdf_urls = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    yield {\n        'title': title.strip() if title else None,\n        'description': description.strip() if description else None,\n        'pdf_urls': [response.urljoin(url) for url in pdf_urls]\n    }"
+  }
+}

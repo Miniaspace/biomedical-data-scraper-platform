@@ -1,0 +1,37 @@
+{
+  "url": "https://agingresearchbiobank.nia.nih.gov",
+  "domain": "agingresearchbiobank.nia.nih.gov",
+  "site_type": "biobank",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 54
+      }
+    ],
+    "detail_link_pattern": "#",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/agingresearchbiobank_nia_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n        \n            \n                \n                <script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CSLL4ZEK4L&amp;cx=c&amp;gtm=4e61e1\" nonce=\"\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\" nonce=\"\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-FWPK5VXCPM&amp;cx=c&amp;gtm=4e61e1\" nonce=\"\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-132935856-1\"></script>\n            \n        \n        \n    \n        <meta name=\"description\" content=\"AgingResearchBiobank provides a state-of-the-art inventory system for the storage and distribution of NIA collections to the broader scientific community.\">\n    \n    <meta name=\"keywords\" content=\"NIA, Aging Research Biobank, AgingResearchBiobank, Biobank, AgingResearch, ResearchBiobank, Aging, Research, NIA Collections, NIA Studies\">\n    <meta name=\"robots\" content=\"index,follow\">\n    \n            <meta charset=\"utf-8\">\n            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=yes\">\n            <title>\n                \n                    AgingResearchBiobank\n                \n            </title>\n            <link href=\"/static/bioshare/vendor/font.googleapis.9786e5a4a6a3.css\" rel=\"stylesheet\" type=\"text/css\">\n            \n                <link rel=\"shortcut icon\" href=\"/static/favicon.6c30e540d6a6.png\">\n            \n            \n                \n\n\n<link rel=\"stylesheet\" href=\"/static/jquery-ui/jquery-ui.min.fbf8e4a04da9.css\">\n\n    <link rel=\"stylesheet\" href=\"/static/bootstrap/css/bootstrap.min.14c8259dede6.css\">\n\n<link rel=\"stylesheet\" href=\"/static/bioshare/vendor/DataTables/datatables.min.d30d3b5e0b5a.css\">\n<link href=\"/static/compiled/css/bioshare.11c4f558deb8.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n\n\n\n            \n            \n            \n            \n                \n\n    <script nonce=\"\" async=\"\" type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=HHS\"></script>\n\n\n\n            \n        \n\n        <script nonce=\"\" type=\"text/javascript\">\n        // Fix for Firefox autofocus CSS bug (FF < 60)\n        // https://bugzilla.mozilla.org/show_bug.cgi?id=712130\n        // See: http://stackoverflow.com/questions/18943276/html-5-autofocus-messes-up-css-loading/18945951#18945951\n        </script>\n    <style data-cke=\"true\">.ck-hidden{display:none!important}.ck-reset_all :not(.ck-reset_all-excluded *),.ck.ck-reset,.ck.ck-reset_all{box-sizing:border-box;height:auto;position:static;width:auto}:root{--ck-z-default:1;--ck-z-modal:calc(var(--ck-z-default) + 999)}.ck-transitions-disabled,.ck-transitions-disabled *{transition:none!important}:root{--ck-powered-by-line-height:10px;--ck-powered-by-padding-vertical:2px;--ck-powered-by-padding-horizontal:4px;--ck-powered-by-text-color:#4f4f4f;--ck-powered-by-border-radius:var(--ck-border-radius);--ck-powered-by-background:#fff;--ck-powered-by-border-color:var(--ck-color-focus-border)}.ck.ck-balloon-panel.ck-powered-by-balloon{--ck-border-radius:var(--ck-powered-by-border-radius);background:var(--ck-powered-by-background);box-shadow:none;min-height:unset;z-index:calc(var(--ck-z-modal) - 1)}.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by{line-height:var(--ck-powered-by-line-height)}.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by a{align-items:center;cursor:pointer;display:flex;filter:grayscale(80%);line-height:var(--ck-powered-by-line-height);opacity:.66;padding:var(--ck-powered-by-padding-vertical) var(--ck-powered-by-padding-horizontal)}.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by .ck-powered-by__label{color:var(--ck-powered-by-text-color);cursor:pointer;font-size:7.5px;font-weight:700;letter-spacing:-.2px;line-height:normal;margin-right:4px;padding-left:2px;text-transform:uppercase}.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by .ck-icon{cursor:pointer;display:block}.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by:hover a{filter:grayscale(0);opacity:1}.ck.ck-balloon-panel.ck-powered-by-balloon[class*=position_inside]{border-color:transparent}.ck.ck-balloon-panel.ck-powered-by-balloon[class*=position_border]{border:var(--ck-focus-ring);border-color:var(--ck-powered-by-border-color)}:root{--ck-color-base-foreground:#fafafa;--ck-color-base-background:#fff;--ck-color-base-border:#ccced1;--ck-color-base-action:#53a336;--ck-color-base-focus:#6cb5f9;--ck-color-base-text:#333;--ck-color-base-active:#2977ff;--ck-color-base-active-focus:#0d65ff;--ck-color-base-error:#db3700;--ck-color-focus-border-coordinates:218,81.8%,56.9%;--ck-color-focus-border:hsl(var(--ck-color-focus-border-coordinates));--ck-color-focus-outer-shadow:#cae1fc;--ck-color-focus-disabled-shadow:rgba(119,186,248,"
+}

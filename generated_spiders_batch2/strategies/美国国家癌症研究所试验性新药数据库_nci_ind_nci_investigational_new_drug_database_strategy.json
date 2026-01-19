@@ -1,0 +1,36 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": "a[href^='https://pubmed.ncbi.nlm.nih.gov/']",
+    "fields": {
+      "study_title": "table tbody tr td:nth-child(1)",
+      "study_id": "table tbody tr td:nth-child(2)",
+      "status": "table tbody tr td:nth-child(3)",
+      "phase": "table tbody tr td:nth-child(4)",
+      "study_type": "table tbody tr td:nth-child(5)",
+      "start_date": "table tbody tr td:nth-child(6)",
+      "completion_date": "table tbody tr td:nth-child(7)",
+      "detail_link": "table tbody tr td a[href^='https://pubmed.ncbi.nlm.nih.gov/']::attr(href)"
+    }
+  },
+  "pagination_strategy": "网站无分页，所有数据在单一页面的表格中加载，直接抓取全部表格行即可，无需分页处理。",
+  "file_download_strategy": "页面未检测到直接的PDF或补充材料下载链接。若详情页或外部链接（如PubMed）提供PDF文件，需在详情页解析对应下载链接后使用Scrapy的文件下载管道或requests下载文件。",
+  "anti_scraping_handling": [
+    "由于无验证码、无JavaScript渲染、无Cloudflare保护，建议控制请求频率，避免过快访问导致IP被封。",
+    "设置合理的下载延迟和并发数，模拟正常用户访问。",
+    "使用随机User-Agent切换，防止简单的UA封禁。"
+  ],
+  "special_considerations": [
+    "详情链接指向外部PubMed网站，需额外处理跨域请求和数据抓取。",
+    "部分数据字段可能为空或格式不统一，需做好数据清洗和异常处理。",
+    "若后续发现详情页含有PDF或补充材料，需动态扩展文件下载逻辑。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        item = {}\n        item['study_title'] = row.css('td:nth-child(1)::text').get(default='').strip()\n        item['study_id'] = row.css('td:nth-child(2)::text').get(default='').strip()\n        item['status'] = row.css('td:nth-child(3)::text').get(default='').strip()\n        item['phase'] = row.css('td:nth-child(4)::text').get(default='').strip()\n        item['study_type'] = row.css('td:nth-child(5)::text').get(default='').strip()\n        item['start_date'] = row.css('td:nth-child(6)::text').get(default='').strip()\n        item['completion_date'] = row.css('td:nth-child(7)::text').get(default='').strip()\n        detail_link = row.css('td a[href^=\"https://pubmed.ncbi.nlm.nih.gov/\"]::attr(href)').get()\n        if detail_link:\n            yield response.follow(detail_link, callback=self.parse_detail, meta={'item': item})\n        else:\n            yield item",
+    "parse_detail": "def parse_detail(self, response):\n    item = response.meta['item']\n    # 这里根据PubMed页面结构提取更多字段，例如摘要、作者等\n    item['abstract'] = response.css('div.abstract-content p::text').get(default='').strip()\n    item['authors'] = response.css('div.authors-list span.authors-list-item a::text').getall()\n    # 如果有PDF下载链接\n    pdf_link = response.css('a.pdf-link::attr(href)').get()\n    if pdf_link:\n        yield scrapy.Request(response.urljoin(pdf_link), callback=self.save_pdf, meta={'item': item})\n    else:\n        yield item\n\ndef save_pdf(self, response):\n    item = response.meta['item']\n    # 这里实现PDF文件保存逻辑\n    path = f\"pdfs/{item['study_id']}.pdf\"\n    with open(path, 'wb') as f:\n        f.write(response.body)\n    item['pdf_path'] = path\n    yield item"
+  }
+}

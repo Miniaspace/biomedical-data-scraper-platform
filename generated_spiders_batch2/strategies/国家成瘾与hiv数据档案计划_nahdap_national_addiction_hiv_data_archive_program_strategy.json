@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 4,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href*='/sites/nahdap/find-access-data']",
+    "fields": {
+      "title": "ul li > a > h3, ul li > a > div.title, or ul li > a (根据具体结构调整)",
+      "author": "ul li .author, ul li .contributor (需根据实际DOM确认)",
+      "description": "ul li .description, ul li p.summary",
+      "download_links": "a[href$='.pdf'], a[href*='supplemental'], a.download-link"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite scroll)，使用Playwright模拟用户滚动页面，等待新内容加载，直到所有数据加载完成或达到预设最大条数。结合页面元素变化判断加载结束。",
+  "file_download_strategy": "拦截页面中的文件下载链接，结合Playwright的下载API进行文件下载。对PDF和补充材料链接单独处理，确保文件完整性。支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免简单UA检测",
+    "合理设置请求间隔，避免触发Cloudflare防护",
+    "登录环节采用自动化填写表单和Cookie持久化，减少重复登录",
+    "使用代理池分散请求IP，降低被封风险"
+  ],
+  "special_considerations": [
+    "登录是必须步骤，需提前获取有效账号和密码",
+    "Cloudflare防护可能导致请求延迟，需设置合理超时和重试",
+    "无限滚动加载可能导致内存占用较高，需分批保存数据",
+    "页面结构可能动态变化，需定期维护选择器"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        link = await item.query_selector('a[href*=\"/sites/nahdap/find-access-data\"]')\n        title = await item.inner_text()\n        href = await link.get_attribute('href') if link else None\n        results.append({'title': title.strip(), 'detail_url': href})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.title')\n    author = await page.text_content('.author')\n    description = await page.text_content('.description')\n    download_links = await page.query_selector_all('a[href$=\".pdf\"], a.download-link')\n    files = []\n    for link in download_links:\n        url = await link.get_attribute('href')\n        files.append(url)\n    return {'title': title.strip(), 'author': author.strip(), 'description': description.strip(), 'files': files}"
+  }
+}

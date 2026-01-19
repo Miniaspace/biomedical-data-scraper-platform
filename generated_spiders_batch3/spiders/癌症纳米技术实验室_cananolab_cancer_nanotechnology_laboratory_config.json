@@ -1,0 +1,24 @@
+{
+  "spider_name": "癌症纳米技术实验室_cananolab_cancer_nanotechnology_laboratory",
+  "platform": {
+    "name": "癌症纳米技术实验室 caNanoLab (Cancer Nanotechnology Laboratory)",
+    "url": "https://cananolab.cancer.gov/#",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程复杂，需支持账号密码自动登录并验证登录成功",
+    "页面内容动态加载，需等待网络请求完成后再提取数据",
+    "无公开API，所有数据需通过页面渲染抓取",
+    "文件下载链接可能需要额外请求跳转或验证，需处理重定向和cookie"
+  ]
+}

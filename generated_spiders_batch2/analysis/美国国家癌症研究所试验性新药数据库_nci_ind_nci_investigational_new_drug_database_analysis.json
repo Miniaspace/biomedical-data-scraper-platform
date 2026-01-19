@@ -1,0 +1,35 @@
+{
+  "url": "https://cipinddirectory.cancer.gov",
+  "domain": "cipinddirectory.cancer.gov",
+  "site_type": "clinical_trial",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 123
+      }
+    ],
+    "detail_link_pattern": "https://pubmed.ncbi.nlm.nih.gov/27909986",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/cipinddirectory_cancer_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CSLL4ZEK4L&amp;cx=c&amp;gtm=4e61f0h2\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-7DY8NBQXN4\"></script>\n    <script>\n      window.dataLayer = window.dataLayer || [];\n      function gtag() {\n        dataLayer.push(arguments);\n      }\n      gtag(\"js\", new Date());\n      gtag(\"config\", \"G-7DY8NBQXN4\");\n    </script>\n    <title>CIP IND Directory</title>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" href=\"styles/main.css\">\n  <script src=\"https://assets.adobedtm.com/6a4249cd0a2c/785de09de161/launch-70d67a6a40a8.min.js\" async=\"\"></script><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement.min.js\" async=\"\"></script><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement_Module_ActivityMap.min.js\" async=\"\"></script><script src=\"https://assets.adobedtm.com/6a4249cd0a2c/785de09de161/299c1ac2773b/RC4f8f47c0a2b44884811206fff5587447-source.min.js\" async=\"\"></script><script type=\"text/javascript\" id=\"_fed_an_ua_tag\" src=\"https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=NCI\"></script><script src=\"https://dap.digitalgov.gov/web-vitals/dist/web-vitals.attribution.iife.js\"></script><script type=\"text/javascript\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CSLL4ZEK4L\"></script></head>\n  <body>\n    <header class=\"mb-2\">\n      <div class=\"bg-danger d-flex justify-content-between align-items-center\">\n        <a title=\"The National Cancer Institute\" href=\"https://www.cancer.gov\">\n          <img src=\"images/red-ncilogo.gif\" class=\"p-1\" alt=\"Red NCI Logo\">\n        </a>\n        <small class=\"d-flex me-1 text-white\">\n          <a class=\"link-light text-decoration-none small sep\" href=\"http://www.cancer.gov\" target=\"_blank\" rel=\"noopener noreferrer\">\n            www.cancer.gov\n          </a>\n          <a class=\"link-light text-decoration-none small\" href=\"http://www.nih.gov\" rel=\"noopener noreferrer\">\n            at the National Institutes of Health\n          </a>\n        </small>\n      </div>\n      <a title=\"Cancer Imaging Program\" href=\"http://imaging.cancer.gov\"><img src=\"images/cip_logo.gif\" alt=\"CIP Logo\"></a>\n    </header>\n    <main class=\"container-fluid border-bottom\">\n      <div class=\"d-flex justify-content-between mb-3\">\n        <a class=\"d-flex align-items-center\" href=\"javascript:print()\">\n          <img class=\"me-1\" src=\"images/icon-print-sml.gif\" alt=\"Print Icon\">\n          Print This Page\n        </a>\n        <span> Contact us at <a href=\"mailto:NCICIPINDDirectory@mail.nih.gov\">NCICIPINDDirectory@mail.nih.gov</a></span>\n      </div>\n\n      <h1 class=\"h4 fw-bold\">Welcome to the CIP IND Directory - a centralized resource to facilitate the sharing of IND information.</h1>\n\n      <div class=\"mb-3\">\n        To contribute your IND information to the directory, please contact us via email with the\n        <a href=\"#new-agent-instructions\">following information</a>.\n      </div>\n\n      <div id=\"records\" class=\"table-responsive mb-1\"><table class=\"table table-sm table-bordered border-black border border-2 align-middle mb-0\"><thead class=\"bg-info\"><tr class=\"table-info border-black\"><th class=\"text-center\">Agent Name</th><th class=\"text-center\">IND #</th><th class=\"text-center\">Letter of Authorization available</th><th class=\"text-center\">Contact Institution</th><th class=\"text-center\">Contact</th><th class=\"text-center\">Source DOC Issue Date</th><th class=\"text-center\">Source Documentation</th><th class=\"text-center\">clinicaltrials.gov</th><th class=\"text-center\">Synonym(s)</th></tr></thead><tbody><tr class=\"text-center table-secondary border-black\"><td rowspan=\"1\"><div>ABY-029</div></td><td rowspan=\"1\"><div>122681</div></td><td rowspan=\"1\"><div></div></td><td rowspan=\"1\"><div>eIND - Dartmouth</div></td><td rowspan=\"1\">See Source Document</td><td rowspan=\"1\"><div>2017</div></td><td rowspan=\"1\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://pubmed.ncbi.nlm.nih.gov/27909986\">27909986</a></td><td rowspan=\"1\"></td><td rowspan=\"1\"><ul class=\"text-start\"></ul></td></tr><tr class=\"text-center\"><td rowspan=\"1\"><div>MB<sub>KDR</sub></div></td><td rowspan=\"1\"><div>UNPUBLISHED</div></td><td rowspan=\"1\"><div></div></td><td rowspan=\"1\"><div>Stanford</div></td><td rowspan=\"1\">See Source Document</td><td rowspan=\"1\"><div>2017</div></td><td rowspan=\"1\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://pubmed.ncbi.nlm.nih.gov/28291391\">28291391</a></td><td rowspan=\"1\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://clinicaltrials.gov/ct2/show/NCT02142608\">NCT02142608</a><br></td><td rowspan=\"1\"><ul class=\"text-start\"><li>BR55<br><"
+}

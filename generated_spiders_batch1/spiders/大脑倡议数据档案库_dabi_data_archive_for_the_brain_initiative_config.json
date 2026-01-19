@@ -1,0 +1,23 @@
+{
+  "spider_name": "大脑倡议数据档案库_dabi_data_archive_for_the_brain_initiative",
+  "platform": {
+    "name": "大脑倡议数据档案库 DABI (Data Archive for the BRAIN Initiative)",
+    "url": "https://dabi.loni.usc.edu",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要处理多因素认证或验证码时需额外开发对应模块",
+    "页面数据依赖JavaScript渲染，纯Scrapy无法有效采集",
+    "文件下载链接可能动态生成，需在详情页完全加载后提取"
+  ]
+}

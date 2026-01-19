@@ -1,0 +1,25 @@
+{
+  "spider_name": "罕见病治疗加速器数据平台_rdca_dap_rare_disease_cures_accelerator_data_and_analytics_platform",
+  "platform": {
+    "name": "罕见病治疗加速器数据平台 RDCA-DAP (Rare Disease Cures Accelerator - Data and Analytics Platform)",
+    "url": "https://portal.rdca.c-path.org",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录认证是必须步骤，需实现自动登录并处理登录失败情况",
+    "页面内容依赖JavaScript渲染，必须使用Playwright或类似工具",
+    "无API接口，需从页面DOM解析所有数据",
+    "文件下载需保持登录态，避免下载链接失效",
+    "页面结构可能动态变化，需定期维护选择器"
+  ]
+}

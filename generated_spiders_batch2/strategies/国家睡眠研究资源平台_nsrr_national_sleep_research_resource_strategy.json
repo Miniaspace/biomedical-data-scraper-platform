@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='/pages/']",
+    "fields": {
+      "title": "css=h1.page-title, xpath=//h1[contains(@class,'page-title')]",
+      "authors": "css=.author-list, xpath=//div[contains(@class,'author-list')]",
+      "abstract": "css=.abstract, xpath=//section[contains(@class,'abstract')]",
+      "publication_date": "css=.pub-date, xpath=//time[contains(@class,'pub-date')]",
+      "pdf_link": "css=a[href$='.pdf'], xpath=//a[contains(@href,'.pdf')]",
+      "supplementary_materials": "css=a.supplementary, xpath=//a[contains(@class,'supplementary')]"
+    }
+  },
+  "pagination_strategy": "无分页，需遍历首页所有列表项，若数据量大需结合登录后动态加载或筛选功能进行分批采集",
+  "file_download_strategy": "通过Playwright模拟登录后，使用页面中直接可访问的PDF和补充材料链接进行文件下载，确保带上登录cookie和header，避免重定向到登录页",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，自动处理登录和验证码弹窗",
+    "针对验证码，尝试人工打码或集成第三方验证码识别服务",
+    "控制请求频率，模拟正常用户浏览节奏，避免触发异常检测"
+  ],
+  "special_considerations": [
+    "登录是必须步骤，需稳定实现登录流程并维护会话",
+    "验证码可能在登录或关键操作时出现，需预留人工干预接口",
+    "网站无API，数据结构较简单但需处理登录和验证码，采集难度较高"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    for item in items:\n        link = await item.query_selector('a')\n        href = await link.get_attribute('href')\n        if href and href.startswith('/pages/'):\n            await page.context.new_page().goto(f'https://sleepdata.org{href}')\n            # 进一步处理详情页",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.page-title')\n    authors = await page.text_content('.author-list')\n    abstract = await page.text_content('.abstract')\n    pub_date = await page.get_attribute('time.pub-date', 'datetime')\n    pdf_link = await page.get_attribute('a[href$=\".pdf\"]', 'href')\n    # 下载pdf时需保持登录状态\n    return {\n        'title': title.strip() if title else '',\n        'authors': authors.strip() if authors else '',\n        'abstract': abstract.strip() if abstract else '',\n        'publication_date': pub_date,\n        'pdf_link': pdf_link\n    }"
+  }
+}

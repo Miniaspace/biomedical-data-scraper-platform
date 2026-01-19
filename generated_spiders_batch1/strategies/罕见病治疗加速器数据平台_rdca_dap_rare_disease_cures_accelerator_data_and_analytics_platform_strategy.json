@@ -1,0 +1,36 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul li > div.title, ul li > h3.title",
+      "author": "ul li > div.author, ul li > span.author",
+      "date": "ul li > div.date, ul li > span.date",
+      "pdf_link": "ul li a[href$='.pdf']",
+      "supplementary_material_link": "ul li a.supplementary"
+    }
+  },
+  "pagination_strategy": "无分页，全部数据在单页面加载，直接抓取全部列表项",
+  "file_download_strategy": "通过Playwright模拟点击或直接请求PDF及补充材料链接，保持登录态，使用流式下载保存文件",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器环境，执行JavaScript，绕过Cloudflare防护",
+    "保持登录状态，管理cookie和会话，避免重复登录",
+    "设置合理的请求间隔，避免触发潜在的速率限制",
+    "使用代理IP池分散请求，防止IP封禁"
+  ],
+  "special_considerations": [
+    "登录认证是必须步骤，需实现自动登录并处理登录失败情况",
+    "页面内容依赖JavaScript渲染，必须使用Playwright或类似工具",
+    "无API接口，需从页面DOM解析所有数据",
+    "文件下载需保持登录态，避免下载链接失效",
+    "页面结构可能动态变化，需定期维护选择器"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('div.title, h3.title', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('div.author, span.author', 'el => el.textContent.trim()')\n        date = await item.query_selector_eval('div.date, span.date', 'el => el.textContent.trim()')\n        pdf_link = await item.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href').catch(lambda e: None)\n        supp_link = await item.query_selector_eval('a.supplementary', 'el => el.href').catch(lambda e: None)\n        results.append({\n            'title': title,\n            'author': author,\n            'date': date,\n            'pdf_link': pdf_link,\n            'supplementary_link': supp_link\n        })\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 由于无详细链接，详情页解析可忽略或根据需要扩展\n    pass"
+  }
+}

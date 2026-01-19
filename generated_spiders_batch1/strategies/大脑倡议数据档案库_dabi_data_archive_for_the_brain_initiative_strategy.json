@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "div[data-testid='record-list'] > div.record-item",
+    "detail_page_selector": "div[data-testid='record-detail']",
+    "fields": {
+      "title": "h1.record-title",
+      "authors": "div.authors-list > span.author-name",
+      "publication_date": "span.pub-date",
+      "abstract": "div.abstract-section > p",
+      "pdf_link": "a.download-pdf[href$='.pdf']",
+      "supplementary_materials": "a.supplementary-download"
+    }
+  },
+  "pagination_strategy": "使用Playwright模拟用户滚动页面，触发infinite scroll加载更多数据，直到加载完所有数据或达到预设的最大条数。通过监听网络请求或DOM变化确认新数据加载完成。",
+  "file_download_strategy": "通过Playwright拦截下载链接，结合登录态请求PDF及补充材料文件，保存到本地。对大文件采用分块下载或断点续传策略，确保文件完整性。",
+  "anti_scraping_handling": [
+    "模拟真实用户行为，控制滚动速度和间隔，避免触发异常检测",
+    "保持登录态Cookie和Session，定期刷新登录状态",
+    "设置合理的请求间隔，避免频繁请求导致账号封禁"
+  ],
+  "special_considerations": [
+    "登录流程需要处理多因素认证或验证码时需额外开发对应模块",
+    "页面数据依赖JavaScript渲染，纯Scrapy无法有效采集",
+    "文件下载链接可能动态生成，需在详情页完全加载后提取"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    records = await page.query_selector_all(\"div[data-testid='record-list'] > div.record-item\")\n    for record in records:\n        detail_url = await record.query_selector_eval('a.detail-link', 'el => el.href')\n        yield detail_url",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.record-title')\n    authors = await page.eval_on_selector_all('div.authors-list > span.author-name', 'nodes => nodes.map(n => n.textContent)')\n    pub_date = await page.text_content('span.pub-date')\n    abstract = await page.text_content('div.abstract-section > p')\n    pdf_url = await page.get_attribute('a.download-pdf', 'href')\n    supplementary_urls = await page.eval_on_selector_all('a.supplementary-download', 'nodes => nodes.map(n => n.href)')\n    return {\n        'title': title.strip(),\n        'authors': authors,\n        'publication_date': pub_date.strip(),\n        'abstract': abstract.strip(),\n        'pdf_url': pdf_url,\n        'supplementary_materials': supplementary_urls\n    }"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "spider_name": "国立精神卫生研究所数据存档库_nda_national_institute_of_mental_health_data_archive",
+  "platform": {
+    "name": "国立精神卫生研究所数据存档库 NDA (National Institute of Mental Health Data Archive)",
+    "url": "https://nda.nih.gov/nda/access-data-info.html",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需自动化处理，可能涉及多因素认证或验证码，需提前确认登录接口和流程",
+    "页面无API接口，所有数据需通过渲染后的DOM提取",
+    "部分文件下载链接可能需要额外请求头或Referer，需抓包确认"
+  ]
+}

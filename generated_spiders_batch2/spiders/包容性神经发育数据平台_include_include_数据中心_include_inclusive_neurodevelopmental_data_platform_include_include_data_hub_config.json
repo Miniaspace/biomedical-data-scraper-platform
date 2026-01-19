@@ -1,0 +1,23 @@
+{
+  "spider_name": "包容性神经发育数据平台_include_include_数据中心_include_inclusive_neurodevelopmental_data_platform_include_include_data_hub",
+  "platform": {
+    "name": "包容性神经发育数据平台 INCLUDE (INCLUDE 数据中心) INCLUDE (Inclusive Neurodevelopmental Data Platform INCLUDE (INCLUDE Data Hub))",
+    "url": "https://portal.includedcc.org/login?redirect_path=/dashboard",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "hybrid",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需模拟完整，包括验证码无但需处理多因素认证或动态token",
+    "API请求可能包含动态签名或token，需分析请求头和参数，动态生成",
+    "确保文件下载时携带有效身份验证信息，避免403错误"
+  ]
+}

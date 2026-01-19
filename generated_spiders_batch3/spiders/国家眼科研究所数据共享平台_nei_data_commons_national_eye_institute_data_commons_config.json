@@ -1,0 +1,23 @@
+{
+  "spider_name": "国家眼科研究所数据共享平台_nei_data_commons_national_eye_institute_data_commons",
+  "platform": {
+    "name": "国家眼科研究所数据共享平台 NEI Data Commons (National Eye Institute Data Commons)",
+    "url": "https://neidatacommons.nei.nih.gov",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面JavaScript加载较少，Scrapy直接请求即可，无需Playwright",
+    "无限滚动需模拟前端行为，推荐使用scrapy-playwright或scrapy-selenium辅助",
+    "注意详情页链接为相对路径，需拼接完整URL"
+  ]
+}

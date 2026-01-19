@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "study_name": "table tbody tr td:nth-child(1)",
+      "study_description": "table tbody tr td:nth-child(2)",
+      "study_date": "table tbody tr td:nth-child(3)",
+      "download_links": "table tbody tr td a[href$='.pdf'], table tbody tr td a[href$='.zip'], table tbody tr td a[href$='.csv']"
+    }
+  },
+  "pagination_strategy": "无分页，页面一次性加载所有数据，直接抓取当前页面全部表格行",
+  "file_download_strategy": "通过Playwright模拟点击下载链接，处理文件保存路径和命名，支持断点续传和重试机制",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免被Cloudflare拦截",
+    "登录时处理验证码，采用手动输入或第三方验证码识别服务",
+    "设置合理的请求间隔，避免触发反爬机制",
+    "使用代理IP池分散请求来源"
+  ],
+  "special_considerations": [
+    "登录流程复杂，需实现动态验证码处理",
+    "网站无API，所有数据均需从页面解析",
+    "文件下载链接可能分散在表格不同列，需全面提取",
+    "Cloudflare防护可能导致请求失败，需重试和异常捕获"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    rows = await page.query_selector_all('table tbody tr')\n    for row in rows:\n        study_name = await row.query_selector_eval('td:nth-child(1)', 'el => el.textContent.trim()')\n        study_description = await row.query_selector_eval('td:nth-child(2)', 'el => el.textContent.trim()')\n        study_date = await row.query_selector_eval('td:nth-child(3)', 'el => el.textContent.trim()')\n        download_links = await row.query_selector_all('a[href$=\".pdf\"], a[href$=\".zip\"], a[href$=\".csv\"]')\n        files = []\n        for link in download_links:\n            href = await link.get_attribute('href')\n            files.append(href)\n        yield {\n            'study_name': study_name,\n            'study_description': study_description,\n            'study_date': study_date,\n            'files': files\n        }",
+    "parse_detail": "null"
+  }
+}

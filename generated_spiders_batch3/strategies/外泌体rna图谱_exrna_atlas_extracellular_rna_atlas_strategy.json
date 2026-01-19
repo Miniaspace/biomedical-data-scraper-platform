@@ -1,0 +1,34 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": "css=div.article-content, css=div#main-content",
+    "fields": {
+      "title": "css=h1.article-title, xpath=//h1[contains(@class,'article-title')]",
+      "authors": "css=div.authors-list, xpath=//div[contains(@class,'authors-list')]",
+      "abstract": "css=div.abstract, xpath=//div[contains(@class,'abstract')]",
+      "publication_date": "css=div.pub-date, xpath=//div[contains(@class,'pub-date')]",
+      "pdf_link": "xpath=//a[contains(text(),'PDF') or contains(@href,'.pdf')]/@href",
+      "supplementary_materials": "xpath=//a[contains(text(),'Supplementary') or contains(text(),'Supplemental')]/@href"
+    }
+  },
+  "pagination_strategy": "由于网站采用无限滚动（infinite_scroll），通过模拟页面滚动触发加载更多内容。Scrapy本身不支持JS渲染，建议结合Splash或Playwright中间件实现滚动加载，或分析网络请求模拟分页参数请求数据。",
+  "file_download_strategy": "解析详情页中PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保链接为绝对URL，若为相对路径则拼接域名。",
+  "anti_scraping_handling": [
+    "设置合理的下载延迟和并发数，避免过快请求导致封禁",
+    "使用随机User-Agent和请求头模拟正常浏览器行为",
+    "监控请求失败率，自动重试失败请求"
+  ],
+  "special_considerations": [
+    "网站无登录和复杂反爬，采集难度较低，但需处理无限滚动加载",
+    "无检测到API接口，需基于页面解析数据",
+    "文件下载链接需确认是否直接可访问，避免跳转或权限限制"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    rows = response.css('table tbody tr')\n    for row in rows:\n        detail_url = row.css('a::attr(href)').get()\n        if detail_url:\n            yield response.follow(detail_url, callback=self.parse_detail)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1.article-title::text').get()\n    authors = response.css('div.authors-list::text').getall()\n    abstract = response.css('div.abstract::text').get()\n    pub_date = response.css('div.pub-date::text').get()\n    pdf_url = response.xpath(\"//a[contains(text(),'PDF') or contains(@href,'.pdf')]/@href\").get()\n    supplementary_urls = response.xpath(\"//a[contains(text(),'Supplementary') or contains(text(),'Supplemental')]/@href\").getall()\n    yield {\n        'title': title,\n        'authors': authors,\n        'abstract': abstract,\n        'publication_date': pub_date,\n        'pdf_url': response.urljoin(pdf_url) if pdf_url else None,\n        'supplementary_urls': [response.urljoin(url) for url in supplementary_urls]\n    }"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "spider_name": "慢性阻塞性肺病亚群及中间结局指标研究_spiromics_the_subpopulations_and_intermediate_outcome_measures_in_copd_study",
+  "platform": {
+    "name": "慢性阻塞性肺病亚群及中间结局指标研究 SPIROMICS (The Subpopulations and Intermediate Outcome Measures in COPD Study)",
+    "url": "https://www.spiromics.org/spiromics/",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要处理可能的多因素验证或登录验证码（目前未检测到），需预留接口",
+    "无限滚动加载可能存在加载失败或超时情况，需增加重试和异常处理机制",
+    "PDF文件下载需保证cookie或token有效，避免403拒绝访问"
+  ]
+}

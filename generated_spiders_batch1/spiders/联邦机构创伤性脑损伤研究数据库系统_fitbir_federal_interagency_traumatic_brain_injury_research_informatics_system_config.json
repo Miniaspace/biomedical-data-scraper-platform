@@ -1,0 +1,23 @@
+{
+  "spider_name": "联邦机构创伤性脑损伤研究数据库系统_fitbir_federal_interagency_traumatic_brain_injury_research_informatics_system",
+  "platform": {
+    "name": "联邦机构创伤性脑损伤研究数据库系统 FITBIR (Federal Interagency Traumatic Brain Injury Research Informatics System)",
+    "url": "https://fitbir.nih.gov/content/access-data",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面不依赖JavaScript渲染，Scrapy即可完成采集，无需Playwright。",
+    "确认所有PDF链接均可直接访问，若有权限限制需额外处理。",
+    "注意列表项中可能存在无效链接或重复数据，需做数据清洗。"
+  ]
+}

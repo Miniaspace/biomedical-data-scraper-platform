@@ -1,0 +1,23 @@
+{
+  "spider_name": "nih数据共享云计划_nih_dc_nih_data_commons",
+  "platform": {
+    "name": "NIH数据共享云计划 NIH DC (NIH Data Commons)",
+    "url": "https://commonfund.nih.gov/commons",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站基于Drupal 10构建，结构相对稳定，CSS选择器较为可靠。",
+    "无登录和动态加载需求，Scrapy即可满足采集需求，无需Playwright。",
+    "注意采集时尊重robots.txt及网站使用条款，避免过度请求。"
+  ]
+}

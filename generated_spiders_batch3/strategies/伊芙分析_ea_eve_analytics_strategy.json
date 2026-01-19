@@ -1,0 +1,32 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 4,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul li div.title",
+      "author": "ul li div.author",
+      "date": "ul li div.date",
+      "summary": "ul li div.summary"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动分页，使用Playwright模拟用户滚动页面，等待新数据加载完成后继续滚动，直到加载完全部数据或达到预设的最大条数。",
+  "file_download_strategy": "在数据项中检测PDF文件或补充材料的下载链接，使用Playwright模拟点击或直接请求文件URL进行下载，需保持登录状态和cookie，支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "使用Playwright保证JavaScript渲染，模拟真实浏览器行为，避免因无JS渲染导致数据缺失。",
+    "保持登录状态，使用cookie/session持久化，避免频繁登录触发安全检测。",
+    "控制滚动和请求频率，模拟正常用户行为，防止触发潜在的速率限制。"
+  ],
+  "special_considerations": [
+    "网站无公开API，需全程模拟浏览器操作完成数据加载和交互。",
+    "登录流程复杂，需提前准备账号密码，处理可能的登录验证码或多因素认证。",
+    "无限滚动可能导致内存占用较高，需设计合理的分批处理和数据存储方案。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('div.title', 'el => el.textContent.trim()')\n        author = await item.query_selector_eval('div.author', 'el => el.textContent.trim()')\n        date = await item.query_selector_eval('div.date', 'el => el.textContent.trim()')\n        summary = await item.query_selector_eval('div.summary', 'el => el.textContent.trim()')\n        results.append({\"title\": title, \"author\": author, \"date\": date, \"summary\": summary})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 详情页无固定链接，数据均在列表页加载，若有详情页则补充此函数\n    pass"
+  }
+}

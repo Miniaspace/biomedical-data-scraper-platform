@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "8",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul li > a::text",
+      "link": "ul li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "由于页面采用无限滚动加载，但检测到页面内容为静态HTML且无API支持，建议通过Scrapy抓取初始页面所有ul li元素，若内容动态加载则需结合Playwright模拟滚动加载后抓取完整内容。",
+  "file_download_strategy": "页面未检测到可下载文件链接，若后续详情页或列表中出现PDF或补充材料链接，使用Scrapy的FilesPipeline或requests模块下载，需确保链接为完整URL或拼接域名后下载。",
+  "anti_scraping_handling": [
+    "无验证码和明显反爬限制，保持合理请求间隔避免触发服务器限流",
+    "设置User-Agent模拟浏览器请求，避免被简单封禁"
+  ],
+  "special_considerations": [
+    "页面内容较为静态，无需执行JavaScript，Scrapy即可满足需求",
+    "列表项链接pattern为“/”，需确认详情页链接是否存在，若无详情页，直接采集列表信息",
+    "因无API支持，且内容量较大（130条），建议分批抓取，避免请求超时"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        title = item.css('a::text').get()\n        link = item.css('a::attr(href)').get()\n        yield {\n            'title': title,\n            'link': response.urljoin(link) if link else None\n        }",
+    "parse_detail": "# 由于无明确详情页链接，详情页解析暂不实现\n# 若后续确认详情页存在，可实现对应解析函数"
+  }
+}

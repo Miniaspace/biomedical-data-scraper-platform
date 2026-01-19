@@ -1,0 +1,35 @@
+{
+  "url": "https://primatedatabase.org",
+  "domain": "primatedatabase.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 24
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/primatedatabase_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><style md-theme-style=\"\">md-autocomplete.md-default-theme input, md-autocomplete input{color:rgba(0,0,0,0.87)}.md-autocomplete-suggestions-container.md-default-theme li, .md-autocomplete-suggestions-container li{color:rgba(0,0,0,0.87)}md-bottom-sheet.md-default-theme.md-list md-list-item, md-bottom-sheet.md-list md-list-item{color:rgba(0,0,0,0.87)}.md-button.md-default-theme.md-primary, .md-button.md-primary{color:rgb(33,150,243)}.md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab,.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised{color:rgb(255,255,255);background-color:rgb(33,150,243)}.md-button.md-default-theme.md-primary.md-fab:not([disabled]) md-icon, .md-button.md-primary.md-fab:not([disabled]) md-icon,.md-button.md-default-theme.md-primary.md-raised:not([disabled]) md-icon, .md-button.md-primary.md-raised:not([disabled]) md-icon{color:rgb(255,255,255)}.md-button.md-default-theme.md-primary.md-fab:not([disabled]).md-focused, .md-button.md-primary.md-fab:not([disabled]).md-focused,.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover,.md-button.md-default-theme.md-primary.md-raised:not([disabled]).md-focused, .md-button.md-primary.md-raised:not([disabled]).md-focused,.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover{background-color:rgb(30,136,229)}.md-button.md-default-theme.md-primary:not([disabled]) md-icon, .md-button.md-primary:not([disabled]) md-icon{color:rgb(33,150,243)}._md a.md-default-theme:not(.md-button).md-primary, ._md a:not(.md-button).md-primary{color:rgb(33,150,243)}._md a.md-default-theme:not(.md-button).md-primary:hover, ._md a:not(.md-button).md-primary:hover{color:rgb(25,118,210)}md-card.md-default-theme .md-card-image, md-card .md-card-image{border-radius:2px 2px 0 0}md-card.md-default-theme md-card-header md-card-header-text .md-subhead, md-card md-card-header md-card-header-text .md-subhead,md-card.md-default-theme md-card-title md-card-title-text:not(:only-child) .md-subhead, md-card md-card-title md-card-title-text:not(:only-child) .md-subhead{color:rgba(0,0,0,0.54)}md-checkbox.md-default-theme .md-ink-ripple, md-checkbox .md-ink-ripple{color:rgba(0,0,0,0.54)}md-checkbox.md-default-theme:not(.md-checked) .md-icon, md-checkbox:not(.md-checked) .md-icon{border-color:rgba(0,0,0,0.54)}md-checkbox.md-default-theme:not([disabled]).md-primary .md-ripple, md-checkbox:not([disabled]).md-primary .md-ripple{color:rgb(30,136,229)}md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-ripple, md-checkbox:not([disabled]).md-primary.md-checked .md-ripple{color:rgb(117,117,117)}md-checkbox.md-default-theme:not([disabled]).md-primary .md-ink-ripple, md-checkbox:not([disabled]).md-primary .md-ink-ripple{color:rgba(0,0,0,0.54)}md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-ink-ripple, md-checkbox:not([disabled]).md-primary.md-checked .md-ink-ripple{color:rgba(33,150,243,0.87)}md-checkbox.md-default-theme:not([disabled]).md-primary:not(.md-checked) .md-icon, md-checkbox:not([disabled]).md-primary:not(.md-checked) .md-icon{border-color:rgba(0,0,0,0.54)}md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-icon, md-checkbox:not([disabled]).md-primary.md-checked .md-icon{background-color:rgba(33,150,243,0.87)}md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked.md-focused .md-container:before, md-checkbox:not([disabled]).md-primary.md-checked.md-focused .md-container:before{background-color:rgba(33,150,243,0.26)}md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-icon:after, md-checkbox:not([disabled]).md-primary.md-checked .md-icon:after{border-color:rgba(255,255,255,0.87)}md-checkbox.md-default-theme:not([disabled]).md-primary .md-indeterminate[disabled] .md-container, md-checkbox:not([disabled]).md-primary .md-indeterminate[disabled] .md-container{color:rgba(0,0,0,0.38)}md-checkbox.md-default-theme[disabled]:not(.md-checked) .md-icon, md-checkbox[disabled]:not(.md-checked) .md-icon{border-color:rgba(0,0,0,0.38)}md-checkbox.md-default-theme[disabled] .md-icon:after, md-checkbox[disabled] .md-icon:after{border-color:rgba(0,0,0,0.38)}md-checkbox.md-default-theme[disabled] .md-label, md-checkbox[disabled] .md-label{color:rgba(0,0,0,0.38)}md-chips.md-default-theme .md-chips, md-chips .md-chips{box-shadow:0 1px rgba(0,0,0,0.12)}md-chips.md-default-theme .md-chips.md-focused, md-chips .md-chips.md-focused{box-shadow:0 2px rgb(33,150,243)}md-chips.md-default-theme .md-chips .md-chip-input-container input, md-chips .md-chips .md-chip-input-container input{color:rgba(0,0,0,0.87)}md-chips.md-default-theme .md-chips .md-chip-input-container input:-moz-placeholder, md-chips .md-chips .md-chip-input-container input:-moz-placeholder,md-chips.md-default-theme .md-chips .md-chip-input-container "
+}

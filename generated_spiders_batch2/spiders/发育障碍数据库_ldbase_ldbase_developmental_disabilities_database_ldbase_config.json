@@ -1,0 +1,25 @@
+{
+  "spider_name": "发育障碍数据库_ldbase_ldbase_developmental_disabilities_database_ldbase",
+  "platform": {
+    "name": "发育障碍数据库 LDbase LDbase (Developmental Disabilities Database LDbase)",
+    "url": "https://ldbase.org",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站需要登录，需实现自动登录流程并处理登录失败。",
+    "无公开API，所有数据需通过页面解析获取。",
+    "无限滚动分页需确保滚动到底部后等待数据加载完成，避免遗漏数据。",
+    "文件下载需保证登录态有效，避免下载失败。",
+    "部分数据字段可能不固定，需根据实际页面结构灵活调整选择器。"
+  ]
+}

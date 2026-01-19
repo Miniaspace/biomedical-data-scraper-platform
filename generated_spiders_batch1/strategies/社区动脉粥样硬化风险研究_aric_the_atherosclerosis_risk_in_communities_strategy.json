@@ -1,0 +1,30 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='/aric9/home']",
+    "fields": {
+      "title": "li > a::text",
+      "detail_url": "li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "由于网站采用无限滚动(infinite_scroll)分页，需模拟前端滚动加载行为。使用Scrapy结合中间件或扩展实现自动发送分页请求，或者通过分析网络请求参数构造翻页请求。若前端通过XHR请求加载更多数据，需抓包分析请求参数，模拟请求获取完整列表数据。",
+  "file_download_strategy": "在详情页中定位所有指向xml文件的链接（如a标签href以.xml结尾），使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件保存路径和命名规范。支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "合理设置下载延迟，避免过快请求导致服务器封禁",
+    "使用随机User-Agent和IP代理池分散请求来源",
+    "监控请求失败率，自动调整请求频率"
+  ],
+  "special_considerations": [
+    "网站不需要登录且无复杂反爬机制，采集难度较低",
+    "无限滚动分页需重点解决，确保数据完整采集",
+    "需确认详情页中所有目标文件链接均可直接访问下载"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse_list(self, response):\n    items = response.css('ul li')\n    for li in items:\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url:\n            yield response.follow(detail_url, self.parse_detail)",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('li > a::text').get()\n    # 解析xml文件链接\n    xml_links = response.css('a[href$=\".xml\"]::attr(href)').getall()\n    for link in xml_links:\n        yield {\n            'title': title,\n            'xml_url': response.urljoin(link)\n        }\n    # 可扩展解析其他字段"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "url": "https://biolincc.nhlbi.nih.gov/studies/hchssol/",
+  "domain": "biolincc.nhlbi.nih.gov",
+  "site_type": "biobank",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 54
+      }
+    ],
+    "detail_link_pattern": "/home/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/biolincc_nhlbi_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>\n            BioLINCC: Hispanic Community Health Study / Study of Latinos (HCHS-SOL)\n        </title>\n\n        \n            <link href=\"/static/compiled/css/bootstrap.6e7671654bd9.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n\t\t<link href=\"/static/fontawesomefree/css/all.min.275b491a8803.css\" rel=\"stylesheet\" type=\"text/css\">\n\t\t<link href=\"/static/compiled/css/base.9ebe16e21b2d.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n        \n\n        <link rel=\"icon\" href=\"/static/img/favicon.4ab56f109ee7.ico\">\n\n        <!-- Flash of Unstyled Content (FOUC) fix:\n             If JS is enabled, mark <body> with the class \"js\", then hide it. Once the\n             page has been fully loaded, unhide it. This prevents FOUC (at least for\n             users who haven't disabled JS) -->\n        <style type=\"text/css\">body.js { display:none; }</style>\n        <script type=\"text/javascript\">document.onload = function () {document.body.className='js'};</script>\n\n        \n        \n    </head>\n\n    <body class=\"current-studies\" style=\"display: flex;\">\n        <div id=\"skipLink\">\n            <a href=\"#skipTo\" class=\"visually-hidden-focusable\">Skip to Main Content</a>\n        </div>\n        <!-- begin header -->\n        <div class=\"header\" role=\"banner\">\n            <section id=\"review-banner\" class=\"reviewBanner\" aria-label=\"Repository under review\">\n                <div class=\"container-lg\">\n                    <div class=\"row\">\n\t\t\t<div class=\"review-banner__header-text py-1 py-sm-2  text-start text-sm-center lh-sm\">\n\t\t\t    This repository is under review for potential modification in compliance with Administration directives.\n                        </div>\n                    </div>\n                </div>\n            </section>\n            <section id=\"usa-banner\" class=\"nihBanner\" aria-label=\"Official government website\">\n                <div class=\"container-lg\">\n                    <div class=\"row\">\n                        <div class=\"usa-banner__header-text py-2\">\n                            <img class=\"me-2\" src=\"/static/img/usa-banner-flag-icon.png\" alt=\"\"> An official website of the United States government\n                        </div>\n                    </div>\n                </div>\n            </section>\n            <div class=\"container-lg\">\n\t\t<div class=\"d-flex align-items-center justify-content-between\">\n\t\t    <a class=\"nciLogo\" href=\"https://www.nhlbi.nih.gov\" title=\"NHLBI Home\">\n\t\t\t<img src=\"/static/img/nhlbi.8d204961f916.svg\" alt=\"National Heart, Lung, and Blood Institute\">\n\t\t    </a>\n\t\t    <div>\n\t\t\t<div class=\"cf d-none d-lg-inline-block me-2\" role=\"search\">\n\t\t\t    <form action=\"/media/search\" method=\"get\">\n\t\t\t\t<div class=\"input-group\">\n\t\t\t\t    <label for=\"q\" class=\"visually-hidden\">Search:</label>\n\t\t\t\t    <input name=\"q\" id=\"q\" type=\"text\" class=\"form-control rounded-start\" value=\"\" style=\"\">\n\t\t\t\t    <button class=\"cta-green input-group-text\">Search</button>\n\t\t\t\t</div>\n\t\t\t    </form>\n\t\t\t</div>\n\n                        \n                            <a href=\"/login/?next=/studies/hchssol/\" class=\"btn btn-secondary mb-1 text-nowrap\">\n\t\t\t\t<!-- Optional person-circle icon to make it easier to see the Log In button. HTML copied from https://icons.getbootstrap.com/icons/person-circle/ but the ims-bootstrap package has a bootstrap_icon template tag that this could be called from -->\n\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-person-circle\" viewBox=\"0 0 16 16\">\n\t\t\t\t    <path d=\"M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0\"></path>\n\t\t\t\t    <path fill-rule=\"evenodd\" d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1\">          </path>\n\t\t\t\t</svg>\n\t\t\t\tLog In</a>\n                        \n                    </div>\n\t\t</div>\n\t    </div>\n        </div>\n        <div class=\"ribbon\">\n            <div class=\"container-lg\">\n                <h1 id=\"biolincc-name\">Biologic Specimen and Data Repository Information Coordinating Center</h1>\n            </div>\n        </div>\n        \n        <!-- end header -->\n\n        <!-- begin main navbar -->\n\n        <nav class=\"navbar navbar-expand-xxl navbar-dark navbar-main\">\n            <div class=\"container-lg\">\n                <!-- navbar toggler -->\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#main-nav\" aria-controls=\"main-nav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span><span class=\"ms-2 fw-bold\">Menu</span>\n                </button>\n\n                <!-- navbar links -->\n                <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                    <ul class=\"navbar-nav\">\n                        "
+}

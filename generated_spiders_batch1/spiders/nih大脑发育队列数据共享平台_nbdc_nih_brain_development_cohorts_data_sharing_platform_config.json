@@ -1,0 +1,23 @@
+{
+  "spider_name": "nih大脑发育队列数据共享平台_nbdc_nih_brain_development_cohorts_data_sharing_platform",
+  "platform": {
+    "name": "NIH大脑发育队列数据共享平台 NBDC (NIH Brain Development Cohorts Data Sharing Platform)",
+    "url": "https://sharing.nih.gov/accessing-data/NIH-security-best-practices",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需处理NIH身份验证，可能涉及多因素认证，需提前准备账号和凭证",
+    "Cloudflare防护可能会动态变化，需定期维护Playwright脚本",
+    "PDF文件下载需确保权限验证，避免无权限访问导致下载失败"
+  ]
+}

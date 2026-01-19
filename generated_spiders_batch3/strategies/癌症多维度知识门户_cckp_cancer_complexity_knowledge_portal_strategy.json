@@ -1,0 +1,35 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "div[data-testid='dataset-list'] > div.dataset-item",
+    "detail_page_selector": "div[data-testid='dataset-detail']",
+    "fields": {
+      "title": "h2.dataset-title",
+      "author": "span.dataset-author",
+      "publication_date": "span.dataset-date",
+      "description": "div.dataset-description",
+      "pdf_links": "a[href$='.pdf']",
+      "supplementary_materials": "a.supplementary-download"
+    }
+  },
+  "pagination_strategy": "使用Playwright模拟用户滚动页面触发无限加载，监听网络请求确保数据加载完成后再提取，直到无新数据加载为止。",
+  "file_download_strategy": "通过Playwright捕获文件下载链接，使用会话cookie和授权头部进行文件请求，确保登录状态下下载所有PDF及补充材料，支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "模拟真实用户行为，设置合理的滚动间隔和随机等待时间，避免触发异常",
+    "保持登录状态，定期刷新token或重新登录，防止会话失效",
+    "限制并发请求数，避免过快访问导致账号封禁"
+  ],
+  "special_considerations": [
+    "网站需要登录，需实现自动登录流程并管理cookie/session",
+    "无公开API，所有数据需通过页面渲染抓取",
+    "无限滚动分页需精准判断数据加载结束，避免遗漏或重复采集",
+    "文件下载需处理大文件和断点续传，保证数据完整性"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    datasets = await page.query_selector_all(\"div[data-testid='dataset-list'] > div.dataset-item\")\n    for dataset in datasets:\n        title = await dataset.query_selector_eval('h2.dataset-title', 'el => el.textContent.trim()')\n        detail_url = await dataset.query_selector_eval('a.dataset-link', 'el => el.href')\n        yield {'title': title, 'detail_url': detail_url}",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.query_selector_eval('h2.dataset-title', 'el => el.textContent.trim()')\n    author = await page.query_selector_eval('span.dataset-author', 'el => el.textContent.trim()')\n    pub_date = await page.query_selector_eval('span.dataset-date', 'el => el.textContent.trim()')\n    description = await page.query_selector_eval('div.dataset-description', 'el => el.textContent.trim()')\n    pdf_links = await page.eval_on_selector_all('a[href$=\".pdf\"]', 'els => els.map(el => el.href)')\n    supplementary = await page.eval_on_selector_all('a.supplementary-download', 'els => els.map(el => el.href)')\n    return {\n        'title': title,\n        'author': author,\n        'publication_date': pub_date,\n        'description': description,\n        'pdf_links': pdf_links,\n        'supplementary_materials': supplementary\n    }"
+  }
+}

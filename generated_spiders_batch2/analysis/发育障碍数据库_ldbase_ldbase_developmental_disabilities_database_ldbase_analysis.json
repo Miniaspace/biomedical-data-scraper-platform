@@ -1,0 +1,35 @@
+{
+  "url": "https://ldbase.org",
+  "domain": "ldbase.org",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 12
+      }
+    ],
+    "detail_link_pattern": "/user/login",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/ldbase_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"js fontawesome-i2svg-active fontawesome-i2svg-complete\"><head>\n    <meta charset=\"utf-8\">\n<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>\n</noscript><script type=\"text/javascript\" defer=\"\" async=\"\" src=\"https://stats.lib.fsu.edu/matomo.js\"></script><script>var _paq = _paq || [];(function(){var u=((\"https:\" == document.location.protocol) ? \"https://stats.lib.fsu.edu/\" : \"http://stats.lib.fsu.edu/\");_paq.push([\"setSiteId\", \"1\"]);_paq.push([\"setTrackerUrl\", u+\"matomo.php\"]);_paq.push([\"setDownloadExtensions\", \"7z|aac|arc|arj|asf|asx|avi|bin|csv|dat|do|doc(x|m)?|dot(x|m)?|dta|exe|flv|gif|gz|gzip|hqx|inp|jar|jnp|jpe?g|js|json|m|mat|mp(2|3|4|e?g)|mov(ie)?|msi|msp|mtj|mtw|out|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|py|pzf|pzfx|sld(x|m)?|thmx|qtm?|r|ra(m|r)?|rda|rdata|rmd|sas|sas7bdat|sav|sea|sit|sps|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"]);_paq.push([\"setDoNotTrack\", 1]);document.addEventListener('DOMContentLoaded', function(){ \n  \n  var consentGiven = 0;\n  var cookieArray = document.cookie.split(\";\"); \n  \n  for(var i=0; i < cookieArray.length; i++) {\n    var cookiePair = cookieArray[i].split(\"=\");\n    \n    if('cookie-agreed' == cookiePair[0].trim()) {\n    \n      if(cookiePair[1].trim() == 2) {\n        consentGiven = 1;\n      }\n    }\n  }   \n \n  if (!consentGiven) {\n      _paq.push(['requireConsent']);\n      _paq.push(['disableCookies']);\n    }\n \n    if (consentGiven) {\n      _paq.push(['setConsentGiven']);\n    }\n\n}, false);if (!window.matomo_search_results_active) {_paq.push([\"trackPageView\"]);}_paq.push([\"setIgnoreClasses\", [\"no-tracking\",\"colorbox\"]]);_paq.push([\"enableLinkTracking\"]);var d=document,g=d.createElement(\"script\"),s=d.getElementsByTagName(\"script\")[0];g.type=\"text/javascript\";g.defer=true;g.async=true;g.src=u+\"matomo.js\";s.parentNode.insertBefore(g,s);})();</script>\n<meta name=\"description\" content=\"LDbase is an open science resource for the educational and developmental science scientific communities, providing a secure place to store and access data, as well access materials about aspects of data management and analyses. LDbase is unique in that it is project oriented, rather than dataset oriented, meeting the needs of how our field thinks about data.\">\n<style type=\"text/css\">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:"
+}

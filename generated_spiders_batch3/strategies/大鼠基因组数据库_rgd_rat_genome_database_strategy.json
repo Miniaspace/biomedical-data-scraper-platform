@@ -1,0 +1,33 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "td:nth-child(1) a",
+      "authors": "td:nth-child(2)",
+      "publication_date": "td:nth-child(3)",
+      "journal": "td:nth-child(4)",
+      "pdf_link": "td:nth-child(1) a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于网站采用无限滚动（infinite_scroll）分页，需使用Playwright模拟浏览器滚动页面，等待新数据加载，直到页面底部无新内容加载为止。通过监听网络请求或DOM变化判断加载完成。",
+  "file_download_strategy": "通过提取PDF文件链接（通常在a标签href中以.pdf结尾），使用Playwright或requests库进行文件下载。确保下载时带上必要的请求头（如Referer）以防止防盗链。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器，绕过Cloudflare防护。",
+    "设置合理的请求间隔，避免触发速率限制。",
+    "使用随机User-Agent和代理IP池（如必要）增加请求多样性。"
+  ],
+  "special_considerations": [
+    "网站不需要登录，简化采集流程。",
+    "无检测到API，需通过页面解析获取数据。",
+    "无限滚动可能导致大量数据加载，需控制滚动次数和数据量，避免内存溢出。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    rows = await page.query_selector_all('table tbody tr')\n    for row in rows:\n        title_el = await row.query_selector('td:nth-child(1) a')\n        title = await title_el.inner_text() if title_el else ''\n        authors = await (await row.query_selector('td:nth-child(2)')).inner_text()\n        pub_date = await (await row.query_selector('td:nth-child(3)')).inner_text()\n        journal = await (await row.query_selector('td:nth-child(4)')).inner_text()\n        pdf_el = await row.query_selector('td:nth-child(1) a[href$=\".pdf\"]')\n        pdf_url = await pdf_el.get_attribute('href') if pdf_el else None\n        yield {\n            'title': title.strip(),\n            'authors': authors.strip(),\n            'publication_date': pub_date.strip(),\n            'journal': journal.strip(),\n            'pdf_url': pdf_url\n        }",
+    "parse_detail": "由于无明确详情页链接，详情数据直接在列表页中提取，无需单独解析详情页。"
+  }
+}

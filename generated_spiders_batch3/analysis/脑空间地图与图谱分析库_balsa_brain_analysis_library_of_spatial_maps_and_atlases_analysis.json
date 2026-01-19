@@ -1,0 +1,37 @@
+{
+  "url": "https://balsa.wustl.edu",
+  "domain": "balsa.wustl.edu",
+  "site_type": "unknown",
+  "has_login": true,
+  "pagination": {
+    "type": "next_button",
+    "selectors": [
+      "a:has-text(\">\")"
+    ],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 12
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/balsa_wustl_edu.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" class=\"no-js\"><!--<![endif]--><head>\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n\t\t<title>BALSA</title>\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  \t\t<link rel=\"stylesheet\" href=\"/assets/application-40c7a33334605b753f838dcb61e3b048.css\">\n\t\t<script type=\"text/javascript\" src=\"/assets/application-f3f724f29c1637923bda44b0c81824e2.js\"></script>\n\t\t<link rel=\"shortcut icon\" href=\"/assets/favicon-7555546af8674d5dbd4e07a6e0670b70.ico\" type=\"image/x-icon\">\n\t\t\n\t\t<meta name=\"layout\" content=\"main\">\n\t\t\n\t\n\t<style>body.tablesorter-disableSelection { -ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none; -webkit-user-select: none; user-select: none; }.tablesorter-resizable-container { position: relative; height: 1px; }.tablesorter-resizable-handle { position: absolute; display: inline-block; width: 8px;top: 1px; cursor: ew-resize; z-index: 3; user-select: none; -moz-user-select: none; }</style></head>\n\t<body>\n\t\t<div class=\"card border-0\">\n\t\t\t<div class=\"card-header d-flex\">\n\t\t\t\t<div id=\"balsaLogo\">\n\t\t\t\t\t<a href=\"/\">\n\t\t\t\t\t\t<img src=\"/assets/BALSALogo-95b8e071266bf7a23405c00307531ac0.png\" width=\"100%\" height=\"100%\" data-toggle=\"popover\" data-trigger=\"hover\" data-placement=\"right\" data-content=\"The Brain Analysis Library of Spatial Maps and Atlases\" data-original-title=\"\" title=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"float-right align-self-center ml-auto\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"btn-group\">\n\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#loginModal\">Login</button>\n\t\t\t\t\t\t<a href=\"/register/register\" class=\"btn btn-light\">Register</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"btn-group ml-2\" role=\"group\">\n\t\t\t\t\t\t<div class=\"btn-group\" role=\"group\">\n\t\t\t\t\t\t\t<button id=\"navigation\" type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t\t\t\tNavigation\n\t\t\t\t\t\t\t\t<span class=\"caret\"></span>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t\t<div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navigation\">\n\t\t\t\t\t\t\t\t<a href=\"/\" class=\"dropdown-item\">Main Page</a>\n\t\t\t\t\t\t\t\t<a href=\"/about/index\" class=\"dropdown-item\">About BALSA</a>\n\t\t\t\t\t\t\t\t<a href=\"/about/help\" class=\"dropdown-item\">BALSA Help</a>\n\t\t\t\t\t\t\t\t<a href=\"/about/submission\" class=\"dropdown-item\">About Data Submission</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<a href=\"/terms/submission\" class=\"dropdown-item\">Become a BALSA Submitter</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<a href=\"/study/index\" class=\"dropdown-item\">Studies Index</a>\n\t\t\t\t\t\t\t\t<a href=\"/reference/index\" class=\"dropdown-item\">Reference Index</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<a href=\"/about/help\" class=\"btn-square btn btn-light\">?</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"card-body\">\n\t\t\t\t\n\t\t<div role=\"main\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"sidebar\" role=\"complementary\" class=\"col sidebar\">\n\t\t\t\t\t\n\t\t\t\t\t<div id=\"explanation\" class=\"card\">\n\t\t\t\t\t\t<div class=\"card-header h5 mb-0\">Welcome to BALSA</div>\n\t\t\t\t\t\t<div class=\"card-body pb-2\">\n\t\t\t\t\t\t\tBALSA hosts two types of extensively analyzed neuroimaging data:\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li><b>BALSA Studies:</b> user-submitted neuroimaging data associated with published figures</li>\n\t\t\t\t\t\t\t\t<li><b>BALSA Reference:</b> reference data mapped to brain atlas surfaces and volumes in humans and nonhuman primates</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\"Scene files\" in BALSA facilitate data upload, previews, download, and visualization.\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>No login needed to preview scene ‘thumbnails’ in BALSA or to download data having no release constraints.</li>\n\t\t\t\t\t\t\t\t<li>Human data: accessible upon agreeing to applicable Data Use Terms.</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"card-footer\"><a href=\"/about\">More about BALSA</a></div>\n\t\t\t\t\t\t<div class=\"card-footer\"><a href=\"/about/submission\">About Data Submission</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div id=\"news\" class=\"card\">\n\t\t\t\t\t\t<div class=\"card-header h5 mb-0\">News</div>\n\t\t\t\t\t\t<div id=\"latestNews\" class=\"card-body\"><b>Dec. 01, 2025</b><br><br>\nAspera downloads from ConnectomeDB powered by BALSA are operational again!\n<br>\n\n<div class=\"collapse\" id=\"collapseNews\">\n\t\n<br>Aspera server downloading from ConnectomeDB powered by BALSA are now back online after an extended major filesystem outage affecting all imaging package and larger project file archive downloads. We will update if there are any other issues. Please report any issues to our technical staff or curators.\n</div>\n<div id=\"newsToggle\" class=\"toggle-text\" onclick=\"newsToggle()\">show more</div>\n</div>\n\t\t\t\t\t\t<div class=\"card-footer\"><a href=\"/news/index\">More BALSA news</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-auto main-column\">\n\t\t\t\t\t<ul class=\"nav nav-tabs\" role=\"tablist\">\n\t\t\t\t\t\t<li role=\"presentation\" class=\"nav-item w-50\">\n\t\t\t\t\t\t\t<a href=\"#scenesTab\" class=\"active nav-link card-header h5"
+}

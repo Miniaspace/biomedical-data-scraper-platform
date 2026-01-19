@@ -1,0 +1,23 @@
+{
+  "spider_name": "国家酒精滥用与酒精中毒研究所数据档案_niaaa_da_national_institute_on_alcohol_abuse_and_alcoholism_data_archive",
+  "platform": {
+    "name": "国家酒精滥用与酒精中毒研究所数据档案 NIAAA-DA (National Institute on Alcohol Abuse and Alcoholism Data Archive)",
+    "url": "https://nda.nih.gov/niaaa",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "必须先完成登录，登录流程可能涉及多因素认证，需人工辅助或预置账号信息",
+    "页面无API接口，需解析HTML，结构较简单但需确保登录状态有效",
+    "文件下载链接可能动态生成，需在登录状态下动态抓取"
+  ]
+}

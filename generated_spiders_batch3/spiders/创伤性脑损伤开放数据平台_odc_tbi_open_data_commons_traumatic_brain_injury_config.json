@@ -1,0 +1,24 @@
+{
+  "spider_name": "创伤性脑损伤开放数据平台_odc_tbi_open_data_commons_traumatic_brain_injury",
+  "platform": {
+    "name": "创伤性脑损伤开放数据平台 ODC-TBI (Open Data Commons - Traumatic Brain Injury)",
+    "url": "https://odc-tbi.org",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要先分析，可能涉及验证码或多因素认证，需人工辅助或模拟登录",
+    "无限滚动可能加载大量数据，需设置合理的最大采集条数或时间限制",
+    "详情页链接为'#'，说明详情信息可能在列表页动态展开或通过AJAX加载，需分析网络请求抓取数据",
+    "无公开API，需通过页面渲染抓取，数据结构可能动态变化，需定期维护选择器"
+  ]
+}

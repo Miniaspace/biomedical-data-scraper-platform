@@ -1,0 +1,30 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='https://nda.nih.gov/nda/webinars-and-tutorials']",
+    "fields": {
+      "title": "li > a > text()",
+      "link": "li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "无分页，页面全部数据一次性加载，无需分页处理",
+  "file_download_strategy": "登录后通过Playwright模拟用户点击下载链接，自动处理文件保存路径和重命名，支持断点续传和重试机制",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免因无头浏览器特征被识别",
+    "合理设置请求间隔，避免触发登录会话异常",
+    "保存和复用登录状态Cookies，减少重复登录次数"
+  ],
+  "special_considerations": [
+    "必须先完成登录，登录流程可能涉及多因素认证，需人工辅助或预置账号信息",
+    "页面无API接口，需解析HTML，结构较简单但需确保登录状态有效",
+    "文件下载链接可能动态生成，需在登录状态下动态抓取"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        title = await item.eval_on_selector('a', 'el => el.textContent.trim()')\n        link = await item.eval_on_selector('a', 'el => el.href')\n        results.append({'title': title, 'link': link})\n    return results",
+    "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    # 示例：提取PDF下载链接\n    pdf_link = await page.eval_on_selector('a[href$=\".pdf\"]', 'el => el.href')\n    return {'pdf_link': pdf_link}"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "url": "https://dash.nichd.nih.gov",
+  "domain": "dash.nichd.nih.gov",
+  "site_type": "biobank",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 32
+      }
+    ],
+    "detail_link_pattern": "https://www.hhs.gov/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/dash_nichd_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"fs-16 gap-16 js solo-state-manager-loaded\"><head>\n    <meta charset=\"utf-8\">\n<link rel=\"canonical\" href=\"https://dash.nichd.nih.gov/\">\n<link rel=\"shortlink\" href=\"https://dash.nichd.nih.gov/\">\n<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>.path-frontpage #page-wrapper  .simple-link {\n    text-decoration: none;\n}\n\n#highlighted {\n  align-self:start;\n  position:sticky;\n  top:0;\n  z-index:1;\n}\n\n#header {\n  align-self:start;\n  position:sticky;\n  top:35px;\n  z-index:1;\n}\n\n#primary-menu {\n  align-self:start;\n  position:sticky;\n  top:112px;\n  z-index:2;\n}\n\n#welcome-text {\n  top:156px !important;\n}\n\n#welcome-text  .pb__content-full {\n    max-width: 100% !important;\n}\n\n.alert-container,#important-notice-container {\nmargin: 0px !important;\n}\n\n.path-frontpage #page-wrapper #welcome-text .pb__content-full {\n    padding: 0 0px !important;\n}\n#header-inner .branding-first.dash a.fitbir {\n  display:none;\n}</style>\n<link rel=\"icon\" href=\"/themes/custom/dash/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n\n    <title>NICHD DASH - Eunice Kennedy Shriver National Institute of Child Health and Human Development Data and Specimen Hub</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/core/misc/components/progress.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/misc/components/ajax-progress.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/align.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/fieldgroup.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/container-inline.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/clearfix.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/details.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/hidden.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/item-list.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/js.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/nowrap.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/position-container.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/reset-appearance.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/resize.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/system-status-counter.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/system-status-report-counters.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/system-status-report-general-info.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/system/css/components/tablesort.module.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/back_to_top/css/back_to_top.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/modules/paragraph_bundle_content/css/paragraph-bundle-content-base.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/modules/paragraph_bundle_grid/css/paragraph-bundle-grid.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/modules/paragraph_bundle_grid/css/paragraph-bundle-grid-pb-992.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/modules/paragraph_bundle_layout/css/paragraph-bundle-layout.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/modules/paragraph_bundle_layout/css/paragraph-bundle-layout-pb-992.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs/css/paragraphs.unpublished.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/css/paragraphs-bundles-basic.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs_bundles/css/paragraphs-bundles-custom.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/solo/css/base/solo-normalize.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/solo/css/base/solo-variables.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/solo/css/base/solo-variables-regions.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/solo/css/base/solo-animation.css?t7gwst\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/solo/css/bas"
+}

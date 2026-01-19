@@ -1,0 +1,24 @@
+{
+  "spider_name": "儿童癌症数据计划中心_ccdi_hub_childhood_cancer_data_initiative_hub",
+  "platform": {
+    "name": "儿童癌症数据计划中心 CCDI Hub (Childhood Cancer Data Initiative Hub)",
+    "url": "https://ccdi.cancer.gov/home",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录，无API，且数据通过JavaScript动态加载，必须使用支持JS渲染的工具",
+    "分页为无限滚动，需精确控制滚动触发加载，避免漏采或重复采集",
+    "PDF和补充材料链接可能分散在详情页不同位置，需全面提取",
+    "部分字段可能缺失或格式不统一，需容错处理"
+  ]
+}

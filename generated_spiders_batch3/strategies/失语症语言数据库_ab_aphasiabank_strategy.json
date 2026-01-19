@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "N/A (无分页，主页即为数据入口，需登录后访问具体内容页面)",
+    "detail_page_selector": "CSS选择器，如 div.content 或 article.main-content（具体需登录后确认）",
+    "fields": {
+      "title": "css: h1.title, h2.article-title, 或 xpath: //h1[contains(@class,'title')]",
+      "author": "css: div.authors, span.author-name, 或 xpath: //div[contains(@class,'author')]//span",
+      "publication_date": "css: span.pub-date, time.pub-date, 或 xpath: //time[contains(@class,'pub-date')]",
+      "abstract": "css: div.abstract, section.abstract, 或 xpath: //div[contains(@class,'abstract')]",
+      "pdf_link": "css: a[href$='.pdf']",
+      "docx_link": "css: a[href$='.docx']"
+    }
+  },
+  "pagination_strategy": "无分页，所有数据集中展示或通过登录后导航访问各研究条目，需模拟登录后遍历所有研究详情页面链接",
+  "file_download_strategy": "登录后使用Playwright保持会话状态，直接访问PDF和DOCX链接进行下载，确保请求头带上Cookie和Referer，避免403错误",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器环境，完成登录流程，保持会话",
+    "合理控制请求频率，避免触发登录限制",
+    "处理登录失败和会话过期，自动重试登录"
+  ],
+  "special_considerations": [
+    "登录流程依赖外部域名的JS模块，需确保Playwright支持模块加载",
+    "无API接口，数据需从HTML中解析，需登录后才能访问完整数据",
+    "网站编码为ISO-8859-1，需正确处理字符编码"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 登录后访问主页或数据入口页面\n    # 获取所有研究条目链接\n    links = await page.query_selector_all('a.research-link')  # 示例选择器\n    urls = [await link.get_attribute('href') for link in links]\n    return urls",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.title')\n    author = await page.text_content('div.authors')\n    pub_date = await page.text_content('time.pub-date')\n    abstract = await page.text_content('div.abstract')\n    pdf_url = await page.get_attribute('a[href$=\".pdf\"]', 'href')\n    docx_url = await page.get_attribute('a[href$=\".docx\"]', 'href')\n    return {\n        'title': title.strip() if title else None,\n        'author': author.strip() if author else None,\n        'publication_date': pub_date.strip() if pub_date else None,\n        'abstract': abstract.strip() if abstract else None,\n        'pdf_url': pdf_url,\n        'docx_url': docx_url\n    }"
+  }
+}

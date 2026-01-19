@@ -1,0 +1,31 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "16",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": "a[href^='https://www.ncbi.nlm.nih.gov/gap/']",
+    "fields": {
+      "title": "td:nth-child(1)",
+      "description": "td:nth-child(2)",
+      "pdf_link": "td a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "无分页，所有数据均在单页table中展示，无需分页处理",
+  "file_download_strategy": "通过Playwright登录后，直接访问PDF链接进行下载，保持登录状态以确保权限，支持断点续传和重试机制",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，绕过Cloudflare防护",
+    "保持登录会话，避免频繁登录导致封禁",
+    "控制请求频率，避免触发潜在的速率限制"
+  ],
+  "special_considerations": [
+    "登录流程需处理NIH身份验证，可能涉及多因素认证，需提前准备账号和凭证",
+    "Cloudflare防护可能会动态变化，需定期维护Playwright脚本",
+    "PDF文件下载需确保权限验证，避免无权限访问导致下载失败"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    rows = await page.query_selector_all('table tbody tr')\n    for row in rows:\n        title = await row.query_selector_eval('td:nth-child(1)', 'el => el.textContent.trim()')\n        detail_link = await row.query_selector_eval('a[href^=\"https://www.ncbi.nlm.nih.gov/gap/\"]', 'el => el.href')\n        yield {'title': title, 'detail_link': detail_link}",
+    "parse_detail": "async def parse_detail(page, detail_url):\n    await page.goto(detail_url)\n    pdf_links = await page.query_selector_all('a[href$=\".pdf\"]')\n    pdf_urls = [await link.get_attribute('href') for link in pdf_links]\n    return {'pdf_urls': pdf_urls}"
+  }
+}

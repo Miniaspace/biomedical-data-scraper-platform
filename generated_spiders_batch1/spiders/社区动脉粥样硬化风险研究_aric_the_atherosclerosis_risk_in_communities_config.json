@@ -1,0 +1,23 @@
+{
+  "spider_name": "社区动脉粥样硬化风险研究_aric_the_atherosclerosis_risk_in_communities",
+  "platform": {
+    "name": "社区动脉粥样硬化风险研究 ARIC (The Atherosclerosis Risk in Communities)",
+    "url": "https://www5.cscc.unc.edu/aric9/",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站不需要登录且无复杂反爬机制，采集难度较低",
+    "无限滚动分页需重点解决，确保数据完整采集",
+    "需确认详情页中所有目标文件链接均可直接访问下载"
+  ]
+}

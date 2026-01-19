@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 5,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": null,
+    "detail_page_selector": null,
+    "fields": {}
+  },
+  "pagination_strategy": "无分页，因网站返回403 Forbidden，无法访问数据列表，需先解决访问权限问题",
+  "file_download_strategy": "待获取有效页面后，根据文件链接进行直接HTTP请求下载，支持断点续传和重试机制",
+  "anti_scraping_handling": [
+    "确认IP是否被封禁，尝试更换IP或使用代理",
+    "检查请求头，模拟浏览器User-Agent及Referer",
+    "尝试使用浏览器自动化工具（Playwright）模拟真实用户行为",
+    "联系网站管理员确认访问权限及数据开放政策"
+  ],
+  "special_considerations": [
+    "当前访问主页返回403 Forbidden，说明存在访问限制，需先解决访问权限问题",
+    "无API接口及分页，数据结构未知，采集前需获取有效页面结构",
+    "无登录需求，反爬机制较弱，但访问受限可能为IP或区域限制",
+    "采集前建议先人工访问确认数据可见性及下载链接格式"
+  ],
+  "code_snippets": {
+    "parse_list": "# 由于无法访问有效页面，示例代码暂不可用\n# 采集前需获取有效页面结构后补充",
+    "parse_detail": "# 由于无法访问有效页面，示例代码暂不可用\n# 采集前需获取有效页面结构后补充"
+  }
+}

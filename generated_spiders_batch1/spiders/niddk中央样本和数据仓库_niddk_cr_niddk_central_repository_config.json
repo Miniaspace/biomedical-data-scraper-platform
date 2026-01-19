@@ -1,0 +1,24 @@
+{
+  "spider_name": "niddk中央样本和数据仓库_niddk_cr_niddk_central_repository",
+  "platform": {
+    "name": "NIDDK中央样本和数据仓库 NIDDK CR (NIDDK Central Repository)",
+    "url": "https://repository.niddk.nih.gov/home",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 5,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "当前访问主页返回403 Forbidden，说明存在访问限制，需先解决访问权限问题",
+    "无API接口及分页，数据结构未知，采集前需获取有效页面结构",
+    "无登录需求，反爬机制较弱，但访问受限可能为IP或区域限制",
+    "采集前建议先人工访问确认数据可见性及下载链接格式"
+  ]
+}

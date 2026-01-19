@@ -1,0 +1,37 @@
+{
+  "url": "https://sharing.nih.gov/accessing-data/NIH-security-best-practices",
+  "domain": "sharing.nih.gov",
+  "site_type": "biobank",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 43
+      }
+    ],
+    "detail_link_pattern": "https://www.ncbi.nlm.nih.gov/gap/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": true
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/sharing_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"h-100 js\"><head>\n    <meta charset=\"utf-8\">\n<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"icon\" href=\"/themes/nihod5__subtheme/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n<link rel=\"canonical\" href=\"https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/accessing-data/requirements\">\n<link rel=\"shortlink\" href=\"https://grants.nih.gov/node/1239\">\n\n    <title>Requirements for NIH Controlled-Access Data Repositories and Users | Grants &amp; Funding</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/align.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/fieldgroup.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/container-inline.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/clearfix.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/details.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/hidden.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/item-list.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/js.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/nowrap.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/position-container.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/reset-appearance.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/resize.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/system-status-counter.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/system-status-report-counters.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/system-status-report-general-info.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/system/components/tablesort.module.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/themes/stable9/css/core/assets/vendor/normalize-css/normalize.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/action-links.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/breadcrumb.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/container-inline.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/details.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/exposed-filters.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/field.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/form.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/icons.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/inline-form.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/item-list.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/links.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/menu.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/more-link.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/pager.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/tabledrag.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/tableselect.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/tablesort.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/textarea.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/ui-dialog.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/messages.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/bootstrap5/css/components/node.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/nihod5/css/style.css?t8yrg4\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/nih"
+}

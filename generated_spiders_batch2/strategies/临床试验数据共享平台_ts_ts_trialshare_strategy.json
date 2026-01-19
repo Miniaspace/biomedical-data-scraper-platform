@@ -1,0 +1,34 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "table tbody tr",
+    "detail_page_selector": null,
+    "fields": {
+      "study_id": "table tbody tr td:nth-child(1)",
+      "study_name": "table tbody tr td:nth-child(2)",
+      "status": "table tbody tr td:nth-child(3)",
+      "start_date": "table tbody tr td:nth-child(4)",
+      "end_date": "table tbody tr td:nth-child(5)",
+      "pdf_link": "table tbody tr td a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "无分页，所有数据均在单页面表格中展示，直接抓取全部表格行数据。",
+  "file_download_strategy": "通过Playwright模拟点击或直接请求PDF链接，确保登录状态下访问，保存PDF文件到本地。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器环境，执行JavaScript，确保页面正常加载。",
+    "保持登录状态，管理好Cookie和会话信息，避免重复登录。",
+    "控制请求频率，避免触发潜在的速率限制。"
+  ],
+  "special_considerations": [
+    "登录过程需要处理表单提交，可能需要验证码外的额外验证步骤，需手动确认登录流程。",
+    "页面数据无分页，数据量较大时需注意内存和性能优化。",
+    "PDF文件下载需确保链接有效且在登录状态下可访问。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    rows = await page.query_selector_all('table tbody tr')\n    for row in rows:\n        study_id = await row.query_selector_eval('td:nth-child(1)', 'el => el.textContent.trim()')\n        study_name = await row.query_selector_eval('td:nth-child(2)', 'el => el.textContent.trim()')\n        status = await row.query_selector_eval('td:nth-child(3)', 'el => el.textContent.trim()')\n        start_date = await row.query_selector_eval('td:nth-child(4)', 'el => el.textContent.trim()')\n        end_date = await row.query_selector_eval('td:nth-child(5)', 'el => el.textContent.trim()')\n        pdf_element = await row.query_selector('a[href$=\".pdf\"]')\n        pdf_url = await pdf_element.get_attribute('href') if pdf_element else None\n        yield {\n            'study_id': study_id,\n            'study_name': study_name,\n            'status': status,\n            'start_date': start_date,\n            'end_date': end_date,\n            'pdf_url': pdf_url\n        }",
+    "parse_detail": "无详情页，所有数据均在列表页展示，无需额外详情页解析。"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 1,
+  "estimated_dev_time": "4",
+  "data_extraction": {
+    "list_page_selector": null,
+    "detail_page_selector": null,
+    "fields": {}
+  },
+  "pagination_strategy": "网站无分页，所有数据均在单一页面或少量页面中直接展示，无需分页处理。",
+  "file_download_strategy": "直接解析页面中所有可见的PDF文件链接或补充材料链接，使用Scrapy的文件下载管道或自定义请求进行下载，确保文件URL完整有效。",
+  "anti_scraping_handling": [
+    "无验证码，无Cloudflare，无JavaScript渲染需求，故无特殊反爬处理必要。",
+    "合理设置请求间隔，避免过快请求导致服务器限制。"
+  ],
+  "special_considerations": [
+    "网站当前无API，且无动态内容，直接静态HTML解析即可。",
+    "目标数据结构未明确，需根据实际页面内容灵活调整选择器。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    # 由于无列表页，直接解析首页或指定页面\n    # 示例：查找所有PDF链接\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    for link in pdf_links:\n        yield response.follow(link, self.save_pdf)\n\n    # 如果有其他数据，继续解析\n",
+    "parse_detail": "def save_pdf(self, response):\n    path = response.url.split('/')[-1]\n    self.logger.info(f'Downloading file {path}')\n    with open(path, 'wb') as f:\n        f.write(response.body)\n    yield {'file_name': path, 'url': response.url}\n"
+  }
+}

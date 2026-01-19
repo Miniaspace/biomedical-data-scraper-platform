@@ -1,0 +1,23 @@
+{
+  "spider_name": "美国国家人类基因组研究所基因组数据科学分析可视化与信息学实验室空间_anvil_the_nhgri_genomic_data_science_analysis_visualization_and_informatics_lab_space",
+  "platform": {
+    "name": "美国国家人类基因组研究所基因组数据科学分析、可视化与信息学实验室空间 AnVIL (The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space)",
+    "url": "https://anvilproject.org/learn/accessing-data/requesting-data-access",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 1,
+    "estimated_dev_time": "4"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无API，且内容静态加载，无需使用Playwright等浏览器自动化工具，节省资源。",
+    "确认详情页链接格式稳定，避免因链接格式变化导致采集失败。",
+    "部分文件可能托管在第三方站点，需确认下载链接有效性。"
+  ]
+}

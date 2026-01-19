@@ -1,0 +1,35 @@
+{
+  "url": "https://portal.includedcc.org/login?redirect_path=/dashboard",
+  "domain": "portal.includedcc.org",
+  "site_type": "unknown",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": true,
+    "endpoints": [
+      {
+        "url": "https://o4505959323860992.ingest.us.sentry.io/api/4506264491786240/envelope/?sentry_version=7&sentry_key=c6f524598c2d3fe566e16e5f487eda75&sentry_client=sentry.javascript.react%2F8.55.0",
+        "method": "POST",
+        "resource_type": "fetch"
+      }
+    ]
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/portal_includedcc_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><style data-rc-order=\"prepend\" rc-util-key=\"@ant-design-icons\">\n.anticon {\n  display: inline-flex;\n  alignItems: center;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n</style><meta charset=\"utf-8\"><link rel=\"icon\" href=\"/favicon.ico\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#000000\"><link rel=\"apple-touch-icon\" href=\"/logo192.png\"><link rel=\"manifest\" href=\"/manifest.json\"><title>INCLUDE Data Hub</title><script defer=\"defer\" src=\"/static/js/main.94f62e9d.js\"></script><link href=\"/static/css/main.cc2175a8.css\" rel=\"stylesheet\"><style id=\"plotly.js-style-global\"></style><script async=\"\" src=\"https://widget.usersnap.com/load/9c38f99d-6ee3-400f-ac33-c87d632ce2ab?onload=onUsersnapCXLoad\"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id=\"root\"><div class=\"App\" id=\"appContainer\"><div data-show=\"true\" class=\"ant-alert ant-alert-warning ant-alert-banner\" role=\"alert\"><span role=\"img\" aria-label=\"exclamation-circle\" class=\"anticon anticon-exclamation-circle ant-alert-icon\"><svg viewBox=\"64 64 896 896\" focusable=\"false\" data-icon=\"exclamation-circle\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z\"></path></svg></span><div class=\"ant-alert-content\"><div class=\"ant-alert-message\">This repository is under review for potential modification in compliance with Administration directives.</div></div></div><div class=\"Login_mainLayout__8pgYp\"><div class=\"TopBanner_topBanner__+G34I\"><div class=\"TopBanner_contentContainer__Px164\"><div class=\"LoginForm_form__4pWrw\"><div class=\"LoginForm_title__XTmUR\"><svg width=\"56\" height=\"59\" class=\"\" viewBox=\"0 0 38 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.9046 39.9652C17.4678 39.9618 16.0351 39.8118 14.6288 39.5175C12.2932 39.0449 10.048 38.2029 7.97755 37.0232C5.88335 35.8364 4.04179 34.2511 2.55677 32.3567C1.32866 30.7651 0.779936 29.132 0.927214 27.4965C1.04393 26.3062 1.4289 25.1578 2.05318 24.1376C2.16324 23.9515 2.28201 23.7674 2.40949 23.5853C0.838134 21.938 0.0304814 20.0637 0.000788244 17.9888C-0.079977 12.1535 6.05818 6.7517 12.7094 1.78464C14.2879 0.602853 15.8866 0.00305176 17.4603 0.00305176C19.1422 0.00305176 20.7135 0.691932 22.0046 1.99605C23.0201 3.02106 23.7636 4.33468 24.2221 5.6103C24.9102 5.41627 25.6213 5.31599 26.3362 5.31218C27.4261 5.2978 28.5012 5.56625 29.4564 6.09133C33.1811 8.16866 35.6076 14.352 36.262 16.1965C37.1314 18.6491 38.9368 24.7612 36.9141 28.5571C35.7964 30.6523 33.3818 32.1702 30.8721 32.4208C30.6907 33.3689 30.3347 34.2751 29.8222 35.0932C29.0869 36.2254 28.1143 37.1843 26.9716 37.9033C26.8529 37.9841 26.7151 38.0661 26.5536 38.1611C24.4845 39.3654 22.007 39.9545 18.9723 39.9652H18.9046Z\" fill=\"white\"></path><path d=\"M6.53336 22.4748C8.01802 21.6268 9.70459 21.622 11.3543 21.7622C11.4351 19.3451 11.6334 16.5089 11.9482 13.2343C12.2629 9.95974 13.3984 8.7922 15.2952 9.69131C17.1089 10.4764 18.7301 11.2567 20.1744 12.0418H20.1874L20.1981 12.0097C20.1962 12.0227 20.1962 12.036 20.1981 12.0489L20.229 12.0656C20.2284 12.0589 20.2284 12.0521 20.229 12.0454C20.5129 10.6878 21.4251 9.46921 22.6045 8.58435C22.6045 8.38956 22.5938 8.19359 22.5938 7.99762V7.98336C22.6187 5.42738 19.5603 -1.22625 13.9115 3.00086C7.20918 8.01068 -4.0944 16.9554 5.17579 23.4855C5.44993 23.2407 5.73698 23.0108 6.0357 22.7967C6.19602 22.681 6.36212 22.5736 6.53336 22.4748Z\" fill=\"#FBCD1A\"></path><path d=\"M35.4841 27.7578C34.3439 29.8957 31.0658 31.169 28.9968 30.2152C28.9968 30.2152 28.9968 30.2093 28.9968 30.2069C28.9073 29.651 28.7423 29.1099 28.5063 28.5987C28.0591 27.6153 27.3394 26.7806 26.4325 26.1936C25.9648 25.9066 25.4801 25.6484 24.9811 25.4204C27.1998 23.2825 29.2225 20.6148 27.5941 18.0446C26.5631 16.4198 24.7744 14.8259 22.2422 13.2426L22.2101 13.2213C21.5949 12.8364 20.9321 12.4516 20.229 12.0692C20.229 12.0692 20.229 12.0561 20.229 12.0514C20.5141 10.6926 21.4"
+}

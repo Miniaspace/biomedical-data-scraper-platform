@@ -1,0 +1,39 @@
+{
+  "url": "https://www5.cscc.unc.edu/aric9/",
+  "domain": "www5.cscc.unc.edu",
+  "site_type": "journal",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [
+      "a:has-text(\"Next\")"
+    ],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 53
+      }
+    ],
+    "detail_link_pattern": "/aric9/home",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "xml"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/www5_cscc_unc_edu.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# \" class=\" js\"><head>\n    <meta charset=\"utf-8\">\n<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"icon\" href=\"/aric9/themes/ARIC/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"\" href=\"https://www5.cscc.unc.edu/aric9/rss.xml\">\n\n    <title>Home | ARIC</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/aric9/sites/default/files/css/css_HzJFNdujwF9CyiXRAl7sxWhBu8sFPW_wjR-RYS1sAa4.css?delta=0&amp;language=en&amp;theme=aric&amp;include=eJxtylEOwjAMA9ALFXKkKsvMqJQ2Ul0Y5fQg9gXix7KezcmBKosSyVzJ-dUrSN3AZNEhLXpVL08k7cVk81jUTxzTS9sOu0QbTPeCnfLJc4315jgo08sKXmMXex97OPPAY_yu2aY55K--AEjFRoY\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/aric9/sites/default/files/css/css_4ISMQrUpamkTJw409_T4FYt96FZpvEqq0NQUTuQX3kM.css?delta=1&amp;language=en&amp;theme=aric&amp;include=eJxtylEOwjAMA9ALFXKkKsvMqJQ2Ul0Y5fQg9gXix7KezcmBKosSyVzJ-dUrSN3AZNEhLXpVL08k7cVk81jUTxzTS9sOu0QbTPeCnfLJc4315jgo08sKXmMXex97OPPAY_yu2aY55K--AEjFRoY\">\n<link rel=\"stylesheet\" media=\"all\" href=\"https://use.typekit.net/wqs5tdr.css\">\n<link rel=\"stylesheet\" media=\"all\" href=\"https://fonts.googleapis.com/css?family=Merriweather\">\n<link rel=\"stylesheet\" media=\"all\" href=\"https://fonts.googleapis.com/css?family=Open+Sans\">\n\n    \n    <meta name=\"google-site-verification\" content=\"cd7OJb2jNX6emqN3p4yzR7Av0RIJFLAXf7_OIzCEALY\"> \n </head>\n  <body>\n        <a href=\"#main-content\" class=\"visually-hidden focusable\">\n      Skip to main content\n    </a>\n    \n      <div class=\"dialog-off-canvas-main-canvas\" data-off-canvas-main-canvas=\"\">\n    \n<script>\nfunction mobileMenu() {\n\tvar mM = document.getElementsByClassName(\"region-primary-menu\");\n\tmM = mM[0];\n\tif(mM.style.display !== \"block\"){\n\t\tmM.style.display=\"block\";\n\t}\n\telse{\n\t\tmM.style.display=\"none\"; \t\n\t}\n}\n\n</script>\n<script>\ndocument.addEventListener('DOMContentLoaded', function() {\nz = document.getElementsByClassName(\"dropcheck\");\nfor (let item of z){ \n\titem.addEventListener('focus',function(){test(item);});\n\titem.addEventListener('click',function(){test2(item);});\n}\nfunction test2(x){\n\tif(x.checkedItem){\n\t\tx.checkedItem=false;\n\t}\n\telse{\n\t\tx.checkedItem=true;\n\t}\n\tconsole.log(x.checkedItem);\n}\nfunction test(x){\n    var xl = x.name;\n\t/*if(!x.clickedItem){\n\t\tx.checked=true;\n        }\n\telse{\n\t\t\n\t}*/\n\tif(x.name > 0){\n                for(let m of z){\n                        if(m.name >= x.name){\n                                if(m!=x){\n                                \tm.checked = false;\n                        \t}\n                \t        else{\n\t                        }\n\n                        }\n                }\n        }\n        else{\n                for(let m of z){\n\t\t\tif(m!=x){\n                        \tm.checked = false;\n\t\t\t}\n\t\t\telse{\n\t\t\t}\n                }\n        }\n\t//setTimeout(function(){for(let sl of z){sl.clickedItem=false;}},10);\n}\n},false);\n</script>\n\n<div id=\"wrapper\">\n    <header>\n\t\t<div id=\"upperBar\">\n\t\t\t<div class=\"logo\">\n\t\t\t\t<a aria-label=\"ARIC logo, click to return home\" href=\"/aric9/\">\n\t\t\t\t\t<svg class=\"miniLogo\" alt=\"ARIC logo\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.2\" baseProfile=\"tiny\" id=\"Layer_1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 646.21 517.41\" overflow=\"visible\" xml:space=\"preserve\" onclick=\"window.scroll({top: 0,left: 0, behavior: 'smooth'});\">\n\t\t\t\t\t<g>\n\t\t\t\t\t\t<path fill=\"#fff\" d=\"M0,517.35h233.72c0,0,70.99-2.86,74.26-59.16c3.45-59.47-40.39-76.3-77.93-120.36s-65.77-112.66,0-140.35   c62.02-26.11,94.66,39.17,94.66,39.17s21.21-52.17,71.81-47.33c46.92,4.49,104.45,57.12,35.5,131.38   c-54.99,59.22-92.62,93.84-88.21,139.15c5.78,59.52,78.83,57.56,78.83,57.56h223.59L432.42,0H220.25L0,517.35z\"></path>\n\t\t\t\t\t</g>\n\t\t\t\t\t</svg>\n\t\t\t\t\t<svg class=\"fullLogo\" alt=\"ARIC logo, click to return home\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.2\" baseProfile=\"tiny\" id=\"Layer_1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 1920 540\" overflow=\"visible\" xml:space=\"preserve\">\n\t\t\t\t\t<g>\n\t\t\t\t\t\t<path fill=\"#fff\" d=\"M0,532.38h233.72c0,0,70.99-2.86,74.26-59.16c3.45-59.47-40.39-76.3-77.93-120.36s-65.77-112.66,0-140.35   c62.02-26.11,94.66,39.17,94.66,39.17s21.21-52.17,71.81-47.33c46.92,4.49,104.45,57.12,35.5,131.38   c-54.99,59.22-92.62,93.84-88.21,139.15c5.78,59.52,78.83,57.56,78.83,57.56h223.59L432.42,15.03H220.25L0,532.38z\"></path>\n\t\t\t\t\t\t<path fill=\"#fff\" d=\"M659.67,15.84h314.98c0,0,175.03-11.12,175.03,183.5c0,115.9"
+}

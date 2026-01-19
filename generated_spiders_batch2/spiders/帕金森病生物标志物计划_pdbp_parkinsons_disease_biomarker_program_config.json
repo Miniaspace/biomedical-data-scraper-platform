@@ -1,0 +1,24 @@
+{
+  "spider_name": "帕金森病生物标志物计划_pdbp_parkinsons_disease_biomarker_program",
+  "platform": {
+    "name": "帕金森病生物标志物计划 PDBP (Parkinson's Disease Biomarker Program)",
+    "url": "https://pdbp.ninds.nih.gov",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程复杂，需处理验证码或多因素认证（若存在）",
+    "网站基于Drupal 10，页面结构可能动态变化，需定期维护选择器",
+    "无公开API，所有数据需通过页面渲染抓取",
+    "文件下载需鉴权，确保请求头携带登录信息"
+  ]
+}

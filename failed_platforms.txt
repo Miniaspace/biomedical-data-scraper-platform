@@ -1,0 +1,18 @@
+# 失败平台列表 - 待重试
+
+# 第1批失败 (5个)
+https://framinghamheartstudy.org/|弗雷明汉心脏研究 FHS (The Framingham Heart Study)
+https://www.cardia.dopm.uab.edu/|年轻人冠状动脉风险发展研究 CARDIA (The Coronary Artery Risk Development in Young Adults)
+https://openicpsr.org|开放社会科学数据平台 openICPSR (openICPSR Open Social Science Data Platform)
+https://kidsfirstdrc.org/resources|儿童癌症数据资源平台 KFDRes (Kids First Data Resource Platform)
+https://alzheimersdata.org/ad-workbench/|阿尔茨海默病数据倡议仓库 ADI Repository (Alzheimer's Data Initiative Repository)
+
+# 第2批失败 (3个)
+https://naccdata.org|国家阿尔茨海默病协调中心 NACC (National Alzheimer's Coordinating Center)
+https://www.icpsr.umich.edu/web/pages/NACDA/|国家老龄化数据档案 NACDA (National Archive of Computerized Data on Aging)
+https://bioportal.bioontology.org|美国国家生物医学本体中心BioPortal (BioPortal - National Center for Biomedical Ontology)
+
+# 第3批失败 (3个)
+https://immunespace.org|免疫数据平台 IS (ImmuneSpace)
+https://neuinfo.org/|神经科学信息框架 NIF (Neuroscience Information Framework)
+https://vdjserver.org/community|VDJServer 社区数据门户 VDJServer CDP (VDJServer Community Data Portal)

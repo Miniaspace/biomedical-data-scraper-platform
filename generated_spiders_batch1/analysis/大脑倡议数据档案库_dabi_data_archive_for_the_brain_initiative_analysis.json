@@ -1,0 +1,29 @@
+{
+  "url": "https://dabi.loni.usc.edu",
+  "domain": "dabi.loni.usc.edu",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/dabi_loni_usc_edu.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>DABI - Data Archive for the BRAIN Initiative</title><meta name=\"next-head-count\" content=\"3\"><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/papaya_standard/papaya.css?build=1449\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\"><link rel=\"preload\" href=\"/_next/static/css/b0218b898f1db527.css\" as=\"style\"><link rel=\"stylesheet\" href=\"/_next/static/css/b0218b898f1db527.css\" data-n-g=\"\"><noscript data-n-css=\"\"></noscript><script defer=\"\" nomodule=\"\" src=\"/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js\"></script><script src=\"/_next/static/chunks/webpack-92e5f689292ea097.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-6b197565200c1210.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-8ff2d8c4cd7ed37e.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-90de1621dbdfa79f.js\" defer=\"\"></script><script src=\"/_next/static/chunks/78e521c3-96766b5fe16bfaf3.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7f0c75c1-21c8262545b0a822.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7779ef99-820d72f691e9a1ee.js\" defer=\"\"></script><script src=\"/_next/static/chunks/0c428ae2-1bb4644f54561304.js\" defer=\"\"></script><script src=\"/_next/static/chunks/4069-6ded72492159391e.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3970-97fe95f1713b0fbe.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-97e8694431324f3f.js\" defer=\"\"></script><script src=\"/_next/static/WkVe-aHFGZ1sTyaXfoGFi/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/WkVe-aHFGZ1sTyaXfoGFi/_ssgManifest.js\" defer=\"\"></script><style data-href=\"https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:wght@300;400;500;600;700&amp;display=swap\">@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyeMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyfMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZs&skey=c491285d6722e4fa&v=v20) format('woff')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsg&skey=c04ef52a878abc32&v=v22) format('woff')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsg&skey=c04ef52a878abc32&v=v22) format('woff')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUUsg&skey=c04ef52a878abc32&v=v22) format('woff')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/l/font?kit=V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42Vksg&skey=c04ef52a878abc32&v=v22) format('woff')}@font-face{font-family:'Space"
+}

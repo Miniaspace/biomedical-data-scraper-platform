@@ -1,0 +1,35 @@
+{
+  "url": "https://adknowledgeportal.synapse.org",
+  "domain": "adknowledgeportal.synapse.org",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 17
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/adknowledgeportal_synapse_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><link rel=\"shortcut icon\" href=\"/favicon.svg\"><meta property=\"og:url\" content=\"https://adknowledgeportal.synapse.org/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:title\" content=\"AD Knowledge Portal\"><meta property=\"og:description\" content=\"Discover and download Alzheimer's Disease data, analyses, and tools from the National Institute on Aging's Alzheimer's Disease Translational Research Program.\"><meta name=\"image\" property=\"og:image\" content=\"https://adknowledgeportal.synapse.org/socialmedia.png\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta property=\"twitter:domain\" content=\"synapse.org\"><meta property=\"twitter:url\" content=\"https://adknowledgeportal.synapse.org/\"><meta name=\"twitter:title\" content=\"AD Knowledge Portal\"><meta name=\"twitter:description\" content=\"Discover and download Alzheimer's Disease data, analyses, and tools from the National Institute on Aging's Alzheimer's Disease Translational Research Program.\"><meta name=\"twitter:image\" content=\"https://adknowledgeportal.synapse.org/socialmedia.png\"><meta name=\"description\" content=\"Discover and download Alzheimer's Disease data, analyses, and tools from the National Institute on Aging's Alzheimer's Disease Translational Research Program.\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#000000\"><title>AD Knowledge Portal</title><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\"><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CEKFPZDZX7&amp;cx=c&amp;gtm=4e61e1\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-KPW4KS62\"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n      })(window,document,'script','dataLayer','GTM-KPW4KS62');</script><script type=\"module\" crossorigin=\"\" src=\"/assets/index-CchESuNI.js\"></script><link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-DzZcO4O5.css\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/layout-BNO8uCwQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/PortalAclEditor-CRsjFiwj.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/UserBadge-xU9vJydZ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/ToastMessage-C5flalzh.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/ownerWindow-BMF2bJvP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/Backdrop-Pf9pYuY_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/useSuspenseQuery-DQTLvw69.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/HelpOutlineTwoTone-DpCYqVzt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/MarkdownSynapse-YHI06FHM.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/HelpPopover-CpFsym8G.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/DateFormatter-CFvN-F7r.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/ConfirmationDialog-CyKoljOS.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/useMutation-CCxg5MMx.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/RssFeedCards-BkW4y7hi.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/Plot-Cz1RNVB7.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/EntityAclEditor-BfGdQHRY.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/index-DMM76vv-.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/useEntity-BKJDB1l9.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/useEntityBundle-BGFnd8_d.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/UserOrTeamBadge-DRZ6Zm9B.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/forEach-BCd1CFZo.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/LoadingScreen-Dfev6Xyr.js\"><link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/LoadingScreen-CSDhHvRo.css\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/TableBody-BpfQOQ7_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/ImageFileHandle-CbiPabAz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/index-D8XVcG4g.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/useTeamMembers-Bock_CnR.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/WideButton-CEk0OGw1.js\">"
+}

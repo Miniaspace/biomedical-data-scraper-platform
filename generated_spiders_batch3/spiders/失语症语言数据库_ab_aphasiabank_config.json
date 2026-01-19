@@ -1,0 +1,23 @@
+{
+  "spider_name": "失语症语言数据库_ab_aphasiabank",
+  "platform": {
+    "name": "失语症语言数据库 AB (AphasiaBank)",
+    "url": "https://aphasia.talkbank.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程依赖外部域名的JS模块，需确保Playwright支持模块加载",
+    "无API接口，数据需从HTML中解析，需登录后才能访问完整数据",
+    "网站编码为ISO-8859-1，需正确处理字符编码"
+  ]
+}

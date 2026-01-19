@@ -1,0 +1,33 @@
+{
+  "recommended_method": "hybrid",
+  "spider_template": "hybrid/playwright_login_api",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": null,
+    "detail_page_selector": null,
+    "fields": {
+      "title": "根据API返回的JSON字段提取，如data.title",
+      "author": "根据API返回的JSON字段提取，如data.author",
+      "publication_date": "根据API返回的JSON字段提取，如data.pub_date",
+      "pdf_url": "根据API返回的JSON字段提取，如data.pdf_url",
+      "supplementary_materials": "根据API返回的JSON字段提取，如data.supplementary_files"
+    }
+  },
+  "pagination_strategy": "无传统分页，利用API接口的参数（如offset/limit或page）进行分页请求，直到返回空数据或无更多数据标志",
+  "file_download_strategy": "通过解析API返回的文件URL，使用带登录状态的请求头（如Cookies或Token）进行文件下载，支持断点续传和重试机制",
+  "anti_scraping_handling": [
+    "使用Playwright模拟登录，保持会话状态，避免频繁登录触发限制",
+    "合理控制请求频率，避免触发服务器异常检测",
+    "利用API接口数据，减少页面渲染和复杂DOM解析，降低被检测概率"
+  ],
+  "special_considerations": [
+    "登录流程需模拟完整，包括验证码无但需处理多因素认证或动态token",
+    "API请求可能包含动态签名或token，需分析请求头和参数，动态生成",
+    "确保文件下载时携带有效身份验证信息，避免403错误"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(self, response):\n    json_data = response.json()\n    items = json_data.get('data', [])\n    for item in items:\n        yield scrapy.Request(\n            url=item.get('detail_url'),\n            callback=self.parse_detail,\n            meta={'item_meta': item}\n        )\n    # 处理分页\n    if json_data.get('has_more'):\n        next_page = json_data.get('next_page')\n        yield scrapy.Request(\n            url=f'https://api.example.com/data?page={next_page}',\n            callback=self.parse_list\n        )",
+    "parse_detail": "async def parse_detail(self, response):\n    item_meta = response.meta.get('item_meta', {})\n    detail_json = response.json()\n    yield {\n        'title': item_meta.get('title') or detail_json.get('title'),\n        'author': item_meta.get('author') or detail_json.get('author'),\n        'publication_date': detail_json.get('pub_date'),\n        'pdf_url': detail_json.get('pdf_url'),\n        'supplementary_materials': detail_json.get('supplementary_files')\n    }"
+  }
+}

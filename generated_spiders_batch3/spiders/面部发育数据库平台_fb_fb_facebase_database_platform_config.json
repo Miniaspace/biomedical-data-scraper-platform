@@ -1,0 +1,23 @@
+{
+  "spider_name": "面部发育数据库平台_fb_fb_facebase_database_platform",
+  "platform": {
+    "name": "面部发育数据库平台 FB FB (FaceBase Database Platform)",
+    "url": "https://facebase.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录和验证码，采集门槛较低",
+    "需重点关注JavaScript渲染内容，纯Scrapy无法直接采集",
+    "注意PDF及补充材料链接可能分散在不同页面或动态加载"
+  ]
+}

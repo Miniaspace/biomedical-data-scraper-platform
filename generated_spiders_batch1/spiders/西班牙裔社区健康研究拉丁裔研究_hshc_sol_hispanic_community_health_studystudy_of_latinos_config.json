@@ -1,0 +1,23 @@
+{
+  "spider_name": "西班牙裔社区健康研究拉丁裔研究_hshc_sol_hispanic_community_health_studystudy_of_latinos",
+  "platform": {
+    "name": "西班牙裔社区健康研究/拉丁裔研究 HSHC-SOL (Hispanic Community Health Study/Study of Latinos)",
+    "url": "https://biolincc.nhlbi.nih.gov/studies/hchssol/",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "确保无限滚动加载完全，避免数据截断",
+    "PDF文件链接可能分布在详情页，需先采集详情页链接再访问详情页提取PDF",
+    "部分字段可能在详情页动态加载，若发现数据缺失，可考虑Playwright辅助渲染"
+  ]
+}

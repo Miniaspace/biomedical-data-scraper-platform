@@ -1,0 +1,37 @@
+{
+  "url": "https://www.allftd.org/data",
+  "domain": "www.allftd.org",
+  "site_type": "biobank",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 20
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": true,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/www_allftd_org.png",
+  "html_sample": "<!DOCTYPE html><html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" lang=\"en-US\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-acierbatnoir-n4-active wf-active\" style=\"\" id=\"yui_3_17_2_1_1768736042768_81\"><div id=\"yui3-css-stamp\" style=\"position: absolute !important; visibility: hidden !important\"></div><head><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n    <meta name=\"viewport\" content=\"initial-scale=1\">\n\n    <!-- This is Squarespace. --><!-- green-bullfrog-ghhx -->\n<base href=\"\">\n<meta charset=\"utf-8\">\n<title>Resource Sharing — ALLFTD</title>\n<meta http-equiv=\"Accept-CH\" content=\"Sec-CH-UA-Platform-Version, Sec-CH-UA-Model\"><link rel=\"icon\" type=\"image/x-icon\" href=\"https://images.squarespace-cdn.com/content/v1/5b11ce562714e5c0f3f724da/1550735550412-GBTGGVVKU0NQ3N4DG72C/favicon.ico?format=100w\">\n<link rel=\"canonical\" href=\"https://www.allftd.org/data\">\n<meta property=\"og:site_name\" content=\"ALLFTD\">\n<meta property=\"og:title\" content=\"Resource Sharing — ALLFTD\">\n<meta property=\"og:url\" content=\"https://www.allftd.org/data\">\n<meta property=\"og:type\" content=\"website\">\n<meta itemprop=\"name\" content=\"Resource Sharing — ALLFTD\">\n<meta itemprop=\"url\" content=\"https://www.allftd.org/data\">\n<meta name=\"twitter:title\" content=\"Resource Sharing — ALLFTD\">\n<meta name=\"twitter:url\" content=\"https://www.allftd.org/data\">\n<meta name=\"twitter:card\" content=\"summary\">\n<meta name=\"description\" content=\"\">\n<link rel=\"preconnect\" href=\"https://images.squarespace-cdn.com\">\n<link rel=\"preconnect\" href=\"https://use.typekit.net\" crossorigin=\"\">\n<link rel=\"preconnect\" href=\"https://p.typekit.net\" crossorigin=\"\">\n<script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/PoyoqOPhxBO7pBk68S4YbpHZ/recaptcha__en.js\" crossorigin=\"anonymous\" integrity=\"sha384-CsMESSmpdyXn2oSFisDd6UA6lT/9DlfGd77o9JZlC2/zeLHxhb5UOwKTAkz7dFBg\"></script><script type=\"text/javascript\" src=\"//use.typekit.net/ik/LogqOROb4X-3GuXZTYiu0fW_NLXt2edfBsVmlxw5prCfelj2fFHN4UJLFRbh52jhWDmKwQBRZQ9hwRSUFe9ujDgcwhjawRsqjs7OMkG0jAFu-WsoShFGZAsude80ZkoRdhXCHKoyjamTiY8Djhy8ZYmC-Ao1Oco8if37OcBDOcu8OfG0Za48ZAtlj1mCdeZkdhSlZhyGpfoDSWmyScmDSeBRZPoRdhXCHKoDSWmyScmDSeBRZWFR-emqiAUTdcS0jhNlOeBRiA8XpWFR-emqiAUTdcS0jhNlOeBRiA8XpWFR-emqiAUTdcS0dcmXOeBCdeZXZfozScSCjWw0dA9CZa48ZAtlj1mCdeZkdhSlZhyGpfoDSWmyScmDSeBRZPoRdhXCdeNRjAUGdaFXOYFUiABkZWF3jAF8ShFGZAsude80ZkoRdhXCiaiaOcBRiA8XpWFR-emqiAUTdcS0jhNlOYiaikoyjamTiY8Djhy8ZYmC-Ao1Oco8ifUaiaS0jAUCZ1sqOcNkZkUaiaS0jWw0dA9CiaiaOcikZAm0OA4udeUcScN1OAiG-Y60SaBujW48Sagyjh90jhNlOYiaikoDSWmyScmDSeBRZWFR-emqiAUTdcS0jhNlJ6oyjh88SKuKjWbldcNTSKGHfHRjMsMMeMb6MTMgyCQ2T3j.js\" async=\"\" fetchpriority=\"high\" onload=\"try{Typekit.load();}catch(e){} document.documentElement.classList.remove('wf-loading');\"></script>\n<script>document.documentElement.classList.add('wf-loading')</script>\n<style>@keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; }</style>\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800\"><script type=\"text/javascript\" crossorigin=\"anonymous\" nomodule=\"nomodule\" src=\"//assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js\"></script>\n<style type=\"text/css\">@font-face{font-family:acier-bat-noir;src:url(https://use.typekit.net/af/416593/0000000000000000775265c0/31/l?subset_id=2&fvd=n4&v=3) format(\"woff2\"),url(https://use.typekit.net/af/416593/0000000000000000775265c0/31/d?subset_id=2&fvd=n4&v=3) format(\"woff\"),url(https://use.typekit.net/af/416593/0000000000000000775265c0/31/a?subset_id=2&fvd=n4&v=3) format(\"opentype\");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}</style><script type=\"text/javascript\" crossorigin=\"anonymous\" src=\"//assets.squarespace.com/@sqs/polyfiller/1.6/modern.js\"></script>\n<script type=\"text/javascript\">SQUARESPACE_ROLLUPS = {};</script>\n<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-baea69e744e2c54f-min.en-US.js\"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_runtime');</script>\n<script crossorigin=\"anonymous\" src=\"//assets.squarespace.co"
+}

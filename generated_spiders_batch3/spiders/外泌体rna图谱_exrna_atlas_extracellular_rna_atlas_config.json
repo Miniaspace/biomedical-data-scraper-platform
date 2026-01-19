@@ -1,0 +1,23 @@
+{
+  "spider_name": "外泌体rna图谱_exrna_atlas_extracellular_rna_atlas",
+  "platform": {
+    "name": "外泌体RNA图谱 exRNA Atlas (Extracellular RNA Atlas)",
+    "url": "https://exrna.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录和复杂反爬，采集难度较低，但需处理无限滚动加载",
+    "无检测到API接口，需基于页面解析数据",
+    "文件下载链接需确认是否直接可访问，避免跳转或权限限制"
+  ]
+}

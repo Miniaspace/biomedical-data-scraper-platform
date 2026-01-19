@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "8",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='https://www.hhs.gov/']",
+    "fields": {
+      "title": "li > a::text",
+      "detail_url": "li > a::attr(href)"
+    }
+  },
+  "pagination_strategy": "无分页，所有数据均在单一页面内加载，无需分页处理。",
+  "file_download_strategy": "在详情页中定位PDF或补充材料链接，使用Scrapy的文件下载管道进行下载，确保链接为绝对路径，若为相对路径则拼接完整URL后下载。",
+  "anti_scraping_handling": [
+    "由于无验证码、无登录、无JavaScript渲染及无Cloudflare防护，反爬机制较弱，建议合理设置下载延时和并发数，避免过快请求导致服务器封禁。",
+    "使用随机User-Agent和请求头模拟正常浏览器访问，防止被简单的UA检测拦截。"
+  ],
+  "special_considerations": [
+    "详情页链接指向外部域名https://www.hhs.gov/，需确保跨域请求时处理好请求头和Cookies（如有）以保证访问成功。",
+    "部分文件可能需要额外权限或特殊请求头，需在测试阶段确认文件下载的可行性。",
+    "Drupal 10网站结构稳定，CSS选择器较为可靠，但需关注未来页面结构变化。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('https://www.hhs.gov/'):\n            yield response.follow(detail_url, callback=self.parse_detail)\n",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('title::text').get() or response.css('h1::text').get()\n    # 假设PDF链接在a标签中，且href以.pdf结尾\n    pdf_links = response.css('a[href$=\".pdf\"]::attr(href)').getall()\n    for pdf_link in pdf_links:\n        yield {\n            'title': title,\n            'pdf_url': response.urljoin(pdf_link)\n        }\n"
+  }
+}

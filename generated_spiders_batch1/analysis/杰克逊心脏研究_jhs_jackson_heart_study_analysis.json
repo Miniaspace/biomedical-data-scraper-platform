@@ -1,0 +1,35 @@
+{
+  "url": "https://www.jacksonheartstudy.org/",
+  "domain": "www.jacksonheartstudy.org",
+  "site_type": "journal",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 39
+      }
+    ],
+    "detail_link_pattern": "#main-menu",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/www_jacksonheartstudy_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en-US\"><head id=\"Head\"><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n<meta name=\"REVISIT-AFTER\" content=\"1 DAYS\">\n<meta name=\"RATING\" content=\"GENERAL\">\n<meta name=\"RESOURCE-TYPE\" content=\"DOCUMENT\">\n<meta content=\"text/javascript\" http-equiv=\"Content-Script-Type\">\n<meta content=\"text/css\" http-equiv=\"Content-Style-Type\">\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\"><title>\n\tJackson Heart Study &gt; Research\n</title><meta id=\"MetaRobots\" name=\"robots\" content=\"INDEX, FOLLOW\"><link href=\"/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700|Open Sans:regular,600&amp;display=swap&amp;subset=&amp;cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/vendor/bootstrap/bootstrap.lite.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/css/header.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/css/theme.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/header/megamenu/megamenu.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/Layouts/0/LayoutDB.Header.jhs-home.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/Layouts/0/LayoutDB.Content.jhs-full.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/Layouts/0/LayoutDB.Footer.jhs-footer.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Resources/Search/SearchSkinObjectPreview.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/skin.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/global-0.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/page-211-research.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Containers/obvio/container.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/0/portal.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/css/global-basic.css?cdv=415\" type=\"text/css\" rel=\"stylesheet\"><link href=\"/Portals/_default/Skins/obvio/resource/header/mobilemenu/mobilemenu.css?cdv=415\" media=\"all\" title=\"all\" onload=\"this.media=this.title\" type=\"text/css\" rel=\"stylesheet\"><script type=\"text/javascript\" async=\"\" src=\"https://ssl.google-analytics.com/ga.js\"></script><script src=\"/Resources/libraries/jQuery/03_07_01/jquery.js?cdv=415\" type=\"text/javascript\"></script><script src=\"/Resources/libraries/jQuery-Migrate/03_04_01/jquery-migrate.js?cdv=415\" type=\"text/javascript\"></script><script src=\"/Resources/libraries/jQuery-UI/01_13_03/jquery-ui.min.js?cdv=415\" type=\"text/javascript\"></script><link rel=\"icon\" href=\"/Portals/0/favicon.ico?ver=6rnKNMBglngAunBPiIrSFw%3d%3d\" type=\"image/x-icon\">     \n        \n\t\t\t    <script type=\"text/javascript\">\n\t\t\t      var _gaq = _gaq || [];\n\t\t\t      _gaq.push(['_setAccount', 'UA-169949369-1']);\n\t\t\t      _gaq.push(['_trackPageview']);\n\t\t\t \n\t\t\t      (function() {\n\t\t\t\t    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n\t\t\t\t    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n\t\t\t\t    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n\t\t\t      })();\n\t\t\t    </script>\n        \n\t\t  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"format-detection\" content=\"telephone=no\"></head>\n<body id=\"Body\">\n\n    <form method=\"post\" action=\"/\" id=\"Form\" enctype=\"multipart/form-data\">\n<div class=\"aspNetHidden\">\n<input type=\"hidden\" name=\"__EVENTTARGET\" id=\"__EVENTTARGET\" value=\"\" style=\"\">\n<input type=\"hidden\" name=\"__EVENTARGUMENT\" id=\"__EVENTARGUMENT\" value=\"\" style=\"\">\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"rGt6F1E1YAs7yH7YyqbccfHg5k9xyODiHcEEM7Ai/JE1dhwd0Gmtc7jmSeYsDs6b2Smitp+XVq2MGz0x9JhXMRR1sbVyoMYa0eBaWCBX9m0XbEjiQR/8Iib1V9pL2bkqF4lJdeZKRUetohuzedd27Z3LSF1We4NM0grHUgMQ07oKObaDs2t3TCWFO2EcmrYFfmTYaSUhqmyc78tDG/a0BwHmIwpniuJUZvO8bYqyImkt43al/wlkMbRZ0VGr+HtviHJVvB9VVGSgiaCsVlYpNRdKJ4cpY4y8UD1h3SYYiPmGVUGBsjMQZQHDJHd9CLfhQCmEXomn3oIAVhN5uaXSH++5zCeULdI+Oy9Ga+8/mK22EuairN1jggj3UrAT9wOtj0/PxuX8/TcxslshnlfZnIldRhiOQlcb7qFnTd4tpyrlgnnTDw6u3LCJEZXhOk1lOBWYe+97JkCr4R6JeQTnFgm9RZ3sLYFVeU0WAyk0IJ11hDr+9ApEmFGydJsXxJKCAqa3I7o7sn7nCKlm44ZCAGFagfwreNqX6MMacsXfHIy17gwrhTot8y33rOFP2VCBunfNUkGLtk0zu/R3RQgZq9/u8/4EKB/B4OjJetIKXK2fbaaVEpQYARWgE4tm7Ms9NB9ryij+rYGluMNhIQ9oM8YM200I1/iR515Njw1C4Y"
+}

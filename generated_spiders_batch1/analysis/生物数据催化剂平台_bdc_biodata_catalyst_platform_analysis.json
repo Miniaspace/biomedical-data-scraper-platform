@@ -1,0 +1,29 @@
+{
+  "url": "https://biodatacatalyst.nhlbi.nih.gov",
+  "domain": "biodatacatalyst.nhlbi.nih.gov",
+  "site_type": "unknown",
+  "has_login": false,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": true,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/biodatacatalyst_nhlbi_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>Human Verification</title>\n    <style>\n        body {\n            font-family: \"Arial\";\n        }\n    </style>\n    <script type=\"text/javascript\">\n    window.awsWafCookieDomainList = [];\n    window.gokuProps = {\n\"key\":\"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AGvfpWwg+S+64/CD3DBdsOtAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMe3NLUdITcxdyK+ScAgEQgDstSWYnhteY6SR5dc5NXNoA2ZqNR+vI60CR6EPqN2nSzWvShPkYpPJpKJ65wPDZsHl0kofZp28i1cYwQA==\",\n          \"iv\":\"D57XbADF5gAAKcnX\",\n          \"context\":\"EM8+rCE2Oz0EaodDFTNPzJ6KgbjeoP/6/gN/I3wmKYVgJrF0RLpPiPLMbZh/7L1oqu+iVL89Hf5DsHUzrgb6H2RcEuEqOetuHwx3rVig9MM57445fzrID0kDOjNf9P7xBZrtika2wQPCVFjhFsr6MdPVaBYW0NwdVnCRjHL9NDjDzkKmcn5ePo+xABWXLKyTcIGn8aXiIp8S3SUOG9sz6LuTl04TVG3oMAgRUi1U5c/J0Y8pl/c3bKj2tWBiBwDgB6ma/fcRGtvrdUEf0qzQVsoo1VAF6bo2aS1I80Rb8zwOv3TJRDHM/jtzEND5a1T/nCTtXuwkQ26ztp+hoz6WNmGohpGFMmKyLp/Ct7BKWg7I5YBocYoIWu7id54ctoriW2XKW2uRLUcCql8kW59ZNEj84t/wUj9isGcUYDyJMReiVon3uglmDhU0Lh72qQoAV3xcp2+nvg4Uax+mVmHgKPHV1re20wQKlU6dpiSkQmMRNF4MpKk5LP4M+fRiElQFMO32dUPIKlO8AGFOBGd+kRPGKOjK3EbH0Dsd390QuMq5c2Rgl5uKy1zc69jbCZkAhvTeVyzv3IV/5qEntIVteN3rznoRn+Wu/JuCwGavTQ6Ar9NmrrZ+6rzrumcP8n9BsbsJ2VUts5k+iHSDPP09Z4swyVguNA78PxJrrEC6AKF/jgKgjhW4IQqi14b5CZs5B6gBEfvlMkK4ml8HuSj2g8/zjCignhHfo5zSR0D3DGFYb4YYwXFGEknA/GjsTiSHVBLZwa4D/p+esv/p\"\n};\n    </script>\n    <script src=\"https://bc791863a89d.ab0bb3cc.us-east-1.token.awswaf.com/bc791863a89d/5e57a6df2073/113cd4414b72/challenge.js\"></script>\n    <script src=\"https://bc791863a89d.ab0bb3cc.us-east-1.captcha.awswaf.com/bc791863a89d/5e57a6df2073/113cd4414b72/captcha.js\"></script>\n<style>/*@font-face {\n    font-family:AmazonEmber;\n    src: url(\"https://a0.awsstatic.com/libra-css/fonts/amazon-ember/AmazonEmber_Rg.woff2\") format(\"woff2\"), url(\"https://a0.awsstatic.com/libra-css/fonts/amazon-ember/AmazonEmber_Rg.woff\") format(\"woff\");\n}*/\n\nhtml,\nbody {\n    height: 100%;\n}\n\n#captcha {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    min-height: 100%;\n}\n\n.btn {\n    box-sizing: border-box;\n    border-radius: 2px;\n    padding: 5px 17px;\n    cursor: pointer;\n    color: #fff;\n    font-size: 1rem;\n}\n\n.btn-primary {\n    background-color: #FF9902;\n    color: black;\n    border: 1px solid #FF9902;\n    font-weight: bold;\n}\n.btn-primary:hover {\n    background-color: #EC7210;\n    border: 1px solid #EC7210;\n    font-weight: bold;\n}\n\n.btn-icon {\n    background-color: transparent;\n    background-repeat: no-repeat;\n    border: none;\n    cursor: pointer;\n    overflow: hidden;\n    padding-inline-start: 6px;\n    padding-inline-end: 6px;\n}\n\n.amzn-captcha-modal {\n    background-color: #fff,\n}\n\n/* TODO: Fix this so the root uses classes instead of an ID */\n#root select,\n#root button {\n    font-size: inherit;\n}\n\n/* Consistent keyboard focus styling */\n#root *:focus {\n    outline: 3px solid #0972d3;\n    outline-offset: 1px;\n}\n\n.amzn-captcha-state-container {\n    max-width: 100px;\n}\n\n#root-instructions {\n    max-width: 350px;\n}\n\n#verification-status {\n    max-width: 250px;\n}\n\ninput[type=\"checkbox\"] {\n    display: none;\n}\n\ninput[type=\"checkbox\"]:checked ~ label > img {\n    transform: scale(2);\n    background: rgb(255, 255, 255);\n    box-shadow: 1px 2px 2px rgb(117, 117, 117), -1px 2px 2px rgb(117, 117, 117);\n    cursor: zoom-out;\n}\n\ninput[type=\"text\"],\nselect,\n.btn {\n    font-family: 'Amazon Ember', Helvetica, Arial, sans-serif;\n    font-size: inherit;\n}\n\n.element img {\n    transition: transform 0.25s ease;\n    cursor: zoom-in;\n}\n\n.grid-category {\n    text-decoration: underline;\n    font-family: 'Amazon Ember', Helvetica, Arial, sans-serif;\n    font-weight:'heavy';\n}\n\n.amzn-captcha-lang-selector {\n    border: 1px solid #ccc;\n    border-radius: 4px;\n    background: transparent;\n}\n\n.amzn-captcha-audio-play-btn {\n    display: flex;\n    margin: 0 auto;\n    align-items: center;\n    background-color: #18817E;\n    border: 1px solid #18817E;\n}\n\n.amzn-grid-focus {\n    position: absolute;\n    background: transparent;\n    outline: 3px solid #0972d3;\n    outline-offset: 1px;\n    pointer-events: none;\n}\n</style><link rel=\"stylesheet\" href=\"https://static.captcha.awswaf.com/fonts/AmazonEmberLt/stylesheet.css\"></head>\n<body>\n    <div id=\"captcha-container\" dir=\"ltr\" style=\"width: 320px; margin: 0px auto;\"><div id=\"root\" style=\"font-family: &quot;Amazon Ember&quot;, Helvetica, Arial, sans-serif; width: 100%;\"><div style=\"padding: 50px 0px; text-align: center; border-top: 1px solid rgb(204, 204, 204); border-bottom: 1px solid rgb(204, 204, 204); margin: 0px auto; max-width: 500px; width: 100%;\"><div style=\"display: none; background-color: rgb(255, 233, 228); padding: 5px 20px; margin-bottom: 20px; font-size: 0.875em;\"><img src=\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gPHBhdGggZm"
+}

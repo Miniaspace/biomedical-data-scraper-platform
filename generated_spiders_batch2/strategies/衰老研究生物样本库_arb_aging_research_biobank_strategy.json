@@ -1,0 +1,29 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul li > strong, ul li > a, ul li > span",
+      "pdf_link": "ul li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于网站采用无限滚动(infinite_scroll)分页且无API接口，建议通过模拟浏览器滚动行为获取更多数据。考虑到JavaScript执行量较小且无复杂反爬，使用Scrapy结合Splash或Scrapy-Selenium模拟滚动加载，直到无新数据加载为止。",
+  "file_download_strategy": "通过解析列表项中PDF文件的直接链接，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件名和路径合理保存。下载前可进行HEAD请求确认文件大小及类型。",
+  "anti_scraping_handling": [
+    "网站无验证码、无登录、无明显速率限制，建议合理设置下载延时和并发数，避免过快请求导致IP封禁。",
+    "使用随机User-Agent和请求头模拟真实浏览器请求，降低被识别风险。"
+  ],
+  "special_considerations": [
+    "detail_link_pattern为“#”，说明无详情页，所有信息均在列表页内，采集时需充分解析列表页内容。",
+    "部分数据可能嵌入在文本或HTML标签中，需根据实际HTML结构灵活调整选择器。",
+    "无限滚动加载数据量较大时，需控制爬取深度和数据量，避免资源浪费。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        title = item.css('strong::text, a::text, span::text').get(default='').strip()\n        pdf_url = item.css('a[href$=\".pdf\"]::attr(href)').get()\n        yield {\n            'title': title,\n            'pdf_url': response.urljoin(pdf_url) if pdf_url else None\n        }\n    # 处理无限滚动通过Splash或Selenium模拟滚动加载更多数据",
+    "parse_detail": "pass  # 无详情页，所有数据均在列表页"
+  }
+}

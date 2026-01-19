@@ -1,0 +1,22 @@
+{
+  "spider_name": "精神疾病基因组资源中心_nrgr_nimh_repository_and_genomics_resources",
+  "platform": {
+    "name": "精神疾病基因组资源中心 NRGR (NIMH Repository and Genomics Resources)",
+    "url": "https://nimhgenetics.org",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 1,
+    "estimated_dev_time": "4"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站当前无API，且无动态内容，直接静态HTML解析即可。",
+    "目标数据结构未明确，需根据实际页面内容灵活调整选择器。"
+  ]
+}

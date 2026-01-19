@@ -1,0 +1,23 @@
+{
+  "spider_name": "临床测序证据生成研究_cser_clinical_sequencing_evidence_generating_research",
+  "platform": {
+    "name": "临床测序证据生成研究 CSER (Clinical Sequencing Evidence-Generating Research)",
+    "url": "https://genome.gov/Funded-Programs-Projects/CSER",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面不依赖JavaScript渲染核心内容，Scrapy即可满足需求",
+    "无限滚动需结合浏览器模拟或Splash，增加开发复杂度",
+    "无登录和验证码，降低反爬难度"
+  ]
+}

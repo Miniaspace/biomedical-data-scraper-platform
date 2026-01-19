@@ -1,0 +1,24 @@
+{
+  "spider_name": "国家成瘾与hiv数据档案计划_nahdap_national_addiction_hiv_data_archive_program",
+  "platform": {
+    "name": "国家成瘾与HIV数据档案计划 NAHDAP (National Addiction & HIV Data Archive Program)",
+    "url": "https://icpsr.umich.edu/web/pages/NAHDAP/data/index.html",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录是必须步骤，需提前获取有效账号和密码",
+    "Cloudflare防护可能导致请求延迟，需设置合理超时和重试",
+    "无限滚动加载可能导致内存占用较高，需分批保存数据",
+    "页面结构可能动态变化，需定期维护选择器"
+  ]
+}

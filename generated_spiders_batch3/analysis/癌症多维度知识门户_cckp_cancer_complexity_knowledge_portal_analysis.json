@@ -1,0 +1,29 @@
+{
+  "url": "https://cancercomplexity.synapse.org",
+  "domain": "cancercomplexity.synapse.org",
+  "site_type": "biobank",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/cancercomplexity_synapse_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><link rel=\"shortcut icon\" href=\"/favicon.svg\"><meta property=\"og:url\" content=\"https://cancercomplexity.synapse.org/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:title\" content=\"Cancer Complexity Knowledge Portal\"><meta property=\"og:description\" content=\"The NIH National Cancer Institute-sponsored Cancer Systems Biology Consortium (CSBC) and Physical Sciences in Oncology Network (PS-ON) aim to tackle the most perplexing issues in cancer to increase our understanding of tumor biology, treatment options, and patient outcome. The CSBC PS-ON Data Portal highlights ongoing research efforts in these richly interdisciplinary fields, including the data generated and methods developed in the addressing fundamental questions in cancer research.\"><meta name=\"image\" property=\"og:image\" content=\"https://cancercomplexity.synapse.org/socialmedia.png\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta property=\"twitter:domain\" content=\"synapse.org\"><meta property=\"twitter:url\" content=\"https://cancercomplexity.synapse.org/\"><meta name=\"twitter:title\" content=\"Cancer Complexity Knowledge Portal\"><meta name=\"twitter:description\" content=\"The NIH National Cancer Institute-sponsored Cancer Systems Biology Consortium (CSBC) and Physical Sciences in Oncology Network (PS-ON) aim to tackle the most perplexing issues in cancer to increase our understanding of tumor biology, treatment options, and patient outcome. The CSBC PS-ON Data Portal highlights ongoing research efforts in these richly interdisciplinary fields, including the data generated and methods developed in the addressing fundamental questions in cancer research.\"><meta name=\"twitter:image\" content=\"https://cancercomplexity.synapse.org/socialmedia.png\"><meta name=\"description\" content=\"The NIH National Cancer Institute-sponsored Cancer Systems Biology Consortium (CSBC) and Physical Sciences in Oncology Network (PS-ON) aim to tackle the most perplexing issues in cancer to increase our understanding of tumor biology, treatment options, and patient outcome. The CSBC PS-ON Data Portal highlights ongoing research efforts in these richly interdisciplinary fields, including the data generated and methods developed in the addressing fundamental questions in cancer research.\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#000000\"><title>Cancer Complexity Knowledge Portal</title><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\"><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CEKFPZDZX7&amp;cx=c&amp;gtm=4e61e1\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-KPW4KS62\"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n      })(window,document,'script','dataLayer','GTM-KPW4KS62');</script><script type=\"module\" crossorigin=\"\" src=\"/assets/index-_y2lBl8m.js\"></script><link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-Dgrjp_--.css\"><style id=\"_goober\"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}</style><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/Home-BnL84cCQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/resources-Bd0cmIuM.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/generateEncodedPathAndQueryForSelectedFacetURL-vzqxlX-3.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/PortalFullTextSearchField-CnA5IXrT.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/KeyboardArrowDown-BlGap2TM.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/SectionLayout-CHdYYkrY.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/assets/Container-D-lEo7Uh.js\"><link r"
+}

@@ -1,0 +1,39 @@
+{
+  "url": "https://www.spiromics.org/spiromics/",
+  "domain": "www.spiromics.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [
+      "a:has-text(\"Next\")"
+    ],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 25
+      }
+    ],
+    "detail_link_pattern": "/spiromics/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/www_spiromics_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\" js\"><head>\n    <meta charset=\"utf-8\">\n<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"canonical\" href=\"https://www.spiromics.org/spiromics/home\">\n<link rel=\"shortlink\" href=\"https://www.spiromics.org/spiromics/node/1\">\n\n    <title>Welcome to SPIROMICS, a comprehensive research study of COPD | Spiromics</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/spiromics/sites/default/files/css/css_rGJ7a8yzC-aahzNvrkX2lrHoaFH-7Iettx1_heVbHoQ.css?delta=0&amp;language=en&amp;theme=spiro9_theme&amp;include=eJxtjksOwjAMRC9U4TWnidJkRCM5MbLdlnB6Ij6LAhsv3pvROImCmmiNXO6YOHZZPcxr4Qwl3yUJB0PyIu1jc7EkG7STNAw_2bWonIMvqKA5Go6kwixeYEfaJI9cN0d9dbaC3eh5T1Xyym8UjEuGLbJTkuYqbMFx8x97HSM6fmeG27cNqScG_aUP_BloKQ\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/spiromics/sites/default/files/css/css_LaSxCK_uE8bV0Fku2v9cT9qJPR2anFsPyYAQfGmS7uo.css?delta=1&amp;language=en&amp;theme=spiro9_theme&amp;include=eJxtjksOwjAMRC9U4TWnidJkRCM5MbLdlnB6Ij6LAhsv3pvROImCmmiNXO6YOHZZPcxr4Qwl3yUJB0PyIu1jc7EkG7STNAw_2bWonIMvqKA5Go6kwixeYEfaJI9cN0d9dbaC3eh5T1Xyym8UjEuGLbJTkuYqbMFx8x97HSM6fmeG27cNqScG_aUP_BloKQ\">\n\n    \n    <link href=\"https://fonts.googleapis.com/css?family=Roboto:400,600,800\" rel=\"stylesheet\">\n  </head>\n  <body class=\"path-frontpage page-node-type-page\">\n        <a href=\"#main-content\" class=\"visually-hidden focusable skip-link\">\n      Skip to main content\n    </a>\n    \n      <div class=\"dialog-off-canvas-main-canvas\" data-off-canvas-main-canvas=\"\">\n    <div class=\"layout-container\">\n  <header>\n\t  <a class=\"header-logo-link\" href=\"/spiromics/\">\n\t\t\t<img alt=\"Site logo\" id=\"header-logo\" src=\"/spiromics/themes/custom/spiro9_theme/images/header-logo.png\">\n\t  </a>\n\t  <nav id=\"nav-menus\" role=\"navigation\">\n      <div id=\"mobile-menu\" data-listening=\"true\">\n        <img alt=\"Main Menu\" src=\"/spiromics/themes/custom/spiro9_theme/images/icons/hamburger.png\">\n      </div>\n\t\t\t  <div class=\"region region-primary-menu\">\n    \n              <ul class=\"menu\">\n    \n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/\" data-drupal-link-system-path=\"&lt;front&gt;\" class=\"is-active\" aria-current=\"page\">Home</a>\n              </li>\n                <li class=\"menu-item down-arrow\">\n                  <a class=\"down-arrow\" aria-haspopup=\"true\" href=\"/spiromics/study-design\">About ▼</a>\n                        <ul class=\"dropdown\" aria-label=\"submenu\">\n    \n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/study-design\" data-drupal-link-system-path=\"node/10\">Study Design</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/clinical-sites\" data-drupal-link-system-path=\"node/16\">Clinical Sites</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/contacts-gic\" data-drupal-link-system-path=\"node/4\">Data Coordinating Center</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/news-archive\" data-drupal-link-system-path=\"node/70\">News Archive</a>\n              </li>\n          </ul>\n  \n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/participants\" data-drupal-link-system-path=\"node/9\">Participants</a>\n              </li>\n                <li class=\"menu-item down-arrow\">\n                  <a class=\"down-arrow\" aria-haspopup=\"true\" href=\"/spiromics/obtaining-data\">Researchers ▼</a>\n                        <ul class=\"dropdown\" aria-label=\"submenu\">\n    \n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/obtaining-data\" data-drupal-link-system-path=\"node/17\">Obtaining SPIROMICS Data</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/data-forms-source\" data-drupal-link-system-path=\"node/54\">Data Collection Forms</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/published-manuscripts\" data-drupal-link-system-path=\"node/20\">Publications</a>\n              </li>\n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/ancillary-studies\" data-drupal-link-system-path=\"node/19\">Ancillary Studies</a>\n              </li>\n          </ul>\n  \n              </li>\n          </ul>\n  \n\n\n\n  </div>\n\n\t\t\t  <div class=\"region region-secondary-menu\">\n    \n              <ul class=\"menu\">\n    \n                <li class=\"menu-item\">\n                  <a href=\"/spiromics/user/login\" data-drupal-link-system-path=\"user/login\">Log in</a>\n              </li>\n          </ul>\n  \n\n\n\n  </div>\n\n\t\t\t\n    </nav><!-- nav-menus -->\n  </header>\n\n    \n  <main role=\"main\">\n    <div id=\"banner\" class=\"\">\n                  <div class=\"banner-image slideshow\">\n                          <img alt=\"Banner "
+}

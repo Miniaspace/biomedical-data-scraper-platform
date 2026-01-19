@@ -1,0 +1,35 @@
+{
+  "url": "https://bdsp.io",
+  "domain": "bdsp.io",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 6
+      }
+    ],
+    "detail_link_pattern": "/content/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/bdsp_io.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <title>\nBrain Data Science Platform\n</title>\n    \n    \n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/bootstrap/css/bootstrap.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/font-awesome/css/all.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/custom/css/bdsp.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/custom/css/notifications.css\">\n    \n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/custom/css/home.css\">\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Brain Data Science Platform News\" href=\"/feed.xml\">\n\n    \n<script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-YKC8ZQQ4FF&amp;cx=c&amp;gtm=4e61e1\"></script><script src=\"/static/jquery/jquery.min.js\"></script>\n<script src=\"/static/popper/popper.min.js\"></script>\n<script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-87592301-7\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'UA-87592301-7');\n</script>\n    \n    <link rel=\"shortcut icon\" type=\"image/png\" href=\"/static/favicon.ico\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  </head>\n\n  \n<body>\n  \n<nav class=\"navbar navbar-expand-md navbar-dark bg-dark d-flex justify-content-between\" id=\"mainNav\">\n\t<label for=\"navicon\" class=\"navbar-icon\">☰</label>\n\t<input type=\"checkbox\" id=\"navicon\" class=\"navbar-check\" style=\"\">\n\n\t<a id=\"nav_home\" class=\"navbar-brand\" href=\"/\">\n\t\tBrain Data Science Platform\n\t</a>\n\n\t<div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n\t\t\n\n\n\n\n<ul class=\"navbar-nav mr-auto\">\n\n  <li class=\"nav-item\">\n    <a id=\"nav_index\" class=\"nav-link\" href=\"/content/\">\n        Find\n    </a>\n  </li>\n\n  \n    \n      <li class=\"nav-item\">\n        <a id=\"nav_about\" class=\"nav-link\" href=\"/about/\">\n          About\n        </a>\n      </li>\n    \n  \n    \n  \n    \n  \n    \n  \n    \n  \n    \n  \n\n  <li class=\"nav-item\">\n    <a id=\"nav_news\" class=\"nav-link\" href=\"/news/\">\n      News\n    </a>\n  </li>\n</ul>\n\n<ul class=\"navbar-nav ml-auto\">\n  \n\n<ul class=\"navbar-nav ml-auto\">\n  \n\n  <!-- Admin Notifications -->\n  \n\n  <li class=\"nav-item dropdown\">\n      \n          \n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"nav_account_dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Account\n            </a>\n            <div class=\"dropdown-menu\" aria-labelledby=\"nav_account_dropdown\">\n                <a id=\"nav_login\" class=\"dropdown-item\" href=\"/login/\">\n                  Login\n                </a>\n                <a id=\"nav_register\" class=\"dropdown-item\" href=\"/register/\">\n                  Register\n                </a>\n            </div>\n          \n      \n  </li>\n</ul>\n\n\t</ul></div>\n\n\t<div class=\"navbar-search\">\n\t\t<form class=\"form-inline\" action=\"/content/\">\n\t    \t<input name=\"topic\" class=\"search-input\" type=\"text\" placeholder=\"Search\" style=\"\">\n\t\t    <span class=\"input-group-btn\">\n\t\t      <button id=\"search-button\" type=\"submit\" class=\"btn-search my-2 my-sm-0\" title=\"Search Brain Data Science Platform\"><span class=\"fa fa-search\"><span class=\"visually-hidden\">Search Brain Data Science Platform</span></span></button>\n\t\t    </span>\n\t \t</form>\n\t</div>\n</nav>\n\n\n  \n  <div class=\"alert alert-primary front-page-banner\">\n    <ul class=\"list-unstyled front-page-banner\">\n    \n    <li>\n      \n      <a href=\"/about/howto_accessdata/\">Learn how to interact with the project data</a>\n      \n    </li>\n    \n    <li>\n      \n      <a href=\"https://www.nlm.nih.gov/NIHbmic/domain_specific_repositories.html\">BDSP Recognized as NIH-Approved Data Repository</a>\n      \n    </li>\n    \n    </ul>\n  </div>\n  \n\n  <div class=\"main-header\">\n    <div class=\"center\">\n      <h1>Brain Data Science Platform</h1>\n      <p>\n        The Resource for Computational Brain Science Research\n      </p>\n      <br>\n      <div>\n        \n            <a href=\"/about/database/\">Data</a>\n        \n            <a href=\"/about/software/\">Software</a>\n        \n            <a href=\"/about/tutorials/\">Tutorials</a>\n        \n            <a href=\"/about/bdspc3/\">Consortium</a>\n        \n      </div>\n    </div>\n    <a href=\"#latest\">\n      <div class=\"down-container\"><div class=\"down\"></div></div>\n    </a>\n  </div>\n  <div class=\"main\">\n    <div class=\"main-content\" id=\"latest\">\n      <div class=\"content-box\">\n        <h2>\n          Featured Resources\n        </h2>\n        <br>\n        \n\n\n  <div class=\"project\">\n    <p><span class=\"badge badge-dark\"><i class=\"fa fa-database\"></i> Database</span>\n       <span class=\"badge badge-danger\"><i class=\"fas fa-lock\"></i> Credentialed Access</span>\n    </p>\n    <h3><a href=\"/content/n1vba1x5qt62frfjem65/1.0/\">The Brain Imaging and Neurophysiology Database (BIND)</a></h3>\n    \n      <p cl"
+}

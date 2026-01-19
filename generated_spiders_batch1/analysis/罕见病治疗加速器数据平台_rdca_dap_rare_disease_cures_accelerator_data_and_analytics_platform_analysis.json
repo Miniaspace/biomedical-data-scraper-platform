@@ -1,0 +1,35 @@
+{
+  "url": "https://portal.rdca.c-path.org",
+  "domain": "portal.rdca.c-path.org",
+  "site_type": "clinical_trial",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 4
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": true
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/portal_rdca_c-path_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/img/apple-touch-icon.png\">\n  <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD0UlEQVRYhe2Wf2hbVRTHP+81S7oYZ9hCV+qigdWlG21Zax1SizOi6EIl/tpGRFSsNrR1ooh/6JT+MWUIA4uQhjCKmzJfnSKWauh0Lto5mLG0q8yygNOCUtL8MUMIWZdkiX+8l/Q1bbKXYf8Q94XHu++c88753nvPuffADfzfIayWY6e3Rw+8DTwJ6ICvgP5Any+uthPLOfFbbc1+q635OjkcA94CGoB64BVg1OntWRKzJAG/1dYLTAPTylgznN6ebcgzL8a9wP2aCACuEmMtqNeqK0fgGJAFspd0htEKCVwoo5vRRMDz5+xHwGZg8wFb67jR4W6rgEAcGF5BHgDG1QLNVWB0uJsBfTIoTeRlMbddBIxAwiyFC7ZOb083sAv4AdiLPNFR4FCgz7dwXQTUJOZqJ2PAAaATMAEx4Eugvy7SatFXC2J75y0TgT7fNX0WCOzwj+iAdmVGZ0MeV2ylHz5/7C7nA9Xx/YptMSbeiFsP+r4++YXWSQlK8AbkJcpnaAJ4MeRxLdnHmNtuAsJAHFHMrLnnkcaq2xq4enGa9NmxWWAOsABNZimc0kRgh39ERK73xiJdCtga8rh+VxF4ATgMsPalQwl9e6epYPzdp9HLQ/01yucTZim8bBWMDnc38CDwYTIoBfIEtgG/liA4CPx8fnh4DDD9sXFqv0HIPSes28DNvh8RhMUUymXSxLvaIH2FRFYc2BLd7lVUWeXZApxQZAvArcmgdEmHfE6XwnqgTnnXZHKC3iDkoKpquaUogiBX9RXEamATkFFZWFTjQlwd8sEwC9iKXGaBd0Me13nle+Ymt70ReCr3d5TMufHMmpadBfLpn04kSF02AWwQM6eTQel7tTOjww2wFfkoPpwMSlFYTMK7kZMwzzIDvBbyuD5QO4m57euBi0AcgzFqeOjpNvH2Bq7+Nk3q208ukElnlNW6wyyFk8uXaTnUZWgGHkau61Pq5FPj3O6mx2261KtAx0rqj5OWg/tGzhzXEnwJAS0wOtz1wKa52skF4D2FhIi8XSeB1+sirRZjVojsia+dGZwa+vcI5IOr9zbmtpuBGiBilsKFRqO3petl4E7kbd2LnGujwJHBqaGs2m+5CmDgaIcJ4M0j1tri4ABmKRxDPoaLcRxoAj5TyR4FdgLPqg1L3oYDRzs6gXlgvnvX/H3Fwa8BPfD8CvJnelu6ltyq5fqBPuR7wWjbmNpdQXCA7WV8t2olcEY1Pl0hgb+06srlwDvApDIeq5DAJHCKov4P+AX4Ri1Ytba8t6VrHfA+sIfFtnzf4NRQZLVi3sB/E/8AnWki0EgJl9IAAAAASUVORK5CYII=\">\n  <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/img/favicon-32x32.png\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"theme-color\" content=\"#000000\">\n  <meta name=\"description\" content=\"RDCA-DAP Portal\">\n  <title>RDCA-DAP Portal</title>\n  <script type=\"module\" crossorigin=\"\" src=\"/assets/index-6f276fca.js\"></script>\n  <link rel=\"stylesheet\" href=\"/assets/index-f2155030.css\">\n</head>\n\n<body>\n  <noscript>You need to enable JavaScript to run this app.</noscript>\n  <div id=\"root\"><div id=\"header\" class=\"semantic\"><div class=\"ui nav fixed menu\"><div class=\"ui container\"><div class=\"header item logo\"><img src=\"/assets/RDCA-DAP_logo_COLOR-0b115543.svg\" alt=\"Aridhia Logo\" class=\"ui image logo\" id=\"portalLogo\"></div><a href=\"https://fair.dap.c-path.org/\" target=\"_blank\" rel=\"noreferrer\" class=\"item menu\"><img src=\"/assets/FAIRLogo2020-white-d8007d3b.svg\" alt=\"\" class=\"icon\"><img src=\"/assets/FAIRLogo2020-white-d8007d3b.svg\" alt=\"\" class=\"icon hover\"> Data Services</a><a href=\"https://workspaces.westeurope.dap.c-path.org/\" target=\"_blank\" rel=\"noreferrer\" class=\"item menu\"><img src=\"/assets/workspacesLogo2020-white-6fa05a33.svg\" alt=\"\" class=\"icon\"><img src=\"/assets/workspacesLogo2020-white-6fa05a33.svg\" alt=\"\" class=\"icon hover\"> Workspaces</a><div class=\"right menu\"><div class=\"ui simple dropdown item\"><div id=\"user_name_display\" class=\"header\">Please sign in<img id=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACQCAYAAADEHbNtAAAFs0lEQVR42uyda28TRxSGd+wlMYmdBjWEAlWp1Kr0A/3/P6VSoBKkasUlBBrs4jgJy5zsuF5SG3vtvZyZeR5ptQgpye6ed95zdmZ2JkkAAAAAAAAAAAAAAAAAAAAAAADqwsR641mWpfbUv/HfQ2PMJUIIM+B9F/B9e/Tcv9MlPyZiGBaO91YgY4TgX/Al6PcKwa8CEcKJPV5ZUQwRgm6r/94JoFfznxMh/GUF8RIh6BLAQ3ekDf/5SyeIFwihXRFI8B+1IIB5aeMPK4i3CKFZAeza02N77Cq7NBHCkY9vHsZTF/hBgQt8LV0c+eYOxjMR/GJPh55c7rEVwzFCqL4g/E1hKljGayuGI4RQnQieeCiCohieIoS4ReCNGFLlD/BXe+yIJjwXwl0r6syK4ZnWC+wodoOf7WkvCYdDe0+HOEI5EdyVVhSAE9zkJ3tvI+sMIxxhuQi27enHJFweu9oHR1jWauzRDdANpmwl+eDYcxxhsRvcCawuWMR39l53cITFPArYCebd6+84wvwCcTuJhz17z3s4wv95EJEbTJEBtDMcYeYGB5G5wZSBe0vCERwHEbrBFJladxy9I7gWMUji5VscIWc/YjcQujLr2hjzPvYaYT+BAY6Qf3CSRS6EftQ1grXEAWZwzY59Ft2YHeE2bjATgz0+xFojbBH/LxoFjgBJq6mhbUdABDN6MTsCbww4AmiibUfADZQ8CxwBcATQ4wgfCYGORtG2I1zhCjoaRdtCmCR51yrkjSLa1DAh/v8xjtkRxqQGHamhbUcYEf88LRhjLqJ1BHvzV1mWSUvoRS6E1huEhg6lfzGE9uYhaKkRBJm0eQchRO4IbrHri5hFICkSR5i5wgFuEHeNIPwTqQgurBuouHcVjiCvTvbtQR7IXmRCONVyIZqGoU9icwNNTqjms3jnCqcRvUGc2Hv+hCPMRxay/hSBCM6tCM40XZC6lVfdHkz3AxeCLNh9rumC1E1Vc/slnQUsglNtIlBVI9zgTZJ/BRXaKiojrfs4qJy86oqo14HVC+ICr7RenPbV2cURHiT+z7YWQf+peYsf1Q/Y5dKTAETwt/Z9nnzZwUU+lr3noTNMRaB+Sp43ezpZMWx5liYk+C992fHNt829Oq6PQfu6CjLZ5o2mnsOghFAQhHRDa1yESwL/TluvYbBCKKSKA0XucL2JuI+bf3othIIg+s4d2uocu3QCGPv8HEPaLV4E8U2DgpDAj1yXuPcEI4SCIGRqvGwPuFPDG4bUAEMngKC+0gpOCHP6H3rJZuMW5671fwwt+NEIYUGB2VkiCmn1Mnvo0tfCDwAAAAAAAAAAAKAZ1HYxu+7g8B640vEKoyDgcg0S9FvuLMPIoS8WLuMZMo4hopBxjYkVSBadENyOZtvuYF+nHBGFjHSet7GUjmlYABL06dAwLKbxYW/TkACmk0W6xLgU4gyjJqbBmZoFIHm/7/I/rI/UEcM6V2c1NQnAOAGQAqpPGcM6CktTgwikDhgkkc1+arLUSvK1GSdqhWBFsJu0vKNpREgxOVIlBJcKBtQCrdQOH6pIFaYiEcj6iClxaQXpmDrbVAymIhHwWtj+a+ZGYjCIADGsLYRCTYAI9IlhrZph3cEdegl10nWxqd8RXHcxHUW6GZftlu6UFEGKCLyg52JVvSMUuo3ZWNwPrr/cXrVeKBPUbUTgFcs+9v2CdEU3kF8qYwhs1ukXWzZ2k1UW9Vq1hTN+4C+3K3EEN62sgxv4myIkhsumv63iCMwpDCBFbOQIrjbo4gbe05VYfq1WWOYIDCuHw61NagTcICBXWKtGcEUi083CwbiYlnYE3CBMV7gqWyMwuhhRekgXpIVpSsARAkNiO2/8obNB/wL4SadMjWBwg3CLxjIt"
+}

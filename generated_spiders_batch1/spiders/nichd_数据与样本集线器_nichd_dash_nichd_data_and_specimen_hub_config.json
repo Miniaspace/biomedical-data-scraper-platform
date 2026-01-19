@@ -1,0 +1,23 @@
+{
+  "spider_name": "nichd_数据与样本集线器_nichd_dash_nichd_data_and_specimen_hub",
+  "platform": {
+    "name": "NICHD 数据与样本集线器 NICHD DASH (NICHD Data and Specimen Hub)",
+    "url": "https://dash.nichd.nih.gov",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "8"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "详情页链接指向外部域名https://www.hhs.gov/，需确保跨域请求时处理好请求头和Cookies（如有）以保证访问成功。",
+    "部分文件可能需要额外权限或特殊请求头，需在测试阶段确认文件下载的可行性。",
+    "Drupal 10网站结构稳定，CSS选择器较为可靠，但需关注未来页面结构变化。"
+  ]
+}

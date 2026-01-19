@@ -1,0 +1,23 @@
+{
+  "spider_name": "大鼠基因组数据库_rgd_rat_genome_database",
+  "platform": {
+    "name": "大鼠基因组数据库 RGD (Rat Genome Database)",
+    "url": "https://rgd.mcw.edu",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站不需要登录，简化采集流程。",
+    "无检测到API，需通过页面解析获取数据。",
+    "无限滚动可能导致大量数据加载，需控制滚动次数和数据量，避免内存溢出。"
+  ]
+}

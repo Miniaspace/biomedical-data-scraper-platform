@@ -1,0 +1,35 @@
+{
+  "url": "https://exrna.org",
+  "domain": "exrna.org",
+  "site_type": "journal",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "table tbody tr",
+        "type": "table_row",
+        "count": 4
+      }
+    ],
+    "detail_link_pattern": "https://www.cell.com/iscience/fulltext/S2589-0042(22)00925-7",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/exrna_org.png",
+  "html_sample": "<!DOCTYPE html><html dir=\"ltr\" lang=\"en-US\" prefix=\"og: https://ogp.me/ns#\" class=\"js no-flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths mti-inactive\"><head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t\n\t<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\">\n\t<link rel=\"pingback\" href=\"https://exrna.org/xmlrpc.php\">\n\t<link rel=\"icon\" href=\"https://exrna.org/favicon.ico\" type=\"image/x-icon\">\n\t\n\t\t<style>img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px }</style>\n\t\n\t\t<!-- All in One SEO 4.4.1 - aioseo.com -->\n\t\t<title>Home - exRNA Portal</title>\n\t\t<meta name=\"robots\" content=\"max-image-preview:large\">\n\t\t<link rel=\"canonical\" href=\"https://exrna.org/\">\n\t\t<meta name=\"generator\" content=\"All in One SEO (AIOSEO) 4.4.1\">\n\t\t<meta property=\"og:locale\" content=\"en_US\">\n\t\t<meta property=\"og:site_name\" content=\"exRNA Portal - Website of the Extracellular RNA Communication Consortium\">\n\t\t<meta property=\"og:type\" content=\"website\">\n\t\t<meta property=\"og:title\" content=\"Home - exRNA Portal\">\n\t\t<meta property=\"og:url\" content=\"https://exrna.org/\">\n\t\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\t\t<meta name=\"twitter:title\" content=\"Home - exRNA Portal\">\n\t\t<script type=\"text/javascript\" charset=\"utf-8\" src=\"//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/38d3020ee67bdafdc3231e2272e1fa0689108cda/popup.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script async=\"\" src=\"/wp-content/themes/exrna/external/chimptastic.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-45628747-1&amp;cx=c&amp;gtm=4e61e1\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-45628747-2&amp;cx=c&amp;gtm=4e61e1\"></script><script type=\"application/ld+json\" class=\"aioseo-schema\">\n\t\t\t{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/exrna.org\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/exrna.org\\/#listItem\",\"position\":1,\"item\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/exrna.org\\/\",\"name\":\"Home\",\"description\":\"Website of the Extracellular RNA Communication Consortium\",\"url\":\"https:\\/\\/exrna.org\\/\"}}]},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/exrna.org\\/#organization\",\"name\":\"exRNA Portal\",\"url\":\"https:\\/\\/exrna.org\\/\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/exrna.org\\/#webpage\",\"url\":\"https:\\/\\/exrna.org\\/\",\"name\":\"Home - exRNA Portal\",\"inLanguage\":\"en-US\",\"isPartOf\":{\"@id\":\"https:\\/\\/exrna.org\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/exrna.org\\/#breadcrumblist\"},\"datePublished\":\"2013-11-02T00:07:44-05:00\",\"dateModified\":\"2014-04-08T04:09:05-05:00\"},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/exrna.org\\/#website\",\"url\":\"https:\\/\\/exrna.org\\/\",\"name\":\"exRNA Portal\",\"description\":\"Website of the Extracellular RNA Communication Consortium\",\"inLanguage\":\"en-US\",\"publisher\":{\"@id\":\"https:\\/\\/exrna.org\\/#organization\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/exrna.org\\/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}]}\n\t\t</script>\n\t\t<!-- All in One SEO -->\n\n\n\t<!-- This site is optimized with the Yoast SEO plugin v21.3 - https://yoast.com/wordpress/plugins/seo/ -->\n\t<link rel=\"canonical\" href=\"https://exrna.org/\">\n\t<meta property=\"og:locale\" content=\"en_US\">\n\t<meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:title\" content=\"exRNA - Extracellular RNA Research, Resources, Projects &amp; Protocols\">\n\t<meta property=\"og:url\" content=\"https://exrna.org/\">\n\t<meta property=\"og:site_name\" content=\"exRNA Portal\">\n\t<meta property=\"article:modified_time\" content=\"2014-04-08T04:09:05+00:00\">\n\t<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://exrna.org/\",\"url\":\"https://exrna.org/\",\"name\":\"exRNA - Extracellular RNA Research, Resources, Projects & Protocols\",\"isPartOf\":{\"@id\":\"https://exrna.org/#website\"},\"datePublished\":\"2013-11-02T00:07:44+00:00\",\"dateModified\":\"2014-04-08T04:09:05+00:00\",\"breadcrumb\":{\"@id\":\"https://exrna.org/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://exrna.org/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://exrna.org/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\"}]},{"
+}

@@ -1,0 +1,35 @@
+{
+  "url": "https://eveanalytics.com",
+  "domain": "eveanalytics.com",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 9
+      }
+    ],
+    "detail_link_pattern": null,
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/eveanalytics_com.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no,maximum-scale=1\"><link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/apple-touch-icon.png\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\"><link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\"><link rel=\"mask-icon\" href=\"/safari-pinned-tab.svg\" color=\"#5bbad5\"><link rel=\"manifest\" href=\"/manifest.json\"><meta name=\"msapplication-TileColor\" content=\"#da532c\"><meta name=\"theme-color\" content=\"#ffffff\"><title>EveAnalytics™</title><meta name=\"description\" content=\"The mission of EveAnalytics™ is to provide a shared platform that equips every MPS &amp; Organ-Chip user with the tools and data needed to streamline experimental designs, compare data sets, and assure successful study outcomes.\"><script defer=\"defer\" src=\"/static/js/main.99df8bb9.js\"></script><link href=\"/static/css/main.2f21677b.css\" rel=\"stylesheet\"><script src=\"https://js.stripe.com/v3\"></script><style data-emotion=\"css-global\" data-s=\"\"></style><style data-emotion=\"css-global\" data-s=\"\"></style><style data-emotion=\"css-global\" data-s=\"\"></style><style data-emotion=\"css-global\" data-s=\"\"></style><style data-emotion=\"css\" data-s=\"\"></style></head><body id=\"body\" style=\"overflow: hidden;\"><noscript>You need to enable JavaScript to run this app.</noscript><div id=\"root\" aria-hidden=\"true\"><div class=\"flex min-h-full flex-col\"><nav class=\"sticky top-0 py-2 bg-grey-50 border-b border-grey-250 z-[999]\"><div class=\"page-container flex items-center justify-between\"><div class=\"flex items-center\"><a href=\"/\"><svg width=\"138\" height=\"20\" viewBox=\"0 0 138 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><g clip-path=\"url(#clip0_2553_18900)\"><path d=\"M123.745 7.51966L122.602 7.84637C122.489 7.51966 122.33 7.22374 122.125 6.95858C121.919 6.69343 121.65 6.48273 121.318 6.32648C120.991 6.17023 120.584 6.09211 120.097 6.09211C119.368 6.09211 118.769 6.2673 118.302 6.61768C117.834 6.96806 117.6 7.42023 117.6 7.97421C117.6 8.44296 117.759 8.82412 118.077 9.11768C118.4 9.4065 118.896 9.63614 119.564 9.8066L121.192 10.2114C122.094 10.434 122.77 10.7867 123.219 11.2697C123.672 11.7526 123.899 12.3587 123.899 13.0878C123.899 13.7034 123.731 14.2503 123.394 14.7285C123.057 15.2067 122.587 15.5831 121.984 15.8577C121.386 16.1276 120.691 16.2626 119.901 16.2626C118.849 16.2626 117.981 16.0235 117.299 15.5452C116.616 15.0623 116.179 14.3663 115.987 13.4572L117.187 13.1589C117.341 13.8075 117.642 14.2976 118.091 14.629C118.545 14.9605 119.141 15.1262 119.88 15.1262C120.708 15.1262 121.369 14.9392 121.865 14.5651C122.361 14.1863 122.609 13.7128 122.609 13.1447C122.609 12.7043 122.464 12.335 122.174 12.0367C121.884 11.7337 121.444 11.5111 120.855 11.3691L119.094 10.943C118.159 10.7157 117.467 10.3558 117.018 9.86341C116.569 9.37099 116.345 8.76019 116.345 8.03103C116.345 7.4297 116.506 6.90177 116.829 6.44722C117.151 5.98794 117.596 5.62809 118.161 5.36768C118.727 5.10726 119.373 4.97705 120.097 4.97705C121.084 4.97705 121.872 5.20432 122.461 5.65887C123.055 6.10868 123.483 6.72894 123.745 7.51966Z\" fill=\"#8859CB\"></path><path d=\"M109.325 16.2626C108.361 16.2626 107.522 16.0187 106.807 15.531C106.096 15.0433 105.544 14.3757 105.151 13.5282C104.758 12.6806 104.562 11.7147 104.562 10.6305C104.562 9.53671 104.761 8.5637 105.158 7.71143C105.56 6.85915 106.117 6.19154 106.828 5.70858C107.538 5.2209 108.364 4.97705 109.304 4.97705C110.024 4.97705 110.676 5.1191 111.261 5.40319C111.845 5.68254 112.327 6.0779 112.706 6.58927C113.089 7.0959 113.33 7.68775 113.428 8.36483H112.166C112.035 7.7493 111.719 7.22374 111.219 6.78813C110.723 6.34779 110.092 6.12762 109.325 6.12762C108.637 6.12762 108.029 6.31701 107.501 6.6958C106.973 7.06985 106.559 7.59305 106.259 8.2654C105.965 8.93302 105.818 9.70717 105.818 10.5878C105.818 11.4733 105.963 12.2569 106.252 12.9387C106.542 13.6158 106.949 14.1461 107.473 14.5296C108.001 14.9131 108.619 15.1049 109.325 15.1049C109.802 15.1049 110.237 15.0149 110.629 14.835C111.027 14.6503 111.359 14.3899 111.625 14.0538C111.897 13.7176 112.079 13.3175 112.173 12.8535H113.435C113.342 13.5116 113.11 14.0987 112.741 14.6148C112.376 15.1262 111.901 15.5287 111.317 15.8222C110.737 16.1158 110.073 16.2626 109.325 16.2626Z\" fill=\"#8859CB\"></path><path d=\"M100.164 16.0351V5.12604H101.419V16.0351H100.164ZM100.802 3.25104C100.545 3.25104 100.325 3.16345 100.143 2.98826C99.9602 2.80834 99.869 2.5929 99.869 2.34195C99.869 2.09101 99.9602 1.87794 100.143 1.70275C100.325 1.52282 100.545 1.43286 100.802 1.43286C101.059 1.43286 101.279 1.52282 101.461 1.70275C101.644 1.87794 101.735 2.09101 101.735 2.34195C101.735 2.5929 101.644 2.80834 101.461 2.98826C101.279 3.16345 101.059 3.25104 100.802 3.25104Z\" fill=\"#8859CB\"></path><path d=\"M96.919 5.12609V6.22694H91.7775V5.12609H96.919ZM93.3838 2.51245H94.6393V13.1872C94.6393 13.6417 94.7165 13.9992 94.8708 14.2596C95.0251 14.5153 95.2262 14.6976 "
+}

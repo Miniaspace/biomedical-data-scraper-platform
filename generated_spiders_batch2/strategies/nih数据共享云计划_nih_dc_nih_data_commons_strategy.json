@@ -1,0 +1,33 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 2,
+  "estimated_dev_time": "12",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='https://www.nih.gov/']",
+    "fields": {
+      "title": "li > a::text",
+      "detail_url": "li > a::attr(href)",
+      "description": "li > p::text",
+      "pdf_links": "a[href$='.pdf']::attr(href)",
+      "supplementary_materials": "a.supplementary-material::attr(href)"
+    }
+  },
+  "pagination_strategy": "无分页，页面一次性加载所有列表项，直接抓取全部li元素即可，无需额外分页处理。",
+  "file_download_strategy": "针对PDF及补充材料链接，使用Scrapy的FilesPipeline或自定义下载中间件进行文件下载，确保文件完整性和重试机制。",
+  "anti_scraping_handling": [
+    "由于网站使用Cloudflare，建议设置合理的下载延迟和并发限制，模拟正常用户访问频率。",
+    "使用Scrapy自带的User-Agent中间件，随机切换User-Agent，避免被简单封禁。",
+    "开启自动重试机制，处理因Cloudflare防护导致的偶发请求失败。"
+  ],
+  "special_considerations": [
+    "网站基于Drupal 10构建，结构相对稳定，CSS选择器较为可靠。",
+    "无登录和动态加载需求，Scrapy即可满足采集需求，无需Playwright。",
+    "注意采集时尊重robots.txt及网站使用条款，避免过度请求。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    for li in response.css('ul li'):\n        detail_url = li.css('a::attr(href)').get()\n        if detail_url and detail_url.startswith('https://www.nih.gov/'):\n            yield response.follow(detail_url, self.parse_detail)\n",
+    "parse_detail": "def parse_detail(self, response):\n    yield {\n        'title': response.css('h1::text').get(),\n        'authors': response.css('.author-list::text').getall(),\n        'pdf_links': response.css('a[href$=\".pdf\"]::attr(href)').getall(),\n        'supplementary_materials': response.css('a.supplementary-material::attr(href)').getall(),\n        'description': response.css('meta[name=\"description\"]::attr(content)').get()\n    }\n"
+  }
+}

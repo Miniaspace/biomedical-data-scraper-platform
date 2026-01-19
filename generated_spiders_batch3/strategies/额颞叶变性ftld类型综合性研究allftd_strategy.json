@@ -1,0 +1,30 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul > li",
+    "detail_page_selector": null,
+    "fields": {
+      "title": "ul > li > div.title, ul > li > div > h3",
+      "pdf_link": "ul > li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite_scroll)，使用Playwright模拟页面滚动操作，触发动态加载更多数据，直到页面不再加载新内容或达到预设最大条数。",
+  "file_download_strategy": "通过Playwright捕获PDF文件链接，使用异步HTTP请求下载PDF文件，确保文件完整性，支持断点续传。若PDF链接为动态生成，需在页面加载后提取。",
+  "anti_scraping_handling": [
+    "针对验证码，采用人工识别或集成第三方验证码识别服务，必要时设置采集频率，避免触发验证码。",
+    "模拟真实用户行为，如合理滚动速度、随机停顿，避免快速连续请求。",
+    "使用代理IP池分散请求，降低被封风险。"
+  ],
+  "special_considerations": [
+    "网站不需要登录，但存在验证码，需提前设计验证码处理流程。",
+    "页面JavaScript渲染较少，但无限滚动需完整执行JS，确保数据加载。",
+    "无API接口，所有数据需从页面DOM中提取，字段较少，需根据实际页面结构调整选择器。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul > li')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('div.title, div > h3', 'el => el.textContent.trim()')\n        pdf_link = await item.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n        results.append({'title': title, 'pdf_link': pdf_link})\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    # 详情页无固定链接，数据均在列表页，若有详情页，补充此处逻辑\n    pass"
+  }
+}

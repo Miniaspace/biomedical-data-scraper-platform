@@ -1,0 +1,24 @@
+{
+  "spider_name": "通用代谢性疾病药物合作平台_cmdkp_common_metabolic_diseases_knowledge_portal",
+  "platform": {
+    "name": "通用代谢性疾病药物合作平台 CMDKP (Common Metabolic Diseases Knowledge Portal)",
+    "url": "https://hugeamp.org",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录必须，需提前准备账号密码，且登录后cookie/session需保持",
+    "页面大量依赖JavaScript渲染，传统Scrapy无法直接抓取",
+    "无公开API，所有数据需从前端渲染内容中提取",
+    "文件下载链接可能动态生成，需在详情页或列表页动态获取"
+  ]
+}

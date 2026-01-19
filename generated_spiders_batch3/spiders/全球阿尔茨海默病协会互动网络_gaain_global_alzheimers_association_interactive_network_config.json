@@ -1,0 +1,23 @@
+{
+  "spider_name": "全球阿尔茨海默病协会互动网络_gaain_global_alzheimers_association_interactive_network",
+  "platform": {
+    "name": "全球阿尔茨海默病协会互动网络 GAAIN (Global Alzheimer’s Association Interactive Network)",
+    "url": "https://gaaindata.org",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录和JavaScript渲染，Scrapy即可满足需求",
+    "需确认所有数据是否均在HTML中，若部分数据通过异步请求加载，需进一步分析接口",
+    "确保下载文件链接有效，避免断链"
+  ]
+}

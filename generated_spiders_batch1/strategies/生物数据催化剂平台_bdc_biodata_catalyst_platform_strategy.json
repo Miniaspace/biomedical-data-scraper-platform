@@ -1,0 +1,36 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 4,
+  "estimated_dev_time": "40",
+  "data_extraction": {
+    "list_page_selector": "N/A - 无明显列表分页结构，需动态分析具体页面",
+    "detail_page_selector": "N/A - 需根据具体研究数据页面动态定位",
+    "fields": {
+      "title": "待定，需根据具体页面结构用CSS或XPath定位，如 //h1 或 .title",
+      "author": "待定，类似 //div[@class='author'] 或 .author",
+      "publication_date": "待定",
+      "abstract": "待定",
+      "pdf_link": "a[href$='.pdf']",
+      "supplementary_materials": "a[href*='supplement']"
+    }
+  },
+  "pagination_strategy": "无传统分页，需通过动态加载或滚动加载方式采集，Playwright模拟用户操作触发数据加载",
+  "file_download_strategy": "通过Playwright捕获页面中PDF及补充材料的下载链接，使用Playwright或requests结合cookie和header完成文件下载，避免直接暴露下载地址导致反爬",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器环境，执行JavaScript，绕过JS验证",
+    "针对验证码，结合手动或第三方验证码识别服务，或采用人工辅助方式",
+    "控制请求频率，避免触发验证码和封禁",
+    "使用代理池分散访问IP"
+  ],
+  "special_considerations": [
+    "网站强制人机验证，自动化采集难度大，需结合人工辅助",
+    "无公开API，需逆向分析动态加载数据接口",
+    "文件下载需保持登录态或验证态，确保链接有效",
+    "采集前需确认版权及使用合规性"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 由于无分页，需定位数据容器\n    await page.wait_for_selector('CSS_SELECTOR_FOR_DATA_CONTAINER')\n    items = await page.query_selector_all('CSS_SELECTOR_FOR_EACH_ITEM')\n    for item in items:\n        detail_url = await item.eval_on_selector('a', 'el => el.href')\n        yield detail_url",
+    "parse_detail": "async def parse_detail(page):\n    await page.wait_for_selector('CSS_SELECTOR_FOR_TITLE')\n    title = await page.text_content('CSS_SELECTOR_FOR_TITLE')\n    author = await page.text_content('CSS_SELECTOR_FOR_AUTHOR')\n    pdf_link = await page.get_attribute('a[href$=\".pdf\"]', 'href')\n    # 下载文件示例\n    if pdf_link:\n        await page.goto(pdf_link)\n    return {\"title\": title, \"author\": author, \"pdf_link\": pdf_link}"
+  }
+}

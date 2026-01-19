@@ -1,0 +1,35 @@
+{
+  "url": "https://sleepdata.org",
+  "domain": "sleepdata.org",
+  "site_type": "journal",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 10
+      }
+    ],
+    "detail_link_pattern": "/pages/about",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": true,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/sleepdata_org.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n<meta charset=\"utf-8\">\n<meta content=\"IE=Edge,chrome=1\" http-equiv=\"X-UA-Compatible\">\n<meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" name=\"viewport\">\n<meta content=\"National Research Resource Resource offers free web access to large collections of de-identified physiological signals and clinical data elements collected in well-characterized research cohorts and clinical trials. The initial data resource is from the Sleep Heart Health Study.\" name=\"description\">\n<meta content=\"Remo Mueller\" name=\"author\">\n<meta content=\"sleep data, research datasets, study, sleep apnea, free access, download datasets\" name=\"keywords\">\n\n<meta content=\"https://sleepdata.org/\" property=\"og:url\">\n<meta content=\"Sleep Data - National Sleep Research Resource - NSRR\" property=\"og:title\">\n<meta content=\"Offering free web access to large collections of de-identified physiological signals and clinical data elements in well-characterized research cohorts and clinical trials.\" property=\"og:description\">\n<meta content=\"https://sleepdata.org/assets/nsrr_logo_256-2b7574fa87aea6bb9e2edd98af62b89528ea66a38a7f203460992b3cb94d34c8.png\" property=\"og:image\">\n\n<meta content=\"Sleep Data - National Sleep Research Resource - NSRR\" itemprop=\"name\">\n<meta content=\"Offering free web access to large collections of de-identified physiological signals and clinical data elements in well-characterized research cohorts and clinical trials.\" itemprop=\"description\">\n<meta content=\"https://sleepdata.org/assets/nsrr_logo_256-2b7574fa87aea6bb9e2edd98af62b89528ea66a38a7f203460992b3cb94d34c8.png\" itemprop=\"image\">\n\n<meta content=\"no-cache\" name=\"turbolinks-cache-control\">\n<title>Sleep Data - National Sleep Research Resource - NSRR</title>\n<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/assets/favicon-2aaa9a73588124fb9fe63e5e33de40d6804deaa9c049627e6328e2d090769ce1.ico\">\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"https://sleepdata.org/blog.atom\">\n<meta name=\"csrf-param\" content=\"authenticity_token\">\n<meta name=\"csrf-token\" content=\"dyNooljRswQNgk1rfL8PBd11pYFLFk6wXyeVXZostas7dilrX-gGUAdHtY0yal4qH_TIutn7xUHvtA_WrzYB2A\">\n<script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/PoyoqOPhxBO7pBk68S4YbpHZ/recaptcha__en.js\" crossorigin=\"anonymous\" integrity=\"sha384-CsMESSmpdyXn2oSFisDd6UA6lT/9DlfGd77o9JZlC2/zeLHxhb5UOwKTAkz7dFBg\"></script><script data-site=\"LOVVJMDS\" defer=\"\" src=\"https://fourteen-imagine.sleepdata.org/script.js\"></script>\n\n<link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-7665744f7526e3a73d9467b7f67868c27b4987adb7d1a26b8d3e61f9aeeaca2b.css\" data-turbolinks-track=\"reload\">\n<script src=\"/assets/application-fc5b2a1cd522a332378ecaac8de48c82df83d8d284162439af8c5d80f15263fe.js\" data-turbolinks-track=\"reload\"></script>\n<script>\n//<![CDATA[\nvar root_url='/';\n//]]>\n</script>\n<!-- Begin Constant Contact Active Forms -->\n<script> var _ctct_m = \"e516fff3daaed3fd7f86426c60362abd\"; </script>\n<script id=\"signupScript\" src=\"//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js\" async=\"\" defer=\"\"></script>\n<!-- End Constant Contact Active Forms -->\n\n<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.css\"><style id=\"ctct-form-styles_0\" type=\"text/css\" media=\"all\">.ctct-form-embed.form_0 .ctct-form-defaults .ctct-form-header {\n                    color: #323232;\n                }\n.ctct-form-embed.form_0 .ctct-form-defaults .ctct-form-text,\n                .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-label,\n                .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-listname,\n                .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-lists-legend,\n                .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-date-slash,\n                .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text,\n                .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text .ctct-form-footer-link,\n                .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text .ctct-form-footer-privacy-link {\n                    color: #323232;\n                }\n.ctct-form-embed.form_0 .ctct-form-custom .ctct-form-button {background-color: #0078c1;border: 1px solid #0078c1;color: #ffffff;}\n.ctct-form-embed.form_0 .ctct-form-custom .ctct-form-button:hover {background-color: #0098f4;border: 1px solid #0098f4;}\n.ctct-form-embed.form_0 .ctct-form-custom .ctct-form-button:active {background-color: #00588e;border: 1px solid #00588e;}\n.ctct-form-embed.form_0 .ctct-form-defaults {\n      "
+}

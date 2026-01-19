@@ -1,0 +1,23 @@
+{
+  "spider_name": "美国国家癌症研究所试验性新药数据库_nci_ind_nci_investigational_new_drug_database",
+  "platform": {
+    "name": "美国国家癌症研究所试验性新药数据库 NCI-IND (NCI Investigational New Drug Database)",
+    "url": "https://cipinddirectory.cancer.gov",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "详情链接指向外部PubMed网站，需额外处理跨域请求和数据抓取。",
+    "部分数据字段可能为空或格式不统一，需做好数据清洗和异常处理。",
+    "若后续发现详情页含有PDF或补充材料，需动态扩展文件下载逻辑。"
+  ]
+}

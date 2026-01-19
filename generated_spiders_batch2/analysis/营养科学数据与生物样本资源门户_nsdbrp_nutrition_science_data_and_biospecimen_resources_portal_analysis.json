@@ -1,0 +1,35 @@
+{
+  "url": "https://dpcpsi.nih.gov/onr/onr-nutrition-science-data-and-biospecimen-resources-portal",
+  "domain": "dpcpsi.nih.gov",
+  "site_type": "biobank",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 24
+      }
+    ],
+    "detail_link_pattern": "https://www.hhs.gov/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": true
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/dpcpsi_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\" js audio video cssgradients opacity rgba cssanimations borderradius borderimage boxshadow flexbox csstransforms csstransitions\"><head>\n    <meta charset=\"utf-8\">\n<meta name=\"description\" content=\"The National Institutes of Health (NIH) Office of Nutrition Research is committed to advancing nutrition science research through promoting access to publicly available datasets, biospecimens, and data analysis tools and resources.&nbsp;In each of the topic areas, the list below provides information and links to resources that may be of interest to nutrition science researchers.\">\n<link rel=\"canonical\" href=\"https://dpcpsi.nih.gov/onr/onr-nutrition-science-data-and-biospecimen-resources-portal\">\n<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\">\n<meta name=\"MobileOptimized\" content=\"width\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<link rel=\"icon\" href=\"/sites/g/files/mnhszr346/files/favicon_trans.ico\" type=\"image/vnd.microsoft.icon\">\n\n    <title>Nutrition Science Data and Biospecimen Resources Portal | DPCPSI</title>\n    <link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/core/components/progress.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/core/components/ajax-progress.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/align.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/fieldgroup.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/container-inline.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/clearfix.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/details.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/hidden.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/item-list.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/js.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/nowrap.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/position-container.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/reset-appearance.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/resize.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/system-status-counter.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/system-status-report-counters.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/system-status-report-general-info.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/system/components/tablesort.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/views/views.module.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/extlink/css/extlink.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/core/modules/layout_discovery/layouts/onecol/onecol.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/modules/contrib/paragraphs/css/paragraphs.unpublished.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/core/assets/vendor/normalize-css/normalize.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/contrib/stable/css/core/normalize-fixes.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/layouts/basic/basic.layout.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/nih.styles.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/modules/system/system.menus.theme.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/nih.normalize.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/nih.hacks.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/style.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/block-31.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/calendar.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/nih.d9styles.css?t8vion\">\n<link rel=\"stylesheet\" media=\"all\" href=\"/themes/custom/dpcpsi/dist/"
+}

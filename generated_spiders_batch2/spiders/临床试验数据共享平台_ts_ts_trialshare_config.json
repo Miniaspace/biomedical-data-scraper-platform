@@ -1,0 +1,23 @@
+{
+  "spider_name": "临床试验数据共享平台_ts_ts_trialshare",
+  "platform": {
+    "name": "临床试验数据共享平台 TS TS (TrialShare)",
+    "url": "https://itntrialshare.org/login/home/login.view?returnUrl=%2Fhome%2Fproject-start.view%3F",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录过程需要处理表单提交，可能需要验证码外的额外验证步骤，需手动确认登录流程。",
+    "页面数据无分页，数据量较大时需注意内存和性能优化。",
+    "PDF文件下载需确保链接有效且在登录状态下可访问。"
+  ]
+}

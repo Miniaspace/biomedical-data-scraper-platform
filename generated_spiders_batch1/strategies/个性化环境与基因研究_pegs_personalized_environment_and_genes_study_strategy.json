@@ -1,0 +1,29 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 4,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": null,
+    "detail_page_selector": null,
+    "fields": {}
+  },
+  "pagination_strategy": "无分页，直接采集单页面所有可见内容",
+  "file_download_strategy": "通过Playwright模拟浏览器环境，等待页面完全加载后，定位PDF及补充材料链接，使用Playwright的下载功能或requests库结合cookies进行文件下载",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，绕过Cloudflare的JS挑战",
+    "合理设置请求间隔，避免触发验证码",
+    "启用代理IP池，分散访问压力",
+    "自动识别并等待Cloudflare挑战页面通过后再进行数据抓取"
+  ],
+  "special_considerations": [
+    "页面被Cloudflare保护，普通Scrapy无法直接访问，必须使用Playwright或类似工具",
+    "页面无API接口，数据需从渲染后的HTML中提取",
+    "页面无分页，数据量可能有限，但需确保页面完全加载",
+    "验证码存在，若触发需人工干预或采用第三方验证码识别服务"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 由于无列表分页，直接解析当前页面内容\n    content = await page.content()\n    # 根据实际页面结构定位数据块\n    # 示例：items = await page.query_selector_all('div.study-item')\n    # return items\n    pass",
+    "parse_detail": "async def parse_detail(page):\n    # 等待页面加载完成\n    await page.wait_for_selector('div.study-detail')\n    title = await page.text_content('h1.title')\n    author = await page.text_content('span.author')\n    # 定位PDF下载链接\n    pdf_link = await page.get_attribute('a.pdf-download', 'href')\n    # 返回数据字典\n    return {'title': title, 'author': author, 'pdf_link': pdf_link}"
+  }
+}

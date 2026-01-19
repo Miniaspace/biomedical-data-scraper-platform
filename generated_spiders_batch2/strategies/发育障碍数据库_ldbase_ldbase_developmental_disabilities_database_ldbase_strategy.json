@@ -1,0 +1,37 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login/infinite_scroll",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "ul li a[href^='/data/'], ul li a[href^='/record/']",
+    "fields": {
+      "title": "css=ul li .title, xpath=./descendant::*[contains(@class,'title')]",
+      "author": "css=ul li .author, xpath=./descendant::*[contains(@class,'author')]",
+      "date": "css=ul li .date, xpath=./descendant::*[contains(@class,'date')]",
+      "description": "css=ul li .description, xpath=./descendant::*[contains(@class,'description')]",
+      "pdf_link": "css=ul li a[href$='.pdf']",
+      "supplementary_material_link": "css=ul li a.supplementary-material"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite_scroll)分页，使用Playwright模拟用户滚动页面到底部，等待新数据加载，循环此过程直到没有新数据加载为止。",
+  "file_download_strategy": "登录后通过Playwright获取文件下载链接，使用带有登录状态的会话进行文件下载。对PDF及补充材料链接进行请求并保存。支持断点续传和重试机制。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免因无头浏览器特征被识别。",
+    "合理设置滚动和请求间隔，避免触发服务器异常。",
+    "登录时保存并复用cookie，减少频繁登录。",
+    "监控页面变化，若出现登录失效或验证码提示，自动报警或暂停采集。"
+  ],
+  "special_considerations": [
+    "网站需要登录，需实现自动登录流程并处理登录失败。",
+    "无公开API，所有数据需通过页面解析获取。",
+    "无限滚动分页需确保滚动到底部后等待数据加载完成，避免遗漏数据。",
+    "文件下载需保证登录态有效，避免下载失败。",
+    "部分数据字段可能不固定，需根据实际页面结构灵活调整选择器。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    for item in items:\n        detail_link = await item.query_selector_eval('a', 'a => a.href')\n        title = await item.query_selector_eval('.title', 'el => el.innerText')\n        yield {'title': title, 'detail_link': detail_link}",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.query_selector_eval('.title', 'el => el.innerText')\n    author = await page.query_selector_eval('.author', 'el => el.innerText')\n    date = await page.query_selector_eval('.date', 'el => el.innerText')\n    description = await page.query_selector_eval('.description', 'el => el.innerText')\n    pdf_links = await page.query_selector_all('a[href$=\".pdf\"]')\n    pdf_urls = [await link.get_attribute('href') for link in pdf_links]\n    return {'title': title, 'author': author, 'date': date, 'description': description, 'pdf_urls': pdf_urls}"
+  }
+}

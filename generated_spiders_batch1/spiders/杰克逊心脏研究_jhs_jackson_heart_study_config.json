@@ -1,0 +1,23 @@
+{
+  "spider_name": "杰克逊心脏研究_jhs_jackson_heart_study",
+  "platform": {
+    "name": "杰克逊心脏研究 JHS (Jackson Heart Study)",
+    "url": "https://www.jacksonheartstudy.org/",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "6"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站结构较为简单，无API接口，需通过HTML解析获取数据。",
+    "部分链接可能为相对路径，需拼接域名确保正确访问。",
+    "确认所有目标文件链接是否直接可访问，若有重定向需处理。"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='#/home']",
+    "fields": {
+      "title": "css=h1.study-title, xpath=//h1[contains(@class,'study-title')]",
+      "authors": "css=div.authors, xpath=//div[contains(@class,'authors')]",
+      "publication_date": "css=span.pub-date, xpath=//span[contains(@class,'pub-date')]",
+      "abstract": "css=div.abstract, xpath=//div[contains(@class,'abstract')]",
+      "pdf_link": "css=a[href$='.pdf'], xpath=//a[contains(@href,'.pdf')]"
+    }
+  },
+  "pagination_strategy": "采用Playwright模拟用户滚动页面，触发页面的infinite scroll机制，等待新内容加载完成后继续提取，直到无新内容加载为止。",
+  "file_download_strategy": "通过Playwright拦截PDF链接请求，或直接抓取PDF链接并使用HTTP客户端下载，确保文件完整性和重试机制。",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，加载JavaScript，避免因无JS环境导致内容缺失。",
+    "控制请求频率，模拟人类浏览节奏，避免触发潜在的速率限制。",
+    "设置合理的User-Agent和浏览器头信息，防止被简单的UA检测屏蔽。"
+  ],
+  "special_considerations": [
+    "页面采用hash路由（#/home），需处理单页应用的动态内容加载。",
+    "无公开API，需完全依赖前端渲染数据，确保Playwright等待数据加载完成。",
+    "PDF文件链接可能动态生成，需动态解析页面元素获取最新链接。"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    items = await page.query_selector_all('ul li')\n    results = []\n    for item in items:\n        link = await item.query_selector('a[href^=\"#/home\"]')\n        href = await link.get_attribute('href')\n        results.append(href)\n    return results",
+    "parse_detail": "async def parse_detail(page):\n    title = await page.text_content('h1.study-title')\n    authors = await page.text_content('div.authors')\n    pub_date = await page.text_content('span.pub-date')\n    abstract = await page.text_content('div.abstract')\n    pdf_element = await page.query_selector('a[href$=\".pdf\"]')\n    pdf_url = await pdf_element.get_attribute('href') if pdf_element else None\n    return {\n        'title': title.strip() if title else '',\n        'authors': authors.strip() if authors else '',\n        'publication_date': pub_date.strip() if pub_date else '',\n        'abstract': abstract.strip() if abstract else '',\n        'pdf_url': pdf_url\n    }"
+  }
+}

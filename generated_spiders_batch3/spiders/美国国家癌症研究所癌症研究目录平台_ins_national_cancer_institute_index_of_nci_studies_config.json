@@ -1,0 +1,23 @@
+{
+  "spider_name": "美国国家癌症研究所癌症研究目录平台_ins_national_cancer_institute_index_of_nci_studies",
+  "platform": {
+    "name": "美国国家癌症研究所癌症研究目录平台 INS (National Cancer Institute Index of NCI Studies)",
+    "url": "https://studycatalog.cancer.gov",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面采用hash路由（#/home），需处理单页应用的动态内容加载。",
+    "无公开API，需完全依赖前端渲染数据，确保Playwright等待数据加载完成。",
+    "PDF文件链接可能动态生成，需动态解析页面元素获取最新链接。"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "url": "https://ccdi.cancer.gov/home",
+  "domain": "ccdi.cancer.gov",
+  "site_type": "journal",
+  "has_login": false,
+  "pagination": {
+    "type": "infinite_scroll",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 9
+      }
+    ],
+    "detail_link_pattern": "/home",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": true,
+    "cloudflare": false
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/ccdi_cancer_gov.png",
+  "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta charset=\"utf-8\"><meta name=\"robots\" content=\"index\"><meta name=\"description\" content=\"Welcome to the Childhood Cancer Data Initiative Hub - Your Central Resource for Transformative Insights into Childhood Oncology through the Childhood Cancer Data Initiative. Explore curated datasets, Molecular research, and collaborative opportunities dedicated to advancing childhood cancer care and research.\"><meta name=\"keywords\" content=\"CCDI Hub, Childhood Cancer Data Initiative, Childhood Oncology Research, Pediatric Oncology Research, Paediatric Oncology Research, Childhood Cancer Data Hub, Pediatric Cancer Data Hub, Paediatric Cancer Data Hub, Pediatric Cancer Data, Paediatric Cancer Data, Childhood Cancer Research, Pediatric Cancer Research, Paediatric Cancer Research, Childhood Leukaemia Studies, Pediatric Leukaemia Studies, Paediatric Leukaemia Studies, Childhood Tumor Data, Pediatric Tumor Data, Paediatric Tumour Data, Cancer Data Sharing, Childhood Cancer Insights, Pediatric Cancer Insights, Paediatric Cancer Insights, Childhood Oncology Collaboration, Pediatric Oncology Collaboration, Paediatric Oncology Collaboration, Childhood Cancer Data Repository, Pediatric Cancer Data Repository, Paediatric Cancer Data Repository, Childhood Cancer Research Resources, Pediatric Cancer Research Resources, Paediatric Cancer Research Resources, Childhood Cancer Data Analysis, Paediatric Cancer Data Analysis, Pediatric Cancer Data Analysis, Childhood Cancer Data Partnerships, Pediatric Cancer Data Partnerships, Paediatric Cancer Data Partnerships, Childhood Cancer Data Catalog, Pediatric Cancer Data Catalog, Paediatric Cancer Data Catalog, Childhood Cancer Data Access, Pediatric Cancer Data Access, Paediatric Cancer Data Access, Childhood Oncology Innovations, Pediatric Oncology Innovations, Paediatric Oncology Innovations, Childhood Cancer Data Discoveries, Pediatric Cancer Data Discoveries, Paediatric Cancer Data Discoveries, Childhood Cancer Data Solutions, Pediatric Cancer Data Science, Paediatric Cancer Data Science, Childhood Cancer Data Science, Pediatric Cancer Data Science, Paediatric Cancer Data Science\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#000000\"><meta property=\"og:title\" content=\"CCDI Hub - Childhood Cancer Data Initiative Hub\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:url\" content=\"https://ccdi.cancer.gov/\"><meta property=\"og:description\" content=\"Welcome to the Childhood Cancer Data Initiative Hub - Your Central Resource for Transformative Insights into Childhood Oncology through the Childhood Cancer Data Initiative. Explore curated datasets, Molecular research, and collaborative opportunities dedicated to advancing childhood cancer care and research.\"><link rel=\"manifest\" href=\"/manifest.json\"><link href=\"/css/index.css\" rel=\"stylesheet\"><link rel=\"icon\" href=\"/favicon.ico\"><script src=\"/injectEnv.js\"></script><title>CCDI Hub</title><script src=\"https://assets.adobedtm.com/6a4249cd0a2c/785de09de161/launch-70d67a6a40a8.min.js\" async=\"\"></script><style>body{padding-right:0}#root{overflow:hidden}.recharts-wrapper :focus{outline:0}.recharts-wrapper{-webkit-tap-highlight-color:transparent}</style><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement.min.js\" async=\"\"></script><script src=\"https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement_Module_ActivityMap.min.js\" async=\"\"></script><style>@font-face{font-family:Open Sans;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Open Sans;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format(\"woff2\");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Open Sans;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v36/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format(\"woff2\");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Open Sans;font-style:normal;font-weight:400;"
+}

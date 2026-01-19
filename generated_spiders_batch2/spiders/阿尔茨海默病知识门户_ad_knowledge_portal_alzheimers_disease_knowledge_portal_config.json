@@ -1,0 +1,23 @@
+{
+  "spider_name": "阿尔茨海默病知识门户_ad_knowledge_portal_alzheimers_disease_knowledge_portal",
+  "platform": {
+    "name": "阿尔茨海默病知识门户 AD Knowledge Portal (Alzheimer's Disease Knowledge Portal)",
+    "url": "https://adknowledgeportal.synapse.org",
+    "type": "data_repository"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要实现自动化，可能涉及多步验证，需提前准备账号和密码。",
+    "页面无公开API，所有数据需通过渲染后的页面DOM提取。",
+    "文件下载链接可能动态生成，需在页面完全加载后提取。"
+  ]
+}

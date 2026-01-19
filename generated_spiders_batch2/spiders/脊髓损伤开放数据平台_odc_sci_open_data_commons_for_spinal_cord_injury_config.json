@@ -1,0 +1,23 @@
+{
+  "spider_name": "脊髓损伤开放数据平台_odc_sci_open_data_commons_for_spinal_cord_injury",
+  "platform": {
+    "name": "脊髓损伤开放数据平台 ODC-SCI (Open Data Commons for Spinal Cord Injury)",
+    "url": "https://odc-sci.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要自动化处理，可能涉及表单提交及验证码检测（目前无验证码）",
+    "详情页链接非标准链接（detail_link_pattern为'#'），需分析页面JS事件绑定或DOM结构，可能需要直接解析列表项中的隐藏数据或通过XHR请求获取详情数据",
+    "由于无公开API，所有数据均需通过页面渲染后抓取，增加采集复杂度"
+  ]
+}

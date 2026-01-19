@@ -1,0 +1,23 @@
+{
+  "spider_name": "国家老龄化研究所阿尔茨海默病遗传学数据存储站点_niagads_national_institute_on_aging_genetics_of_alzheimers_disease_data_storage_site",
+  "platform": {
+    "name": "国家老龄化研究所阿尔茨海默病遗传学数据存储站点 NIAGADS (National Institute on Aging Genetics of Alzheimer's Disease Data Storage Site)",
+    "url": "https://www.niagads.org/",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "24"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "网站无登录需求，减少认证复杂度。",
+    "无限滚动加载可能导致内存占用较高，需合理控制滚动次数和数据量。",
+    "部分数据字段可能存在缺失或格式不统一，需做好异常处理。"
+  ]
+}

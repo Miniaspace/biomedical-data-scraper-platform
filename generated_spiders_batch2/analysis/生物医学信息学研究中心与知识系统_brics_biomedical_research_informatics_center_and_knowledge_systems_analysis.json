@@ -1,0 +1,37 @@
+{
+  "url": "https://brics.nei.nih.gov",
+  "domain": "brics.nei.nih.gov",
+  "site_type": "data_repository",
+  "has_login": true,
+  "pagination": {
+    "type": "none",
+    "selectors": [],
+    "total_pages": null
+  },
+  "data_structure": {
+    "list_items": [
+      {
+        "selector": "ul li",
+        "type": "list_item",
+        "count": 3
+      }
+    ],
+    "detail_link_pattern": "http://www.hhs.gov/",
+    "fields": []
+  },
+  "api_info": {
+    "detected": false,
+    "endpoints": []
+  },
+  "files": [
+    "pdf"
+  ],
+  "anti_scraping": {
+    "captcha": false,
+    "rate_limiting": false,
+    "javascript_required": false,
+    "cloudflare": true
+  },
+  "screenshot_path": "/home/ubuntu/biomedical-data-scraper-platform/spider_generator/screenshots/brics_nei_nih_gov.png",
+  "html_sample": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><!--<![endif]--><head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<title>Log In : NEI BRICS</title>\n\n<link href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/styles/instances/eyegene/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" id=\"main-stylesheet\">\n<link href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/styles/instances/eyegene/images/favicon.ico\" rel=\"icon\">\n\n\n\n\n<link rel=\"stylesheet\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/fonts/source_sans_pro/source_sans_pro.css\">\n<link rel=\"stylesheet\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/fonts/qt/css/qt-glyphicons.css\">\n<link rel=\"stylesheet\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/fonts/qt/css/brics-qt-glyphicons.css\">\n<link rel=\"stylesheet\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/jquery-ui/themes/smoothness/jquery-ui.min.css\">\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-1.0/css/jquery.dataTables.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-1.0/css/datatables.css\">\n<link rel=\"stylesheet\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/styles/common/styles/bootstrap/bootstrap-3.1.1.min.css\" type=\"text/css\">\n<link type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n\n<!-- new datatables s  -->\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-2.0/css/responsive.dataTables.min.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-2.0/css/datatablesWidget.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-2.0/css/idtSearchColumnPlugin.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-2.0/css/idtSelectSetPlugin.css\">\n\n<!-- buttons -->\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/buttons/index.css\">\n\n<!-- loader -->\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/styles/common/styles/loader.css\">\n\n<!--  tagify  -->\n<script src=\"https://cdn.jsdelivr.net/npm/@yaireo/tagify\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js\"></script>\n<link href=\"https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css\" rel=\"stylesheet\" type=\"text/css\">\n\n<script type=\"text/javascript\">\n\tvar baseUrl = '/portal/';\n\tvar portalHost = \"https://brics.nei.nih.gov/\";\n\tvar microserviceBaseUrl = \"https://brics.nei.nih.gov/gateway\";\n\tvar staticUrl = microserviceBaseUrl + \"/static/\" + \"16.1.0-RELEASE-8\";\n</script>\n\n<!-- Load jQuery from their CDN -->\n<script src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/jquery/jquery.min.js\"></script>\n<!-- jQuery Migrate -->\n<script src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/jquery-migrate/jquery-migrate.min.js\"></script>\n<!-- jQueryUI -->\n<script src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/jquery-ui/jquery-ui.min.js\"></script>\n\n\n\n<script src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/portal/js/common.min.js\"></script>\n<script type=\"text/javascript\" charset=\"utf-8\" language=\"javascript\" src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-1.0/js/jquery.dataTables.js\"></script>\n<script type=\"text/javascript\" charset=\"utf-8\" language=\"javascript\" src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/dataTables-1.0/js/FixedHeader.min.js\"></script>\n\n\n\t<script src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/portal/js/sessionHandler.js\"></script>\n\n\n<script type=\"text/javascript\" src=\"/portal/js/jquery.form.min.js\"></script>\n\n<!-- Messaging JS -->\n<script type=\"text/javascript\" src=\"https://brics.nei.nih.gov/gateway/static/16.1.0-RELEASE-8/ibisMessaging/ibisMessaging.js\"></script><style>@CHARSET \"ISO-8859-1\";\n\n.ui-dialog {\n\tpadding: 0px !important;\n}\n\n.ibisMessaging-message {\n\tword-wrap: break-word;\n\tcolor: var(--darkest);\n\tfont-size: 12px;\n}\n\n.ibisMessaging-primary {\n\tmargin-top: 3px;\n\tmargin-bottom: 3px;\n\tpadding: 5px;\n\tbackground-repeat: no-repeat;\n\tbackground-position: 11px center;\n\tbackground-size: 35px 35px;\n\tdisplay: flex;\n\talign-items: center;\n\tpadding-left: 58px;\n\tmin-height: 32px;\n}\n\n.ibisMessaging-message.ibisMessaging-dialog {\n\tpadding: 5px;\n\tpadding-left: 50px;\n\tbackground-repeat: no-repeat;\n\tbackground-position: 11px center;\n\tbackground-size: 35px 35px;\n\tmin-height: 32px;\n\tline-height: 1.6;\n\tdisplay: flex;\n\talign-items: center;\n\tfont-size: 12px;\n\tmargin: 10px;\n}\n\n.ibisMessaging-"
+}

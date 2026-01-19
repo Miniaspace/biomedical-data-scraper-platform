@@ -1,0 +1,24 @@
+{
+  "spider_name": "niaid临床数据访问平台_acdniaid_accessclinicaldataniaid",
+  "platform": {
+    "name": "NIAID临床数据访问平台 ACD@NIAID (AccessClinicalData@NIAID)",
+    "url": "https://accessclinicaldata.niaid.nih.gov",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录认证为必需，需处理登录表单及可能的多因素认证。",
+    "无公开API，所有数据均需通过页面渲染抓取。",
+    "无限滚动加载数据量较大，需合理设计滚动和数据存储策略，避免内存溢出。",
+    "PDF文件下载需保证会话有效，可能需要动态cookie或token。"
+  ]
+}

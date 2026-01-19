@@ -1,0 +1,23 @@
+{
+  "spider_name": "国家药物滥用研究中心遗传资源_nida_genetics_nida_genetics_nida_center_for_genetic_studies",
+  "platform": {
+    "name": "国家药物滥用研究中心遗传资源 NIDA Genetics (NIDA Genetics (NIDA Center for Genetic Studies))",
+    "url": "https://nidagenetics.org",
+    "type": "clinical_trial"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "8"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "页面内容为静态HTML，无需执行JavaScript，减少复杂度",
+    "无限滚动加载可能需要结合Playwright或Splash辅助实现完整数据采集",
+    "无登录，采集门槛较低"
+  ]
+}

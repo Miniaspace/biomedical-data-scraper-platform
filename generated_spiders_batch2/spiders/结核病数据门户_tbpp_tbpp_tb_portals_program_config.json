@@ -1,0 +1,23 @@
+{
+  "spider_name": "结核病数据门户_tbpp_tbpp_tb_portals_program",
+  "platform": {
+    "name": "结核病数据门户 TBPP TBPP (TB Portals Program)",
+    "url": "https://tbportals.niaid.nih.gov",
+    "type": "unknown"
+  },
+  "strategy": {
+    "method": "scrapy",
+    "difficulty": 2,
+    "estimated_dev_time": "12"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "确认详情页中PDF及补充材料的链接格式，确保能正确抓取并下载",
+    "部分链接指向外部域名（如hhs.gov），需处理跨域请求问题",
+    "页面结构较为简单，无复杂JS渲染，Scrapy足够应对"
+  ]
+}

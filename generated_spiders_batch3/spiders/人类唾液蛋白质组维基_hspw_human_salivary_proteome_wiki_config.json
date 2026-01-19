@@ -1,0 +1,24 @@
+{
+  "spider_name": "人类唾液蛋白质组维基_hspw_human_salivary_proteome_wiki",
+  "platform": {
+    "name": "人类唾液蛋白质组维基 HSPW (Human Salivary Proteome Wiki)",
+    "url": "https://salivaryproteome.org",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "hybrid",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录认证是采集前提，需实现自动登录及登录状态维持。",
+    "API接口存在，优先调用API接口获取数据，减少页面渲染压力。",
+    "无限滚动加载需模拟滚动事件，确保数据全部加载。",
+    "PDF文件下载需处理权限验证，确保下载链接有效。"
+  ]
+}

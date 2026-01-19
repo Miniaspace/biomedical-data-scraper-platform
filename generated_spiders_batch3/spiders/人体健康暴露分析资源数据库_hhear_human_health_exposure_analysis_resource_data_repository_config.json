@@ -1,0 +1,24 @@
+{
+  "spider_name": "人体健康暴露分析资源数据库_hhear_human_health_exposure_analysis_resource_data_repository",
+  "platform": {
+    "name": "人体健康暴露分析资源数据库 HHEAR (Human Health Exposure Analysis Resource Data Repository)",
+    "url": "https://hheardatacenter.mssm.edu",
+    "type": "biobank"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 4,
+    "estimated_dev_time": "40"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程复杂，需实现动态验证码处理",
+    "网站无API，所有数据均需从页面解析",
+    "文件下载链接可能分散在表格不同列，需全面提取",
+    "Cloudflare防护可能导致请求失败，需重试和异常捕获"
+  ]
+}

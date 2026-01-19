@@ -1,0 +1,34 @@
+{
+  "recommended_method": "scrapy",
+  "spider_template": "basic",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "ul li",
+    "detail_page_selector": "a[href^='/about-midrc']",
+    "fields": {
+      "title": "li > h2, li > .title, li > a",
+      "author": "li .author, li .meta .author",
+      "date": "li .date, li .meta .date",
+      "description": "li .description, li p",
+      "pdf_link": "li a[href$='.pdf']"
+    }
+  },
+  "pagination_strategy": "由于采用无限滚动(infinite_scroll)分页，使用Scrapy结合中间件或自定义中间件模拟滚动加载。通过分析网络请求，捕获加载更多数据的XHR请求参数，循环发送请求直到无新数据返回。若无XHR请求，则使用Playwright模拟滚动加载后抓取完整列表。",
+  "file_download_strategy": "采集到PDF或补充材料链接后，使用Scrapy的FilesPipeline或自定义下载逻辑进行文件下载，确保文件命名规范并支持断点续传。对于动态生成的下载链接，需先访问详情页获取真实下载地址。",
+  "anti_scraping_handling": [
+    "针对验证码，尝试绕过或人工辅助识别，若验证码频繁出现，降低请求频率并增加随机延时。",
+    "设置合理User-Agent和请求头，模拟真实浏览器访问。",
+    "控制请求速率，避免触发验证码。",
+    "使用代理IP池分散请求来源，降低被封风险。"
+  ],
+  "special_considerations": [
+    "网站无登录但存在验证码，需重点关注验证码触发条件，尽量避免频繁请求。",
+    "无限滚动分页可能导致数据量大，需合理设计采集批次和数据存储。",
+    "无公开API，数据需从HTML页面解析，需关注页面结构变化。"
+  ],
+  "code_snippets": {
+    "parse_list": "def parse(self, response):\n    items = response.css('ul li')\n    for item in items:\n        detail_url = item.css('a::attr(href)').get()\n        if detail_url:\n            yield response.follow(detail_url, self.parse_detail)\n    # 处理无限滚动分页的XHR请求或等待下一批数据",
+    "parse_detail": "def parse_detail(self, response):\n    title = response.css('h1::text').get()\n    author = response.css('.author::text').get()\n    date = response.css('.date::text').get()\n    pdf_url = response.css('a[href$=\".pdf\"]::attr(href)').get()\n    yield {\n        'title': title,\n        'author': author,\n        'date': date,\n        'pdf_url': response.urljoin(pdf_url) if pdf_url else None\n    }"
+  }
+}

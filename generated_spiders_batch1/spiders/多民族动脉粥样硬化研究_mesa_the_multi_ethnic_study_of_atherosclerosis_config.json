@@ -1,0 +1,23 @@
+{
+  "spider_name": "多民族动脉粥样硬化研究_mesa_the_multi_ethnic_study_of_atherosclerosis",
+  "platform": {
+    "name": "多民族动脉粥样硬化研究 MESA (The Multi-Ethnic Study of Atherosclerosis)",
+    "url": "https://www.mesa-nhlbi.org/",
+    "type": "journal"
+  },
+  "strategy": {
+    "method": "playwright",
+    "difficulty": 3,
+    "estimated_dev_time": "16"
+  },
+  "settings": {
+    "download_delay": 2,
+    "concurrent_requests": 8,
+    "retry_times": 3
+  },
+  "notes": [
+    "登录流程需要模拟表单提交，可能涉及CSRF token，需动态获取",
+    "网站基于Drupal 11，页面结构可能动态变化，需定期维护选择器",
+    "无API接口，所有数据需通过页面解析获取"
+  ]
+}

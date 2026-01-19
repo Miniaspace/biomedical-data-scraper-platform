@@ -1,0 +1,35 @@
+{
+  "recommended_method": "playwright",
+  "spider_template": "playwright/login",
+  "difficulty": 3,
+  "estimated_dev_time": "24",
+  "data_extraction": {
+    "list_page_selector": "待登录后确认具体列表页结构，初步可定位包含研究数据条目的容器，如CSS选择器 div.research-list 或 ul.data-list",
+    "detail_page_selector": "待登录后确认详情页结构，通常为 div.article-detail 或 section.content-main",
+    "fields": {
+      "title": "CSS选择器 h1.article-title 或 XPath //h1[contains(@class,'article-title')]",
+      "author": "CSS选择器 div.authors 或 XPath //div[contains(@class,'authors')]",
+      "publication_date": "CSS选择器 span.pub-date 或 XPath //span[contains(@class,'pub-date')]",
+      "abstract": "CSS选择器 div.abstract 或 XPath //div[contains(@class,'abstract')]",
+      "pdf_link": "CSS选择器 a[href$='.pdf'] 或 XPath //a[contains(@href,'.pdf')]",
+      "docx_link": "CSS选择器 a[href$='.docx'] 或 XPath //a[contains(@href,'.docx')]",
+      "supplementary_materials": "CSS选择器 div.supplementary a 或 XPath //div[contains(@class,'supplementary')]//a"
+    }
+  },
+  "pagination_strategy": "网站无分页，所有内容集中展示或通过筛选条件加载，需登录后确认是否存在动态加载或筛选分页，若有则通过Playwright模拟点击加载更多或筛选操作",
+  "file_download_strategy": "通过Playwright登录后，抓取文件链接（pdf/docx），使用Playwright的页面请求拦截或直接通过Python requests携带登录cookie进行文件下载，确保文件完整性和正确命名",
+  "anti_scraping_handling": [
+    "使用Playwright模拟真实浏览器行为，避免因无JavaScript执行导致页面加载不全",
+    "合理设置请求间隔，避免触发服务器异常",
+    "登录状态保持，避免频繁登录导致账号异常"
+  ],
+  "special_considerations": [
+    "登录流程依赖外部authUI模块，需调试登录流程，确保cookie/session正确获取",
+    "无API接口，所有数据需通过页面渲染抓取，需确认页面结构稳定性",
+    "文件下载链接可能为动态生成，需在登录状态下抓取"
+  ],
+  "code_snippets": {
+    "parse_list": "async def parse_list(page):\n    # 登录后进入列表页\n    await page.goto('https://fluency.talkbank.org/your_data_page')\n    # 等待列表加载\n    await page.wait_for_selector('div.research-list')\n    items = await page.query_selector_all('div.research-list > div.item')\n    results = []\n    for item in items:\n        title = await item.query_selector_eval('h2.title', 'el => el.textContent.trim()')\n        detail_url = await item.query_selector_eval('a.detail-link', 'el => el.href')\n        results.append({'title': title, 'detail_url': detail_url})\n    return results",
+    "parse_detail": "async def parse_detail(page, url):\n    await page.goto(url)\n    await page.wait_for_selector('div.article-detail')\n    title = await page.query_selector_eval('h1.article-title', 'el => el.textContent.trim()')\n    authors = await page.query_selector_eval('div.authors', 'el => el.textContent.trim()')\n    pub_date = await page.query_selector_eval('span.pub-date', 'el => el.textContent.trim()')\n    abstract = await page.query_selector_eval('div.abstract', 'el => el.textContent.trim()')\n    pdf_link = await page.query_selector_eval('a[href$=\".pdf\"]', 'el => el.href')\n    docx_link = await page.query_selector_eval('a[href$=\".docx\"]', 'el => el.href')\n    return {\n        'title': title,\n        'authors': authors,\n        'publication_date': pub_date,\n        'abstract': abstract,\n        'pdf_link': pdf_link,\n        'docx_link': docx_link\n    }"
+  }
+}
